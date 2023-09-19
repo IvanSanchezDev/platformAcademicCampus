@@ -1,14 +1,13 @@
 
 import styled from "styled-components"
 import { MdClose } from "react-icons/md"
-import { Link } from 'react-router-dom'
 import { useSidebarContext } from '../context/sidebar_context'
 
 
 const Sidebar=()=>{
 
     const {closeSidebar, isSidebarOpen}=useSidebarContext()
-    console.log(isSidebarOpen)
+    
     return(
         
         <SidebarWrapper className={`bg-white ${isSidebarOpen ? "show-sidebar" : "" }`}>

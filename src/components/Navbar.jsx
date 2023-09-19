@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import {MdMenu} from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import { useSidebarContext } from '../context/sidebar_context'
+import Container from 'react-bootstrap/Container';
+
 
 
 const Navbar=()=>{
@@ -12,7 +14,7 @@ const Navbar=()=>{
 
     return(
         <NavbarWrapper className='bg-white flex'>
-            <div className='container w-100'>
+            <Container className='w-100'>
                 <div className='brand-and-toggler flex flex-between w-100'>
                     <Link to='/' className='navbar-brand text-uppercase ls-1 fw-8'>
                         <span>C</span>ampusAcademic                
@@ -25,7 +27,7 @@ const Navbar=()=>{
                     </div>
 
                 </div>
-            </div>           
+            </Container>           
         </NavbarWrapper>
     )
 }
