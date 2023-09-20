@@ -2,11 +2,30 @@
 import styled from "styled-components"
 import { MdClose } from "react-icons/md"
 import { useSidebarContext } from '../context/sidebar_context'
+import { useNavigate } from "react-router-dom"
 
 
 const Sidebar=()=>{
 
     const {closeSidebar, isSidebarOpen}=useSidebarContext()
+
+    const Navigate=useNavigate()
+
+    const cerrarSesion=async()=>{
+      
+      try {
+        const response=await fetch('http://localhost:1234/auth/logout', {
+          method:'GET',
+        })
+        console.log(response);
+        if(response.ok){
+          Navigate('/login')
+        };
+        
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
     
     return(
         
@@ -19,6 +38,9 @@ const Sidebar=()=>{
                 <ul className="sidebar-category">
                     <li>React</li>
                 </ul>
+            </div>
+            <div>
+              <button type="button" className="btnCerrarSesion" onClick={cerrarSesion}>Cerrar Sesion</button>
             </div>
         </SidebarWrapper>
     )
@@ -52,6 +74,12 @@ const SidebarWrapper = styled.div`
     height: 26px;
     border-radius: 50%;
     transition: all 300ms ease-in-out;
+  }
+
+  .btnCerrarSesion{
+    border: 1px solid;
+    background-color: black;
+    color:white;
   }
   
 `;

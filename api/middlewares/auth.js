@@ -12,7 +12,7 @@ export  function isNotAuthorized(req, res, next) {
         console.log("User isn´t logged in");
         next();    
     } else {
-        res.redirect("/dashboard");
+      res.send('<script>window.opener.postMessage("auth_success", "http://localhost:5173");window.close();</script>');
      
     }
   }

@@ -2,6 +2,8 @@ import express from 'express'
 import cors from 'cors'
 import passport from 'passport';
 import { router as routerAuth } from './routes/auth.routes.js';
+import { router as routerUser } from './routes/user.routes.js';
+
 import session from "express-session";
 import { config } from 'dotenv';
 import { isAuthorized } from './middlewares/auth.js';
@@ -27,4 +29,5 @@ app.get('/Dashboard', isAuthorized, (req, res) => {
 
 
 app.use('/auth', routerAuth)
+app.use('/api', routerUser)
 

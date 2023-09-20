@@ -11,6 +11,13 @@ const Login=()=>{
     const logearse=async()=>{
         const win = window.open('http://localhost:1234/auth/login', '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes');
         win.focus();
+        window.addEventListener('message', async(event) => {
+            if (event.origin === 'http://localhost:1234' && event.data === 'auth_success') {
+                
+                window.location.href = 'http://localhost:5173/';
+                
+            }
+        });
     }
 
     return(
