@@ -22,7 +22,7 @@ const Navbar=()=>{
 
                     <div className='navbar-btns flex'>                     
                         <button type='button' className='sidebar-open-btn' onClick={()=>openSidebar()}>
-                          <MdMenu/>
+                          <MdMenu className="fs-26"/>
                         </button>
                     </div>
 

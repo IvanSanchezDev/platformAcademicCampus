@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './components/HomePage'
 import "bootstrap/dist/css/bootstrap.css";
+import Login from './components/Login'
 
 function App() {
   
@@ -14,6 +15,7 @@ function App() {
       <Sidebar/>
      <Routes>
           <Route path='/' element={<Home/>}/>
+          <Route path='/login' element={<Login/>}/>
       </Routes> 
    </BrowserRouter>
   )
