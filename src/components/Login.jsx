@@ -1,23 +1,29 @@
 import { Container, Button } from "react-bootstrap"
 import {BsDiscord} from 'react-icons/bs'
-
+import { useAuth } from "../context/authContext"
 import styled from "styled-components"
-
+import { Navigate } from "react-router-dom";
 
 
 
 const Login=()=>{
+    const {isAuthenticated, setIsAuthenticated}=useAuth()
 
     const logearse=async()=>{
         const win = window.open('http://localhost:1234/auth/login', '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes');
         win.focus();
         window.addEventListener('message', async(event) => {
-            if (event.origin === 'http://localhost:1234' && event.data === 'auth_success') {
-                
-                window.location.href = 'http://localhost:5173/';
-                
+            if (event.origin === 'http://localhost:1234' && event.data === 'auth_success') {               
+                <Navigate to="/" />; 
+                setIsAuthenticated(true)           
             }
+            
         });
+        
+    }
+
+    if (isAuthenticated) {
+        return <Navigate to="/" />;
     }
 
     return(

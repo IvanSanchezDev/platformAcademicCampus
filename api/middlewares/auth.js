@@ -1,10 +1,11 @@
 export function isAuthorized(req, res, next) {
     if (req.user) {
       console.log("User is logged in");
-      next();
-    } else {
-      res.redirect("/");
-    }
+      return next();
+    } 
+
+    res.status(401).json({error:"No esta autenticado"})
+
   }
   
 export  function isNotAuthorized(req, res, next) {

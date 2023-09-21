@@ -2,30 +2,13 @@
 import styled from "styled-components"
 import { MdClose } from "react-icons/md"
 import { useSidebarContext } from '../context/sidebar_context'
-import { useNavigate } from "react-router-dom"
+import { useAuth } from "../context/authContext"
 
 
 const Sidebar=()=>{
 
     const {closeSidebar, isSidebarOpen}=useSidebarContext()
-
-    const Navigate=useNavigate()
-
-    const cerrarSesion=async()=>{
-      
-      try {
-        const response=await fetch('http://localhost:1234/auth/logout', {
-          method:'GET',
-        })
-        console.log(response);
-        if(response.ok){
-          Navigate('/login')
-        };
-        
-      } catch (error) {
-        console.log(error.message);
-      }
-    }
+   const {logout}=useAuth()
     
     return(
         
@@ -40,7 +23,7 @@ const Sidebar=()=>{
                 </ul>
             </div>
             <div>
-              <button type="button" className="btnCerrarSesion" onClick={cerrarSesion}>Cerrar Sesion</button>
+              <button type="button" className="btnCerrarSesion" onClick={logout}>Cerrar Sesion</button>
             </div>
         </SidebarWrapper>
     )

@@ -1,6 +1,6 @@
 import { Router } from "express";
 import passport from "../auth/discordStrategy.js";
-import { isNotAuthorized } from "../middlewares/auth.js";
+import { isAuthorized, isNotAuthorized } from "../middlewares/auth.js";
 
 export const router = Router();
 
@@ -22,13 +22,10 @@ router.get('/failure', (req, res) => {
     res.redirect('/');
 });
 
-router.get('/logout', (req,res)=>{
-    if(req.user){
-        req.logout()
-        console.log("secion cerrada");
-    }else{
-        console.log('no existe');
-    }
-    
-    res.status(200).send('logout_success');
+router.get('/logout', isAuthorized, (req,res)=>{
+    console.log("entraaa");
+    req.logout()
+    req.session.destroy()
+    console.log('se cerro la sesion');
+    res.status(200).json({message:'logout_success'});
 })

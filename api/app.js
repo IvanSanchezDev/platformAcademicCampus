@@ -9,13 +9,13 @@ import { config } from 'dotenv';
 import { isAuthorized } from './middlewares/auth.js';
 config()
 export const app = express()
-app.use(cors())
+app.use(cors({origin:true, methods:"GET,POST",credentials:true}))
 
 app.use(
     session({
       secret: process.env.SESSION_SECRET,
       resave: false,
-      saveUninitialized: false,
+      saveUninitialized: true,
     })
   );
 app.use(passport.initialize()); 
