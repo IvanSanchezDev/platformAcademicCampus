@@ -22,6 +22,12 @@ app.use(passport.initialize());
 app.use(passport.session()); 
 app.use(express.json());
 
+//configurar variable global
+app.use((req, res, next) => {
+  app.locals.user = req.user;
+  next();
+});
+
 
 app.get('/Dashboard', isAuthorized, (req, res) => {
   res.send('Bienvenido ' + req.user.nombre_usuario);

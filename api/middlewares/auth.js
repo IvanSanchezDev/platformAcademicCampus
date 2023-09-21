@@ -1,6 +1,6 @@
 export function isAuthorized(req, res, next) {
-    if (req.user) {
-      console.log("User is logged in");
+    if (req.app.locals.user) {
+      console.log("Usuario");
       return next();
     } 
 
@@ -9,7 +9,7 @@ export function isAuthorized(req, res, next) {
   }
   
 export  function isNotAuthorized(req, res, next) {
-    if (!req.user) {
+    if (!req.app.locals.user) {
         console.log("User isn´t logged in");
         next();    
     } else {

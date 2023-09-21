@@ -23,8 +23,7 @@ router.get('/failure', (req, res) => {
 });
 
 router.get('/logout', isAuthorized, (req,res)=>{
-    console.log("entraaa");
-    req.logout()
+    req.logout
     req.session.destroy()
     console.log('se cerro la sesion');
     res.status(200).json({message:'logout_success'});
