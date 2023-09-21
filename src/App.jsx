@@ -1,21 +1,26 @@
-import Sidebar from './components/Sidebar'
+
 import './App.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Navbar from './components/Navbar'
+import {  Routes, Route } from 'react-router-dom'
 import Home from './components/HomePage'
 import "bootstrap/dist/css/bootstrap.css";
+import Login from './components/Login'
+import { ProtectedRoute } from './protectedRoutes'
+import { Profile } from './components/Profile';
+
 
 function App() {
   
 
   return (
-   <BrowserRouter>
-      <Navbar/>
-      <Sidebar/>
-     <Routes>
-          <Route path='/' element={<Home/>}/>
-      </Routes> 
-   </BrowserRouter>
+          <Routes >
+            <Route path="/">
+              <Route path='login' element={<Login/>}/>
+            </Route>
+            <Route element={<ProtectedRoute/>}>
+              <Route path='/home' element={<Home/>}/>
+              <Route path='/profile' element={<Profile/>}/>
+            </Route>
+          </Routes>
   )
 }
 

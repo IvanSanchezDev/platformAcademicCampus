@@ -2,11 +2,13 @@
 import styled from "styled-components"
 import { MdClose } from "react-icons/md"
 import { useSidebarContext } from '../context/sidebar_context'
+import { useAuth } from "../context/authContext"
 
 
 const Sidebar=()=>{
 
     const {closeSidebar, isSidebarOpen}=useSidebarContext()
+   const {logout}=useAuth()
     
     return(
         
@@ -19,6 +21,9 @@ const Sidebar=()=>{
                 <ul className="sidebar-category">
                     <li>React</li>
                 </ul>
+            </div>
+            <div>
+              <button type="button" className="btnCerrarSesion" onClick={logout}>Cerrar Sesion</button>
             </div>
         </SidebarWrapper>
     )
@@ -52,6 +57,12 @@ const SidebarWrapper = styled.div`
     height: 26px;
     border-radius: 50%;
     transition: all 300ms ease-in-out;
+  }
+
+  .btnCerrarSesion{
+    border: 1px solid;
+    background-color: black;
+    color:white;
   }
   
 `;
