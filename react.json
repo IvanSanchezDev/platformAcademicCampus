@@ -1,0 +1,405 @@
+{
+   "1": {
+      "sectionName": "Sección 1: Introducción",
+      "videos": [
+        {
+        "1": {
+        "Titulo": "Introducción al curso",
+        "video": "react-1-01-Introducción",
+        "links": {}
+        }
+        },
+        {
+        "2": {
+        "Titulo": "¿Cómo funcionará el curso?",
+        "video": "react-1-02-Como_funcionara_el_curso",
+        "links": {}
+        }
+        },
+        {
+        "3": {
+        "Titulo": "¿Cómo hacer preguntas?",
+        "video": "react-1-03-Como-hacer-preguntas",
+        "links": {}
+        }
+        },
+        {
+        "4": {
+        "Titulo": "Instalaciones necesarias y recomendadas",
+        "video": "react-1-04-Instalaciones_necesarias_y_recomendadas",
+        "links": [
+        {
+        "titulo-link": "Instalaciones necesarias",
+        "link": "https://gist.github.com/Klerith/4a4abfd88a88b2d1f16efd95fea41362"
+        }
+        ]
+        }
+        }
+        ]
+   },
+   "2": {
+      "sectionName": "Sección 2: Introducción a React y conceptos generales",
+      "videos": [
+        {
+        "1": {
+        "Titulo": "Introducción a la sección",
+        "video": "react-2-01-Introducción",
+        "links": {}
+        }
+        },
+        {
+        "2": {
+        "Titulo": "Temas puntuales de la sección",
+        "Texto": "Temas puntuales de la sección\n¿Qué aprenderemos en esta sección?\n\n¿Qué es React?\n\nConceptos generales\n\nBabel\n\nJSX\n\nDaremos nuestros primeros pasos y una pequeña aplicación que nos ayudará a perderle el miedo a React rápidamente"
+        }
+        },
+        {
+        "3": {
+        "Titulo": "¿Qué es React?",
+        "video": "react-2-02-Que_es_React",
+        "links": {}
+        }
+        },
+        {
+        "4": {
+        "titulo": "Primeros pasos en React",
+        "video": "react-2-03-Primeros_pasos_en_React",
+        "links": {
+        "1": {
+        "titulo-link": "React-index.html Demo",
+        "link": "https://gist.github.com/Klerith/b0111f52ba16451d095f38d4c995605b"
+        }
+        }
+        }
+        },
+        {
+        "5": {
+        "Titulo": "Introducción a Babel",
+        "video": "react-2-04-Introduccion_a_Babel",
+        "links": [
+        {
+        "titulo-link": "Babeljs.io - Sitio oficial",
+        "link": "https://babeljs.io/"
+        }
+        ]
+        }
+        }
+        ]
+   },
+   "3": {
+      "sectionName": "Sección 3: Introducción a JavaScript moderno",
+      "videos": {
+         "9": {
+            "Titulo": "Desestructuación de Objetos",
+            "video": "react-3-09-Desestructruacion_de_Objetos",
+            "links": [
+               {
+                  "titulo-link": "Mozilla MDN: Asignación Desestructurante",
+                  "link": "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment"
+               }
+            ]
+         }
+      }
+   },
+   "4": {
+      "sectionName": "Sección 4: Primeros pasos en React",
+      "videos": {
+         "9": {
+            "Titulo": "Tarea - Crear un nuevo componente",
+            "video": "react-4-09-Tarea_-_Crear_un_nuevo_componente",
+            "links": {}
+         }
+      }
+   },
+   "5": {
+      "sectionName": "Sección 5: Pruebas unitarias y de integración - Probando las secciones anteriores",
+      "videos": {
+         "7": {
+            "Titulo": "Nota de Actualización - Extensión de archivos",
+            "Texto": "En la siguiente clase se hace la configuración para las pruebas de nuestros distintos archivos, en caso de ver el error \"You appear to be using a native ECMAScript module configuration file, which is only supported when running Babel asynchronously.\"\n\nCambiar extensión de los archivos jest.config.js y babel.config.js a .cjs\n\nPara ver más detalles al respecto pueden ir a NodeJS",
+            "links": [
+               {
+                  "titulo-link": "NodeJs",
+                  "link": "https://nodejs.org/docs/latest/api/modules.html#enabling"
+               }
+            ]
+         }
+      }
+   },
+   "6": {
+      "sectionName": "Sección 6: GifExpertApp - Aplicación",
+      "videos": {
+         "17": {
+            "Titulo": "className - Clases de css",
+            "video": "react-6-17-className_-_Clases_de_css",
+            "links": {}
+         }
+      }
+   },
+   "7": {
+      "sectionName": "Sección 7: Generando el build de producción y despliegues",
+      "videos": {
+         "2": {
+            "Titulo": "Temas puntuales de la sección",
+            "Texto": "Temas puntuales de la sección\n¿Qué veremos en esta sección?\n\nAprender cómo realizar backups a repositorios de Git\n\nSubir nuestro repositorio a GitHub\n\nUso de Github Pages\n\nDesplegar nuestra aplicación de React\n\nGenerar build de producción de nuestra aplicación\n\nAunque es una sección pequeña, les puede servir para desplegar infinidad de proyectos de React de forma gratuita, sin contar que tendrán respaldos de sus proyectos por si llegan a perder su trabajo que tenían localmente en su computadora."
+         }
+      }
+   },
+   "8": {
+      "sectionName": "Sección 8: Testing - Probando la aplicación de GifExpert",
+      "videos": {
+         "4": {
+            "Titulo": "Implementando PropTypes",
+            "video": "react-8-04-Implementando_PropTypes",
+            "links": {}
+         }
+      }
+   },
+   "9": {
+      "sectionName": "Sección 9: Profundizando Hooks - Generales",
+      "videos": {
+         "8": {
+            "Titulo": "Dependencias del useEffect",
+            "video": "react-9-08-Dependencias_del_useEffect",
+            "links": {}
+         }
+      }
+   },
+   "10": {
+      "sectionName": "Sección 10: Profundizando Hooks - useReducer",
+      "videos": {
+         "11": {
+            "Titulo": "Guardar y Leer TODOs en LocalStorage",
+            "video": "react-10-11-Guardar_y_Leer_TODOs_en_LocalStorage",
+            "links": [
+               {
+                  "titulo-link": "Youtube - Fernando Herrera - LocalStorage",
+                  "link": "https://www.youtube.com/watch?v=hb8O0qRqiSk&t=2s"
+               }
+            ]
+         }
+      }
+   },
+   "11": {
+      "sectionName": "Sección 11: Profundizando Hooks - useContext",
+      "videos": {
+         "9": {
+            "Titulo": "useContext",
+            "video": "react-11-09-useContext",
+            "links": {}
+         }
+      }
+   },
+   "12": {
+      "sectionName": "Sección 12: Pruebas unitarias y de integración - Hooks",
+      "videos": {
+         "13": {
+            "Titulo": "Pruebas en el TodoApp",
+            "video": "react-12-13-Pruebas_en_el_TodoApp",
+            "links": {}
+         }
+      }
+   },
+   "13": {
+      "sectionName": "Sección 13: Bonus: Repositorio de Custom Hooks",
+      "videos": {
+         "3": {
+            "Titulo": "Repositorio con customHooks",
+            "video": "react-13-03-Repositorio_con_customHooks",
+            "links": [
+               {
+                  "titulo-link": "Github",
+                  "link": "https://github.com/"
+               }
+            ]
+         }
+      }
+   },
+   "14": {
+      "sectionName": "Sección 14: HeroesApp - Single Page Application (SPA)",
+      "videos": {
+         "7": {
+            "Titulo": "Colocar clase de la ruta activa",
+            "video": "react-14-07-Colocar_clase_de_la_ruta_activa",
+            "links": {}
+         }
+      }
+   },
+   "15": {
+      "sectionName": "Sección 15: Protección de rutas",
+      "videos": {
+         "12": {
+            "Titulo": "Código fuente de la sección",
+            "Texto": "Código fuente de la sección\nAquí tienen mi código fuente por si lo necesitan comparar contra el suyo",
+            "links": [
+               {
+                  "titulo-link": "GitHub - Fin sección 15",
+                  "link": "https://github.com/Klerith/react-heroes/tree/fin-seccion-15"
+               }
+            ]
+         }
+      }
+   },
+   "16": {
+      "sectionName": "Sección 16: Pruebas de nuestra aplicación de Heroes",
+      "videos": {
+         "2": {
+            "Titulo": "Temas puntuales de la sección",
+            "Texto": "Temas puntuales de la sección\n¿Qué veremos en esta sección?\n\nNuevos tipos de pruebas\n\nPruebas en rutas privadas y públicas\n\nMemoryRouter\n\nPruebas en nuestro DashboardRouter\n\nPruebas en el AppRouter\n\nSimular URLs y segmentos\n\nSimular queryParams y queryStrings\n\nRecuerden que el objetivo de las pruebas, es ir probando cosas nuevas cada vez y tener un repertorio completo de diferentes casos."
+         }
+      }
+   },
+   "17": {
+      "sectionName": "Sección 17: JournalApp - MaterialUI - Estructura y Diseño",
+      "videos": {
+         "1": {
+            "Titulo": "Introducción a la sección",
+            "video": "react-17-01-Introducción a la sección",
+            "links": {}
+         }
+      }
+   },
+   "18": {
+      "sectionName": "Sección 18: Redux - ¿Qué es y conceptos? + React Redux",
+      "videos": {
+         "10": {
+            "Titulo": "pokemonSlice",
+            "video": "react-18-10-pokemonSlice",
+            "links": {}
+         }
+      }
+   },
+   "19": {
+      "sectionName": "Sección 19: Introducción a Redux y autenticación en Firebase",
+      "videos": {
+         "17": {
+            "Titulo": "Realizar el login de usuario con correo y contraseña",
+            "video": "react-19-17-Realizar_el_login_de_usuario_con_correo_y_contrasena",
+            "links": [
+               {
+                  "titulo-link": "tarea.txt",
+                  "link": "https://import.cdn.thinkific.com/643563/courses/1901683/tarea-220622-151524.txt"
+               },
+               {
+                  "titulo-link": "tarea.txt.zip",
+                  "link": "https://import.cdn.thinkific.com/643563/courses/1901683/tareatxt-220622-151524.zip"
+               }
+            ]
+         }
+      }
+   },
+   "20": {
+      "sectionName": "Sección 20: JournalApp - Redux - CRUD en Firestore y subida de archivos",
+      "videos": {
+         "2": {
+            "Titulo": "Temas puntuales de la sección",
+            "Texto": "Temas puntuales de la sección\n¿Qué veremos en esta sección?\n\nCRUD hacia Firestore\n\nExpandiendo nuestro estore añadiendo otros reducers\n\nSeleccionar y subir archivos\n\nAnimaciones adicionales a nuestra aplicación\n\nLimpieza en el logout\n\nEsta sección está enfocada ahora en las entradas de nuestro diario, asegurándose de que grabe únicamente en el documento del usuario autenticado."
+         }
+      }
+   },
+   "21": {
+      "sectionName": "Sección 21: Pruebas con Redux, Firebase, Firestore y autenticación",
+      "videos": {
+         "15": {
+            "Titulo": "Prueba completa sobre inserción",
+            "video": "react-21-15-Prueba_completa_sobre_insercion",
+            "links": {}
+         }
+      }
+   },
+   "22": {
+      "sectionName": "Sección 22: MERN Calendar - Estructura y Diseño",
+      "videos": {
+         "24": {
+            "Titulo": "Redux - serializableCheck",
+            "video": "react-22-24-Redux_-_serializableCheck",
+            "links": {}
+         }
+      }
+   },
+   "23": {
+      "sectionName": "Sección 23: CalendarApp - Backend - Node, Express, Mongo",
+      "videos": {
+         "5": {
+            "Titulo": "Configurando Express",
+            "video": "react-23-05-Configurando_Express",
+            "links": {}
+         }
+      }
+   },
+   "24": {
+      "sectionName": "Sección 24: Backend - Eventos del calendario - CRUD",
+      "videos": {
+         "6": {
+            "Titulo": "Validar campos necesarios",
+            "video": "react-24-06-Validar_campos_necesarios",
+            "links": {}
+         }
+      }
+   },
+   "25": {
+      "sectionName": "Sección 25: Despliegue del backend en Heroku",
+      "videos": {
+         "1": {
+            "Titulo": "Introducción a la sección",
+            "video": "react-25-01-Introducción a la sección",
+            "links": {}
+         }
+      }
+   },
+   "26": {
+      "sectionName": "Sección 26: MERN - Calendario + Backend",
+      "videos": {
+         "7": {
+            "Titulo": "Axios - Configurar cliente para peticiones HTTP",
+            "video": "react-26-07-Axios_-_Configurar_cliente_para_peticiones_HTTP",
+            "links": {}
+         }
+      }
+   },
+   "27": {
+      "sectionName": "Sección 27: MERN CRUD - Eventos del calendario",
+      "videos": {
+         "4": {
+            "Titulo": "Creando un nuevo Evento en el calendario",
+            "video": "react-27-04-Creando_un_nuevo_Evento_en_el_calendario",
+            "links": {}
+         }
+      }
+   },
+   "28": {
+      "sectionName": "Sección 28: Fin el MERN - Desplegarlo a producción",
+      "videos": {
+         "3": {
+            "Titulo": "Generar versión de producción y desplegarla en Heroku",
+            "video": "react-28-03-Generar_version_de_produccion_y_desplegarla_en_Heroku",
+            "links": [
+               {
+                  "titulo-link": "heroku.com",
+                  "link": "https://www.heroku.com/"
+               }
+            ]
+         }
+      }
+   },
+   "29": {
+      "sectionName": "Sección 29: Pruebas unitarias y de integración - MERN",
+      "videos": {
+         "10": {
+            "Titulo": "Tarea - onDeleteEvent y onLogoutCalendar",
+            "video": "react-29-11-Tarea_-_onDeleteEvent_y_onLogoutCalendar",
+            "links": {}
+         }
+      }
+   },
+   "30": {
+      "sectionName": "Sección 30: Fin del curso",
+      "videos": {
+         "3": {
+            "Titulo": "Despedida del curso",
+            "video": "",
+            "links": {}
+         }
+      }
+   }
+}
