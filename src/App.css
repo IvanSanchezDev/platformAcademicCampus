@@ -191,7 +191,9 @@ input, textarea, select{
 .fs-26{font-size: 26px;}
 .fs-50{font-size: 50px;}
 
-
+.cardd{
+    gap: 6rem;
+}
 /* letter spacing */
 .ls-1{letter-spacing: 1px;}
 .ls-2{letter-spacing: 2px;}

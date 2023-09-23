@@ -4,25 +4,42 @@ import CarouselHome from "./CarouselHome"
 import Container from 'react-bootstrap/Container';
 import { useAuth } from "../context/authContext"
 import { Layout } from "./Layout";
+import { useEffect, useState } from "react";
 
 
 
 
 const Home=()=>{
 
-const {user, logout}=useAuth()
-console.log(user);
+    const {user}=useAuth()
+   
+const [listCourses, setCourses]=useState([]);
+
+    useEffect(()=>{
+        (async()=>{
+            try {
+                const response=await fetch("../../courses.json");
+                const result=await response.json();
+                
+                setCourses(result.cursos)
+            } catch (error) {
+                console.log(error);
+            }
+        })();
+    }, [])
+
 
     return(
         <>
         <Layout/>
         <Container>
-            <h1>{`BIENVENIDO`}</h1>
-            <button type="button" className="btnCerrarSesion" onClick={logout }>Cerrar Sesion</button>
-
+           
             <CarouselHome/>
-            <h1 className="mt-5 text fw-5 ">Cursos Disponibles</h1>           
-            <CardCourse/>
+            <h2 className="mt-5 fw-7 fs-26">{ user ? `Empecemos a aprender ${user.data.nombre_usuario} ` : " Cursos Disponibles "}</h2>
+            <Container className="d-flex flex-wrap cardd mt-5">
+                <CardCourse listCourse={listCourses}/>
+            </Container>           
+            
         </Container>   
         </>
              

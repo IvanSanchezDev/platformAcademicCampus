@@ -19,6 +19,7 @@ const Information=({})=>{
 }
 
 const InformationWrapper=styled.div`
+z-index:10;
     position: fixed;
     padding: 10px;
     width: 340px;
