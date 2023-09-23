@@ -12,7 +12,7 @@ const Login=()=>{
 
     if (isAuthenticated) {
         console.log("validacion" + isAuthenticated);
-        return <Navigate to="/course" />;
+        return <Navigate to="/home" />;
     }
 
     const logearse=async()=>{
