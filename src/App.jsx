@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import Login from './components/Login'
 import { ProtectedRoute } from './protectedRoutes'
 import { Profile } from './components/Profile';
-import CoursePage from './components/CoursePage';
+
 
 
 function App() {
@@ -18,9 +18,8 @@ function App() {
               <Route path='login' element={<Login/>}/>
             </Route>
             <Route element={<ProtectedRoute/>}>
-              <Route path='/home' element={<Home/>}/>
-              <Route path='/profile' element={<Profile/>}/>
-              <Route path='/course' element={<CoursePage/>}/>
+              <Route path='/course/*' element={<Home/>}/>
+              <Route path='/profile' element={<Profile/>}/>            
             </Route>
           </Routes>
   )

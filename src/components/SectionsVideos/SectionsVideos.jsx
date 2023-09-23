@@ -37,7 +37,8 @@ const AccordionWrapper=styled.div`
   }
 
   .videos:hover {
-    background-color: red;
+    background-color: gray;
+    color:white;
   }
 
 `;

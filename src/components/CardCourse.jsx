@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Information from './Information';
+import { Link } from "react-router-dom";
 
 function CardCourse() {
 
@@ -16,6 +16,8 @@ function CardCourse() {
     setHover(false);
   };
 
+ 
+
   return (
 
 
@@ -28,7 +30,7 @@ function CardCourse() {
             Curso completo de Reactjs: De cero a avanzado.
           </Card.Text>
           <Card.Subtitle className="mb-2 text-muted fs-15">Fernando Herrera</Card.Subtitle>
-          <Button variant="primary">Suscribirse</Button>
+          <Link to={`/course/react`}>Ver Curso</Link>
         </Card.Body>
         {hover && <Information/>}
         
