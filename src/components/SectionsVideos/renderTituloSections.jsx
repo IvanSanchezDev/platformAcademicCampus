@@ -1,6 +1,6 @@
 
 import Accordion from 'react-bootstrap/Accordion';
-import {renderTituloVideo} from './renderTituloVideo'
+import {RenderTituloVideo} from './renderTituloVideo'
 
 export const renderTituloSection = (section, sectionIndex) => {
     return (
@@ -8,7 +8,7 @@ export const renderTituloSection = (section, sectionIndex) => {
         <Accordion.Header>
           <h2 className="fw-7">{section.sectionName}</h2>
         </Accordion.Header>
-        <Accordion.Body className="bodyy">{renderTituloVideo(section.videos)}</Accordion.Body>
+        <Accordion.Body className="bodyy">{RenderTituloVideo(section.videos, sectionIndex)}</Accordion.Body>
       </Accordion.Item>
     );
   };

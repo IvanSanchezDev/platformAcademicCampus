@@ -3,11 +3,13 @@ import { Layout } from "./Layout";
 import SectionsVideos from "./SectionsVideos/SectionsVideos";
 import { useState, useEffect } from "react";
 import {  useParams } from "react-router-dom"
+import { useUrl } from "../context/urlContext";
 
 
 const CoursePage=()=>{
     const {nameCourse}=useParams();
-    console.log(nameCourse);
+    const{establecerNombreCourse, url}=useUrl()
+    
     const [listSections, setSections]=useState([])
 
     useEffect(()=>{
@@ -18,22 +20,26 @@ const CoursePage=()=>{
                 const result=await response.json();
                 
                 setSections(result)
-                
+                establecerNombreCourse(nameCourse)
             } catch (error) {
                 console.log(error);
             }
         })();
-    }, [])
+    }, [nameCourse])
 
 
     return(
         <>
         <Layout/>
         <Container>
-            <video src=""></video>
+        <video controls>
+          <source src={url} type="video/mp4" />
+         
+        </video>     
+        
         </Container>
         <Container>
-            <SectionsVideos listSection={listSections}/>
+            <SectionsVideos listSection={listSections} />
         </Container>      
         </>
         

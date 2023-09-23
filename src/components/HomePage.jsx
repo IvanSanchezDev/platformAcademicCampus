@@ -4,7 +4,7 @@ import CarouselHome from "./CarouselHome"
 import Container from 'react-bootstrap/Container';
 import { useAuth } from "../context/authContext"
 import { Layout } from "./Layout";
-import { Route, Routes } from "react-router-dom";
+
 
 
 
@@ -21,13 +21,8 @@ console.log(user);
             <button type="button" className="btnCerrarSesion" onClick={logout }>Cerrar Sesion</button>
 
             <CarouselHome/>
-            <h1 className="mt-5 text fw-5 ">Cursos Disponibles</h1>
-            <Routes>
-                    <Route index element={<CardCourse/>}/>
-                    
-                
-                
-            </Routes>
+            <h1 className="mt-5 text fw-5 ">Cursos Disponibles</h1>           
+            <CardCourse/>
         </Container>   
         </>
              
