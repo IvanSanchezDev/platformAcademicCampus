@@ -1,0 +1,1943 @@
+{
+   "1": {
+   "sectionName": "Sección 1: Introducción",
+   "videos": [
+   {
+   "1": {
+   "Titulo": "Introducción",
+   "video": "node-ts-1-01-Introduccion_a_la_seccion",
+   "links": {}
+   }
+   },
+   {
+   "2": {
+   "Titulo": "Instalaciones recomendadas",
+   "video": "node-ts-1-02-Instalaciones_recomendadas",
+   "links": [
+   {
+   "titulo-link": "Instalaciones recomendadas",
+   "link": "https://gist.github.com/Klerith/ab9f091aea5dca80d37c7c9f731c0193"
+   }
+   ]
+   }
+   },
+   {
+   "3": {
+   "Titulo": "Node Version Manager - NVM",
+   "video": "node-ts-1-03-Node_Version_Manager_-_NVM",
+   "links": [
+   {
+   "titulo-link": "NVM - Repositorio",
+   "link": "https://github.com/nvm-sh/nvm"
+   }
+   ]
+   }
+   },
+   {
+   "4": {
+   "Titulo": "Node Version Manager - Windows",
+   "video": "node-ts-1-04-Node_Version_Manager_-_Windows",
+   "links": [
+   {
+   "titulo-link": "NVM - Repositorio - Windows",
+   "link": "https://github.com/coreybutler/nvm-windows"
+   }
+   ]
+   }
+   }
+   ]
+   },
+   "2": {
+   "sectionName": "Sección 2: Fundamentos de Node - Primeros pasos",
+   "videos": [
+   {
+   "1": {
+   "Titulo": "Introducción a la sección",
+   "video": "node-ts-2-01-Introduccion",
+   "links": {}
+   }
+   },
+   {
+   "2": {
+   "Titulo": "Temas puntuales de la sección",
+   "Texto": "En esta sección quiero que nos enfoquemos en varias introducciones a Node, puntualmente veremos:\n\n- Preguntas comunes sobre Node\n- Hola Mundo en Node\n- Laboratorio con FileSystem\n- Code Execution\n- Event Loop\n\nTengan presente que el curso es 99% practico, pero la mayor parte de las presentaciones están en esta sección, porque me interesa que conozcamos el por qué de muchas cosas que sucederán cuando estén trabajando con Node en la vida real."
+   }
+   },
+   {
+   "3": {
+   "Titulo": "Preguntas comunes sobre NodeJS",
+   "video": "node-ts-2-03-Preguntas_comunes_sobre_NodeJS",
+   "links": [
+   {
+   "titulo-link": "Referencia - Blocking vs Non-Blocking Node",
+   "link": "https://nodejs.org/en/docs/guides/blocking-vs-non-blocking"
+   }
+   ]
+   }
+   },
+   {
+   "4": {
+   "Titulo": "Hello World - En Node",
+   "video": "node-ts-2-04-Hello_World_-_En_Node",
+   "links": {}
+   }
+   },
+   {
+   "5": {
+   "Titulo": "Archivos de JavaScript",
+   "video": "node-ts-2-05-Archivos_de_JavaScript",
+   "links": {}
+   }
+   },
+   {
+   "6": {
+   "Titulo": "Leer archivos - FileSystem",
+   "video": "node-ts-2-06-Leer_archivos_-_FileSystem",
+   "links": [
+   {
+   "titulo-link": "react",
+   "link": "https://github.com/facebook/react"
+   }
+   ]
+   }
+   },
+   {
+   "7": {
+   "Titulo": "Tarea - Contador de palabras",
+   "video": "node-ts-2-07-Tarea_-_Contador_de_palabras",
+   "links": {}
+   }
+   },
+   {
+   "8": {
+   "Titulo": "Orden de ejecución - Introducción",
+   "video": "node-ts-2-08-Orden_de_ejecucion_-_Introduccion",
+   "links": [
+   {
+   "titulo-link": "Ejercicio de ejecución",
+   "link": "https://gist.github.com/Klerith/50d4ea23799836220c07cf39e42724fb"
+   }
+   ]
+   }
+   },
+   {
+   "9": {
+   "Titulo": "Node - Code Execution",
+   "video": "node-ts-2-09-Node_-_Code_Execution",
+   "links": [
+   {
+   "titulo-link": "What is the Event Loop?",
+   "link": "https://nodejs.org/es/docs/guides/event-loop-timers-and-nexttick"
+   },
+   {
+   "titulo-link": "builder",
+   "link": "https://www.builder.io/blog/visual-guide-to-nodejs-event-loop"
+   }
+   ]
+   }
+   },
+   {
+   "10": {
+   "Titulo": "Node - Event Loop",
+   "video": "node-ts-2-10-Node_-_Event_Loop",
+   "links": [
+   {
+   "titulo-link": "builder",
+   "link": "https://www.builder.io/blog/visual-guide-to-nodejs-event-loop"
+   }
+   ]
+   }
+   },
+   {
+   "11": {
+   "Titulo": "Código fuente de la sección",
+   "Texto": "Aquí tienen el código fuente de lo que realizamos en la sección, pueden descargarlo y ojearlo si lo llegan a necesitar. Si quieren acceso a las presentaciones utilizadas, serán colocadas en la sección de +Talento Repositorio de GitHub con el código fuente:",
+   "links": [
+   {
+   "titulo-link": "GitHub - Fin sección 2 - Primeros pasos",
+   "link": "https://github.com/Klerith/node-intro/tree/fin-seccion-2"
+   },
+   {
+   "titulo-link": "+Talento",
+   "link": "https://cursos.devtalles.com/pages/mas-talento"
+   }
+   ]
+   }
+   }
+   ]
+   },
+   "3": {
+   "sectionName": "Sección 3: Desarrollando en Node",
+   "videos": [
+   {
+   "1": {
+   "Titulo": "Introducción a la sección",
+   "video": "node-ts-3-01-Introduccion_a_la_seccion",
+   "links": {}
+   }
+   },
+   {
+   "2": {
+   "Titulo": "Temas puntuales de la sección",
+   "Texto": "En esta sección veremos generalidades de Node y a la vez, aprovechamos para explicar ciertos conceptos de JavaScript que son necesarios para casi cualquier aplicación de Node.\n\nPuntualmente veremos:\n\n- Package.json\n- Node Modules\n- Scripts\n- Importaciones y Exportaciones\n- Módulos\n- Reforzamiento de JS\n- Callbacks\n- Arrow Functions\n- Factory Functions\n- Promises\n- Async Await\n- Peticiones Http básicas\n- Dependencias de Producción y Desarrollo\n- Patrón adaptador para nuestras dependencias\n\nY más.\n\nEsta sección es altamente recomendada para todos los que están empezando con NodeJS, y a la vez, sirve para refrescar un poco la memoria sobre JavaScript."
+   }
+   },
+   {
+   "3": {
+   "Titulo": "Inicio de proyecto - Fundamentos",
+   "video": "node-ts-3-03-Inicio_de_proyecto_-_Fundamentos",
+   "links": {}
+   }
+   },
+   {
+   "4": {
+   "Titulo": "Package.json Scripts",
+   "video": "node-ts-3-04-Package.json_Scripts",
+   "links": {}
+   }
+   },
+   {
+   "5": {
+   "Titulo": "Importaciones y exportaciones",
+   "video": "node-ts-3-05-Importaciones_y_exportaciones",
+   "links": {}
+   }
+   },
+   {
+   "6": {
+   "Titulo": "Nodemon - Paquetes de terceros",
+   "video": "node-ts-3-06-Nodemon_-_Paquetes_de_terceros",
+   "links": [
+   {
+   "titulo-link": "nodemon",
+   "link": "https://www.npmjs.com/package/nodemon"
+   }
+   ]
+   }
+   },
+   {
+   "7": {
+   "Titulo": "Variables de entorno por defecto",
+   "video": "node-ts-3-07-Variables_de_entorno_por_defecto",
+   "links": {}
+   }
+   },
+   {
+   "8": {
+   "Titulo": "Depuración de aplicaciones de Node",
+   "video": "node-ts-3-08-Depuracion_de_aplicaciones_de_Node",
+   "links": {}
+   }
+   },
+   {
+   "9": {
+   "Titulo": "Callbacks",
+   "video": "node-ts-3-09-Callbacks",
+   "links": {}
+   }
+   },
+   {
+   "10": {
+   "Titulo": "Arrow Functions",
+   "video": "node-ts-3-10-Arrow_Functions",
+   "links": {}
+   }
+   },
+   {
+   "11": {
+   "Titulo": "Factory Functions - Introducción",
+   "video": "node-ts-3-11-Factory_Functions",
+   "links": {}
+   }
+   },
+   {
+   "12": {
+   "Titulo": "Factory Functions - Necesidad",
+   "video": "node-ts-3-12-Factory_Functions_-_Necesidad",
+   "links": [
+   {
+   "titulo-link": "uuid",
+   "link": "https://www.npmjs.com/package/uuid"
+   },
+   {
+   "titulo-link": "get-age",
+   "link": "https://www.npmjs.com/package/get-age"
+   }
+   ]
+   }
+   },
+   {
+   "13": {
+   "Titulo": "Patrón adaptador",
+   "video": "node-ts-3-13-Patron_adaptador",
+   "links": {}
+   }
+   },
+   {
+   "14": {
+   "Titulo": "Factory Functions - Aplicado",
+   "video": "node-ts-3-14-Factory_Functions_-_Aplicado",
+   "links": {}
+   }
+   },
+   {
+   "15": {
+   "Titulo": "Promesas",
+   "video": "node-ts-3-15-Promesas",
+   "links": [
+   {
+   "titulo-link": "Pokeapi",
+   "link": "https://pokeapi.co/"
+   }
+   ]
+   }
+   },
+   {
+   "16": {
+   "Titulo": "Promesas en cadena",
+   "video": "node-ts-3-16-Promesas_en_cadena",
+   "links": {}
+   }
+   },
+   {
+   "17": {
+   "Titulo": "Async - Await",
+   "video": "node-ts-3-17-Async_-_Await",
+   "links": {}
+   }
+   },
+   {
+   "18": {
+   "Titulo": "Patrón adaptador - FetchAPI",
+   "video": "node-ts-3-18-Patron_adaptador_-_FetchAPI",
+   "links": {}
+   }
+   },
+   {
+   "19": {
+   "Titulo": "Axios - Cliente para peticiones HTTP",
+   "video": "node-ts-3-19-Axios_-_Cliente_para_peticiones_HTTP",
+   "links": [
+   {
+   "titulo-link": "Axios",
+   "link": "https://www.npmjs.com/package/axios"
+   }
+   ]
+   }
+   },
+   {
+   "20": {
+   "Titulo": "Código fuente de la sección",
+   "Texto": "Aquí les dejo el código fuente de la sección para que lo descarguen en caso de que sea necesario.\nSi quieren ejecutar el programa en modo de desarrollo, deben de reconstruir los módulos de node con el comando\n npm install \n Pero esto lo veremos en la siguiente sección también.",
+   "links": [
+   {
+   "titulo-link": "Node - 02 Bases - Github",
+   "link": "https://github.com/Klerith/node-ts-bases/tree/fin-seccion-3"
+   }
+   ]
+   }
+   }
+   ]
+   },
+   "4": {
+   "sectionName": "Sección 4: Bases de Node + TypeScript - Continuación",
+   "videos": [
+   {
+   "1": {
+   "Titulo": "Introducción a la sección",
+   "video": "node-ts-4-01-Introduccion_a_la_seccion",
+   "links": {}
+   }
+   },
+   {
+   "2": {
+   "Titulo": "Temas puntuales de la sección",
+   "Texto": "Esta sección tiene por objetivo aprender un poco sobre Loggers como Winston, y a la vez migrar y comprender por qué TypeScript es recomendado para trabajar y desarrollar aplicaciones.\n\nPuntualmente veremos:\n\n- Loggers y su necesidad\n- Winston\n- Configuraciones básicas y adaptador\n- TypeScript\n- Configuración de TypeScript con Node\n- Migración de proyecto\n- TSC\n- ts-node + nodemon\n\nEntre otras cosas\n\nEs una sección que muchos pueden pensar que es opcional, pero se las recomiendo mucho cuando quieran crear aplicaciones que serán mantenidas y escaladas a largo plazo."
+   }
+   },
+   {
+   "3": {
+   "Titulo": "Continuación de la sección",
+   "video": "node-ts-4-03-Continuacion_de_la_seccion",
+   "links": [
+   {
+   "titulo-link": "Código fuente de la sección 3",
+   "link": "https://github.com/Klerith/node-ts-bases/tree/fin-seccion-3"
+   },
+   {
+   "titulo-link": "Información sobre el Package-lock.json",
+   "link": "https://docs.npmjs.com/cli/v9/configuring-npm/package-lock-json"
+   }
+   ]
+   }
+   },
+   {
+   "4": {
+   "Titulo": "Node Logger - Winston",
+   "video": "node-ts-4-04-Node_Logger_-_Winston",
+   "links": {}
+   }
+   },
+   {
+   "5": {
+   "Titulo": "Winston - Parte 2",
+   "video": "node-ts-4-05-Winston_-_Parte_2",
+   "links": {}
+   }
+   },
+   {
+   "6": {
+   "Titulo": "TypeScript - Proyecto básico",
+   "video": "node-ts-4-06-TypeScript_-_Proyecto_basico",
+   "links": [
+   {
+   "titulo-link": "Configuración de TypeScript en Node",
+   "link": "https://gist.github.com/Klerith/47af527da090043f604b972b22dd4c01"
+   }
+   ]
+   }
+   },
+   {
+   "7": {
+   "Titulo": "Configuración de TypeScript en Node",
+   "video": "node-ts-4-07-Configuracion_de_TypeScript_en_Node",
+   "links": [
+   {
+   "titulo-link": "Configuración de TypeScript en Node",
+   "link": "https://gist.github.com/Klerith/47af527da090043f604b972b22dd4c01"
+   }
+   ]
+   }
+   },
+   {
+   "8": {
+   "Titulo": "Creación de Scripts",
+   "video": "node-ts-4-08-Creacion_de_Scripts",
+   "links": {}
+   }
+   },
+   {
+   "9": {
+   "Titulo": "Trabajando con Node y TypeScript juntos",
+   "video": "node-ts-4-09-Trabajando_con_Node_y_TypeScript_juntos",
+   "links": {}
+   }
+   },
+   {
+   "10": {
+   "Titulo": "Migrar proyecto a TypeScript",
+   "video": "node-ts-4-10-Migrar_proyecto_a_TypeScript",
+   "links": {}
+   }
+   },
+   {
+   "11": {
+   "Titulo": "Migrar proyecto - Segunda Parte",
+   "video": "node-ts-4-11-Migrar_proyecto_-_Segunda_Parte",
+   "links": {}
+   }
+   },
+   {
+   "12": {
+   "Titulo": "Código fuente de la sección",
+   "Texto": "Aquí les dejo el código fuente de la sección, por si lo llegan a ocupar o comparar contra el mío",
+   "links": [
+   {
+   "titulo-link": "Node + TypeScript - 02-bases - GitHub",
+   "link": "https://github.com/Klerith/node-ts-bases/tree/fin-seccion-4"
+   },
+   {
+   "titulo-link": "Node + TypeScript - 03-typescript - GitHub",
+   "link": "https://github.com/Klerith/node-ts-typescript"
+   }
+   ]
+   }
+   }
+   ]
+   },
+   "5": {
+   "sectionName": "Sección 5: Introducción al testing",
+   "videos": [
+   {
+   "1": {
+   "Titulo": "Introducción a la sección",
+   "video": "node-ts-5-01-Introduccion_a_la_seccion",
+   "links": {}
+   }
+   },
+   {
+   "2": {
+   "Titulo": "Temas puntuales de la sección",
+   "Texto": "Esta es nuestra primera (de varias) secciones de pruebas, se que muchos no les interesa el testing, pero quiero mencionarles que es muy importante y también hay personas que toman este curso únicamente porque tiene un testing extensivo.\n\nEsta sección tiene por objetivo comprender lo siguiente:\n\n- ¿Qué es el testing automático?\n- ¿Por qué es importante?\n- Jest testing library\n- Configuraciones Node + TS + Jest\n- Pruebas en todos los archivos realizados en la sección anterior\n- Coverage - Cobertura  del testing\n\nTambién hay varias recomendaciones sobre qué probar y qué sería tolerable a no tener al 100% del coverage."
+   }
+   },
+   {
+   "3": {
+   "Titulo": "Introducción a las pruebas automáticas",
+   "video": "node-ts-5-03-Introduccion_a_las_pruebas_automaticas",
+   "links": {}
+   }
+   },
+   {
+   "4": {
+   "Titulo": "Continuación de proyecto - Bases",
+   "video": "node-ts-5-04-Continuacion_de_proyecto_-_Bases",
+   "links": {}
+   }
+   },
+   {
+   "5": {
+   "Titulo": "Configurar ambiente de pruebas",
+   "video": "node-ts-5-05-Configurar_ambiente_de_pruebas",
+   "links": [
+   {
+   "titulo-link": "Configurar Jest + Node + TypeScript",
+   "link": "https://gist.github.com/Klerith/98d7b1bc0f1525e892f260813cad1007"
+   }
+   ]
+   }
+   },
+   {
+   "6": {
+   "Titulo": "Nota para próximas clases",
+   "Texto": "Más adelante pueda que vean este error: IMAGEN \n O uno similar en el que diga que el archivo de jest.config.ts está fuera del rootDir de TypeScript Config.\nLo cual está bien, y es normal, ya que usamos TS-Jest, no hace falta transpilar nada de Jest con TypeScript; sin embargo, el error es molesto, y podemos añadir esta configuración justo antes del compilerOptions (o después del mismo, da igual)\n \n Para que quede así: IMAGEN-DOS\nSi no les aparece el error, no hay problema, sigan adelante, y si les aparece el error, tampoco es problema, lo explico al final de esta sección.{  'include': ['src/**/*'],  'exclude': ['node_modules', '**/*.spec.ts','**/*.test.ts'], 'compilerOptions': {    /* Visit https://aka.ms/tsconfig to read more about this file */ \nSi no les aparece el error, no hay problema, sigan adelante, y si les aparece el error, tampoco es problema, lo explico al final de esta sección.",
+   "links": [
+   {
+   "titulo-link": "imagen-error",
+   "link": "https://files.cdn.thinkific.com/file_uploads/643563/images/313/0e9/7af/1692805610923.jpg"
+   },
+   {
+   "titulo-link": "imagen-error-dos",
+   "link": "https://files.cdn.thinkific.com/file_uploads/643563/images/1cb/3df/1ce/1692805611077.jpg"
+   }
+   ]
+   }
+   },
+   {
+   "7": {
+   "Titulo": "Arrange, Act y Assert",
+   "video": "node-ts-5-07-Arrange_Act_y_Assert",
+   "links": {}
+   }
+   },
+   {
+   "8": {
+   "Titulo": "Pruebas en 01-Template",
+   "video": "node-ts-5-08-Pruebas_en_01-Template",
+   "links": {}
+   }
+   },
+   {
+   "9": {
+   "Titulo": "Pruebas en 02-Destructuring",
+   "video": "node-ts-5-09-Pruebas_en_02-Destructuring",
+   "links": {}
+   }
+   },
+   {
+   "10": {
+   "Titulo": "Pruebas en 03-Callbacks",
+   "video": "node-ts-5-10-Pruebas_en_03-Callbacks",
+   "links": {}
+   }
+   },
+   {
+   "11": {
+   "Titulo": "Pruebas en 04-Callbacks - Exito",
+   "video": "node-ts-5-11-Pruebas_en_04-Callbacks_-_Exito",
+   "links": {}
+   }
+   },
+   {
+   "12": {
+   "Titulo": "Pruebas en 05-Factory",
+   "video": "node-ts-5-12-Pruebas_en_05-Factory",
+   "links": {}
+   }
+   },
+   {
+   "13": {
+   "Titulo": "Pruebas en 06-Promises",
+   "video": "node-ts-5-13-Pruebas_en_06-Promises",
+   "links": {}
+   }
+   },
+   {
+   "14": {
+   "Titulo": "Pruebas en GetAge Adapter",
+   "video": "node-ts-5-14-Pruebas_en_GetAge_Adapter",
+   "links": {}
+   }
+   },
+   {
+   "15": {
+   "Titulo": "SpyOn - Métodos de objetos",
+   "video": "node-ts-5-15-SpyOn_-_Metodos_de_objetos",
+   "links": {}
+   }
+   },
+   {
+   "16": {
+   "Titulo": "Pruebas en GetUUID Adapter",
+   "video": "node-ts-5-16-Pruebas_en_GetUUID_Adapter",
+   "links": {}
+   }
+   },
+   {
+   "17": {
+   "Titulo": "Pruebas en HttpClient Adapter",
+   "video": "node-ts-5-17-Pruebas_en_HttpClient_Adapter",
+   "links": [
+   {
+   "titulo-link": "jsonplaceholder",
+   "link": "https://jsonplaceholder.typicode.com/todos/1"
+   }
+   ]
+   }
+   },
+   {
+   "18": {
+   "Titulo": "Pruebas en el Logger Adapter",
+   "video": "node-ts-5-18-Pruebas_en_el_Logger_Adapter",
+   "links": {}
+   }
+   },
+   {
+   "19": {
+   "Titulo": "Testing Coverage",
+   "video": "node-ts-5-19-Testing_Coverage",
+   "links": {}
+   }
+   },
+   {
+   "20": {
+   "Titulo": "Conectar Build + Testing",
+   "video": "node-ts-5-20-Conectar_Build_Testing",
+   "links": [
+   {
+   "titulo-link": "Lectura adicional",
+   "link": "https://bobbyhadz.com/blog/typescript-exclude-test-files-from-compilation"
+   }
+   ]
+   }
+   },
+   {
+   "21": {
+   "Titulo": "Código fuente de la sección",
+   "video": "Aquí les dejo el código fuente de la sección, por si lo llegan a ocupar o comparar contra el mío",
+   "links": [
+   {
+   "titulo-link": "Node + TypeScript - 02-bases - GitHub + Testing",
+   "link": "https://github.com/Klerith/node-ts-bases/tree/fin-seccion-5"
+   }
+   ]
+   }
+   }
+   ]
+   },
+   "6": {
+   "sectionName": "Sección 6: Aplicación de consola - Clean Architecture - Primeros Pasos",
+   "videos": [
+   {
+   "1": {
+   "Titulo": "Introducción al seccion",
+   "video": "node-ts-6-01-Introduccion_a_la_seccion",
+   "links": {}
+   }
+   },
+   {
+   "2": {
+   "Titulo": "Temas puntuales de la sección",
+   "Texto": "Esta sección es muy importante ya que aprenderemos conceptos de Node como Argv (Argument Values) y empezaremos a introducir el concepto de la arquitectura limpia: UseCases\n\nPuntualmente veremos:\n\n- Funciones asíncronas auto-invocadas\n- Argumentos de consola\n- Banderas y opciones\n- Yargs\n- Configuración de Yargs\n- Instalación de dependencias\n- Versión específica\n- Versión futura\n- Versión actual\n- Casos de Uso\n- Y más\n\nEl objetivo que busco con esta sección, es ir introduciéndolos poco a poco, en los conceptos necesarios para entrar tranquila e indoloramente a la arquitectura limpia en nuestras aplicaciones de Node, y a sí, poder hacer código que es fácil de mantener y actualizar.",
+   "links": {}
+   }
+   },
+   {
+   "3": {
+   "Titulo": "Inicio de proyecto - MultiplicationApp",
+   "video": "node-ts-6-03-Inicio_de_proyecto_-_MultiplicationApp",
+   "links": [
+   {
+   "titulo-link": "Node + TypeScript - Guía y configuración",
+   "link": "https://gist.github.com/Klerith/47af527da090043f604b972b22dd4c01"
+   }
+   ]
+   }
+   },
+   {
+   "4": {
+   "Titulo": "Tarea - Impresión de consola y archivo",
+   "video": "node-ts-6-04-Tarea_-_Impresion_de_consola_y_archivo",
+   "links": {}
+   }
+   },
+   {
+   "5": {
+   "Titulo": "Argv - Argument Values",
+   "video": "node-ts-6-05-Argv_-_Argument_Values",
+   "links": {}
+   }
+   },
+   {
+   "6": {
+   "Titulo": "yargs",
+   "video": "node-ts-6-06-yargs",
+   "links": [
+   {
+   "titulo-link": "yargs",
+   "link": "https://www.npmjs.com/package/yargs"
+   }
+   ]
+   }
+   },
+   {
+   "7": {
+   "Titulo": "Función anónima auto-invocada",
+   "video": "node-ts-6-07-Funcion_anonima_auto-invocada",
+   "links": {}
+   }
+   },
+   {
+   "8": {
+   "Titulo": "Opciones de Yargs",
+   "video": "node-ts-6-08-Opciones_de_Yargs",
+   "links": {}
+   }
+   },
+   {
+   "9": {
+   "Titulo": "Checks - Validaciones adicionales",
+   "video": "node-ts-6-09-Checks_-_Validaciones_adicionales",
+   "links": {}
+   }
+   },
+   {
+   "10": {
+   "Titulo": "Usando Yargs empiricamente",
+   "video": "node-ts-6-10-Usando_Yargs_empiricamente",
+   "links": {}
+   }
+   },
+   {
+   "11": {
+   "Titulo": "Refactorizar - Organizar lógicamente el código",
+   "video": "node-ts-6-11-Refactorizar_-_Organizar_logicamente_el_codigo",
+   "links": {}
+   }
+   },
+   {
+   "12": {
+   "Titulo": "Clean Architecture - Use Cases",
+   "video": "node-ts-6-12-Clean_Architecture_-_Use_Cases",
+   "links": {}
+   }
+   },
+   {
+   "13": {
+   "Titulo": "CreateTable - UseCase",
+   "video": "node-ts-6-13-CreateTable_-_UseCase",
+   "links": {}
+   }
+   },
+   {
+   "14": {
+   "Titulo": "SaveFile - UseCase",
+   "video": "node-ts-6-14-SaveFile_-_UseCase",
+   "links": {}
+   }
+   },
+   {
+   "15": {
+   "Titulo": "Tarea - Reforzar todo lo aprendido",
+   "video": "node-ts-6-15-Tarea_-_Reforzar_todo_lo_aprendido",
+   "links": {}
+   }
+   },
+   {
+   "16": {
+   "Titulo": "Solución de la tarea",
+   "video": "node-ts-6-16-Solucion_de_la_tarea",
+   "links": {}
+   }
+   },
+   {
+   "17": {
+   "Titulo": "Subir repositorio a GitHub",
+   "video": "node-ts-6-17-Subir_repositorio_a_GitHub",
+   "links": {}
+   }
+   },
+   {
+   "18": {
+   "Titulo": "Subir repositorio a GitHub",
+   "Texto": "Aquí les dejo el código fuente de la sección, por si lo llegan a ocupar o comparar contra el mío",
+   "links": {}
+   }
+   },
+   {
+   "19": {
+   "Titulo": "Código fuente de la sección",
+   "Texto": "Aquí les dejo el código fuente de la sección, por si lo llegan a ocupar o comparar contra el mío",
+   "links": [
+   {
+   "titulo-link": "Node + TypeScript - 04- MultiplicationApp",
+   "link": "https://github.com/Klerith/node-ts-multiplication-app/tree/fin-seccion-6"
+   }
+   ]
+   }
+   }
+   ]
+   },
+   "7": {
+   "sectionName": "Sección 7: Aplicación de consola - Testing",
+   "videos": [
+   {
+   "1": {
+   "Titulo": "Introducción al seccion",
+   "video": "node-ts-7-01-Introduccion_a_la_seccion",
+   "links": {}
+   }
+   },
+   {
+   "2": {
+   "Titulo": "Temas puntuales de la sección",
+   "Texto": "Esta sección de testing, tiene por objetivo probar todo lo visto hasta el momento, pero a la vez, necesitaremos aprender habilidades nuevas para poder probar casos particulares de nuestra aplicación de consola.\n\nPuntualmente veremos\n\n- Pruebas sobre comandos de consola\n- Cambiar dinámicamente los argumentos de consola\n- Mocks\n- Spies\n- Mocks y Spies con retornos personalizados\n- Pruebas cuando se esperan errores\n- Pruebas de Casos de Uso\n- Pruebas de integración\n- Pruebas con funciones asíncronas anónimas auto-invocadas\n- Pruebas con yargs\n- Pruebas con creación de archivos y directorios\n- Y más\n\nEsta sección es muy importante porque les dará más opciones para realizar su testing de todo lo que se planteén probar.",
+   "links": {}
+   }
+   },
+   {
+   "3": {
+   "Titulo": "Continuación de la sección",
+   "video": "node-ts-7-03-Continuacion_de_la_seccion",
+   "links": {}
+   }
+   },
+   {
+   "4": {
+   "Titulo": "Configurar Jest + TS",
+   "video": "node-ts-7-04-Configurar_Jest_TS",
+   "links": [
+   {
+   "titulo-link": "Pasos para configurar Jest con TypeScript, en Node",
+   "link": "https://gist.github.com/Klerith/98d7b1bc0f1525e892f260813cad1007"
+   },
+   {
+   "titulo-link": "Configurar+Jest+con+TypeScript.pdf",
+   "link": "https://import.cdn.thinkific.com/643563/courses/2405661/ConfigurarJestconTypeScript-230901-091112.pdf"
+   }
+   ]
+   }
+   },
+   {
+   "5": {
+   "Titulo": "Pruebas - CreateTable UseCase",
+   "video": "node-ts-7-05-Pruebas_-_CreateTable_UseCase",
+   "links": {}
+   }
+   },
+   {
+   "6": {
+   "Titulo": "Pruebas - SaveFile UseCase",
+   "video": "node-ts-7-06-Pruebas_-_SaveFile_UseCase",
+   "links": {}
+   }
+   },
+   {
+   "7": {
+   "Titulo": "Pruebas - SaveFile UseCase custom values",
+   "video": "node-ts-7-07-Pruebas_-_SaveFile_UseCase_custom_values",
+   "links": {}
+   }
+   },
+   {
+   "8": {
+   "Titulo": "SpyOn + Mock Implementation",
+   "video": "node-ts-7-08-SpyOn_Mock_Implementation",
+   "links": {}
+   }
+   },
+   {
+   "9": {
+   "Titulo": "Pruebas - Argv",
+   "video": "node-ts-7-09-Pruebas_-_Argv",
+   "links": {}
+   }
+   },
+   {
+   "10": {
+   "Titulo": "Pruebas - Argv valores personalizados",
+   "video": "node-ts-7-10-Pruebas_-_Argv_valores_personalizados",
+   "links": {}
+   }
+   },
+   {
+   "11": {
+   "Titulo": "Pruebas - ServerApp",
+   "video": "node-ts-7-11-Pruebas_-_ServerApp",
+   "links": {}
+   }
+   },
+   {
+   "12": {
+   "Titulo": "ServerApp - Ejecutar proceso esperado",
+   "video": "node-ts-7-12-ServerApp_-_Ejecutar_proceso_esperado",
+   "links": {}
+   }
+   },
+   {
+   "13": {
+   "Titulo": "ServerApp - Pruebas unitarias",
+   "video": "node-ts-7-13-ServerApp_-_Pruebas_unitarias",
+   "links": {}
+   }
+   },
+   {
+   "14": {
+   "Titulo": "Depurando paso a paso con breakpoints",
+   "video": "node-ts-7-14-Depurando_paso_a_paso_con_breakpoints",
+   "links": {}
+   }
+   },
+   {
+   "15": {
+   "Titulo": "Pruebas - App.ts",
+   "video": "node-ts-7-15-Pruebas_-_App_ts",
+   "links": {}
+   }
+   },
+   {
+   "16": {
+   "Titulo": "Código fuente de la sección",
+   "Texto": "Aquí les dejo el código fuente de la sección, por si lo llegan a ocupar o comparar contra el mío",
+   "links": [
+   {
+   "titulo-link": "Node + TypeScript - 04- MultiplicationApp + Testing",
+   "link": "https://github.com/Klerith/node-ts-multiplication-app/tree/fin-seccion-7"
+   }
+   ]
+   }
+   }
+   ]
+   },
+   "8": {
+   "sectionName": "Sección 8: Aplicación de Monitoreo - NOC",
+   "videos": [
+   {
+   "1": {
+   "Titulo": "Introducción a la sección",
+   "video": "node-ts-8-01-Introduccion_a_la_seccion",
+   "links": {}
+   }
+   },
+   {
+   "2": {
+   "Titulo": "Temas puntuales de la sección",
+   "Texto": "En esta sección trabajaremos con el patrón 'Repository' para poder construir una forma intercambiable de orígenes de datos.\n\nPuntualmente veremos:\n\n- Entidades\n- DataSources\n- Repositorios\n- Clases Abstractas\n- Implementaciones\n- Variables de entorno\n- Validación de variables de entorno.\n\nEs una sección muy importante, especialmente por la configuración de variables de entorno ya que esto es lo que permite cambiar la aplicación si estamos en producción, staging, testing o development.",
+   "links": {}
+   }
+   },
+   {
+   "3": {
+   "Titulo": "Introducción a la aplicación - Clean Architecture + Repository Pattern",
+   "video": "node-ts-8-03-Introduccion_a_la_aplicacion_-_Clean_Architecture_Repository_Pattern",
+   "links": [
+   {
+   "titulo-link": "Node + TypeScript - TS-Node-dev",
+   "link": "https://gist.github.com/Klerith/3ba17e86dc4fabd8301a59699b9ffc0b"
+   }
+   ]
+   }
+   },
+   {
+   "4": {
+   "Titulo": "Inicio de proyecto - NOC Tasks",
+   "video": "node-ts-8-04-Inicio_de_proyecto_-_NOC_Tasks",
+   "links": [
+   {
+   "titulo-link": "Configuración de Node",
+   "link": "https://gist.github.com/Klerith/3ba17e86dc4fabd8301a59699b9ffc0b"
+   },
+   {
+   "titulo-link": "Usar_Node_con_TypeScript.pdf",
+   "link": "https://import.cdn.thinkific.com/643563/courses/2405661/Usar_Node_con_TypeScript-230828-095200.pdf"
+   }
+   ]
+   }
+   },
+   {
+   "5": {
+   "Titulo": "Main - Server App",
+   "video": "node-ts-8-05-Main_-_Server_App",
+   "links": {}
+   }
+   },
+   {
+   "6": {
+   "Titulo": "CRON Tasks",
+   "video": "node-ts-8-06-CRON_Tasks",
+   "links": [
+   {
+   "titulo-link": "cron",
+   "link": "https://www.npmjs.com/package/cron"
+   }
+   ]
+   }
+   },
+   {
+   "7": {
+   "Titulo": "CronService",
+   "video": "node-ts-8-07-CronService",
+   "links": {}
+   }
+   },
+   {
+   "8": {
+   "Titulo": "CheckService - UseCase",
+   "video": "node-ts-8-08-CheckService_-_UseCase",
+   "links": {}
+   }
+   },
+   {
+   "9": {
+   "Titulo": "JSON-Server",
+   "video": "node-ts-8-09-JSON-Server",
+   "links": [
+   {
+   "titulo-link": "json-server",
+   "link": "https://www.npmjs.com/package/json-server"
+   }
+   ]
+   }
+   },
+   {
+   "10": {
+   "Titulo": "Cierre de sección",
+   "video": "node-ts-8-10-Cierre_de_seccion",
+   "links": {}
+   }
+   },
+   {
+   "11": {
+   "Titulo": "Código fuente de la sección",
+   "Texto": "Aquí les dejo el código fuente de la sección tal cual lo dejé en el último video, en la siguiente sección lo continuaremos.",
+   "links": [
+   {
+   "titulo-link": "Node NOC - Fin sección 8 - GitHub",
+   "link": "https://github.com/Klerith/node-noc/tree/fin-seccion-8"
+   }
+   ]
+   }
+   }
+   ]
+   },
+   "9": {
+   "sectionName": "Sección 9: Clean Architecture - Repository Pattern",
+   "videos": [
+   {
+   "1": {
+   "Titulo": "Introducción a la sección",
+   "video": "node-ts-9-01-Introduccion_a_la_seccion",
+   "links": {}
+   }
+   },
+   {
+   "2": {
+   "Titulo": "Temas puntuales de la sección",
+   "Texto": "En esta sección trabajaremos con el patrón 'Repository' para poder construir una forma intercambiable de orígenes de datos.\n\nPuntualmente veremos:\n\n- Entidades\n- DataSources\n- Repositorios\n- Clases Abstractas\n- Implementaciones\n- Variables de entorno\n- Validación de variables de entorno.\n\nEs una sección muy importante, especialmente por la configuración de variables de entorno ya que esto es lo que permite cambiar la aplicación si estamos en producción, staging, testing o development.",
+   "links": {}
+   }
+   },
+   {
+   "3": {
+   "Titulo": "Continuación de aplicación",
+   "video": "node-ts-9-03-Continuacion_de_aplicacion",
+   "links": {}
+   }
+   },
+   {
+   "4": {
+   "Titulo": "LogEntity",
+   "video": "node-ts-9-04-LogEntity",
+   "links": {}
+   }
+   },
+   {
+   "5": {
+   "Titulo": "Datasources y Repositorios - Abstractos",
+   "video": "node-ts-9-05-Datasources_y_Repositorios_-_Abstractos",
+   "links": {}
+   }
+   },
+   {
+   "6": {
+   "Titulo": "FileSystem - Datasource",
+   "video": "node-ts-9-06-FileSystemDatasource",
+   "links": {}
+   }
+   },
+   {
+   "7": {
+   "Titulo": "FileSystem - SaveLog",
+   "video": "node-ts-9-07-FileSystem_-_SaveLog",
+   "links": {}
+   }
+   },
+   {
+   "8": {
+   "Titulo": "FileSystem - GetLogs",
+   "video": "node-ts-9-08-FileSystem_-_GetLogs",
+   "links": {}
+   }
+   },
+   {
+   "9": {
+   "Titulo": "LogRepository - Implementation",
+   "video": "node-ts-9-09-LogRepository_-_Implementation",
+   "links": {}
+   }
+   },
+   {
+   "10": {
+   "Titulo": "Inyectar repositorio en caso de uso",
+   "video": "node-ts-9-10-Inyectar_repositorio_en_caso_de_uso",
+   "links": {}
+   }
+   },
+   {
+   "11": {
+   "Titulo": "Probar la implementación",
+   "video": "node-ts-9-11-Probar_la_implementacion",
+   "links": {}
+   }
+   },
+   {
+   "12": {
+   "Titulo": "Depuración del proceso",
+   "video": "node-ts-9-12-Depuracion_del_proceso",
+   "links": {}
+   }
+   },
+   {
+   "13": {
+   "Titulo": "Variables de entorno",
+   "video": "node-ts-9-13-Variables_de_entorno",
+   "links": {}
+   }
+   },
+   {
+   "14": {
+   "Titulo": "Configurar variables de entorno",
+   "video": "node-ts-9-14-Configurar_variables_de_entorno",
+   "links": [
+   {
+   "titulo-link": "dotenv",
+   "link": "https://www.npmjs.com/package/dotenv"
+   },
+   {
+   "titulo-link": "env-var",
+   "link": "https://www.npmjs.com/package/env-var"
+   }
+   ]
+   }
+   },
+   {
+   "15": {
+   "Titulo": "Readme.md",
+   "video": "node-ts-9-15-ReadmeMD",
+   "links": {}
+   }
+   }
+   ]
+   },
+   "10": {
+   "sectionName": "Sección 10: Correos electrónicos",
+   "videos": [
+   {
+   "1": {
+   "Titulo": "Introducción a la sección",
+   "video": "node-ts-10-01-Introduccion_a_la_seccion",
+   "links": {}
+   }
+   },
+   {
+   "2": {
+   "Titulo": "Temas puntuales de la sección",
+   "Texto": "En esta sección aprenderemos a enviar correos electrónicos con y sin archivos adjuntos. Puntualmente veremos: Casos de Uso Servicios Inyecciones de dependencias Configuración de password en Gmail (secret keys) NodeMailer Y más Al final del ejercicio, ustedes podrán enviar correos electrónicos programados con la información que necesitan.",
+   "links": {}
+   }
+   },
+   {
+   "3": {
+   "Titulo": "Continuación de la sección",
+   "video": "node-ts-10-03-Continuacion_de_la_seccion.mp4",
+   "links": {}
+   }
+   },
+   {
+   "4": {
+   "Titulo": "Tarea - Refactorización y nueva propiedad",
+   "video": "node-ts-10-04-Tarea_-_Refactorizacion_y_nueva_propiedad.mp4",
+   "links": {}
+   }
+   },
+   {
+   "5": {
+   "Titulo": "Solución de la tarea",
+   "video": "node-ts-10-05-Solucion_de_la_tarea.mp4",
+   "links": {}
+   }
+   },
+   {
+   "6": {
+   "Titulo": "Preparación de envío de correo",
+   "video": "node-ts-10-06-Preparacion_de_envio_de_correo.mp4",
+   "links": {}
+   }
+   },
+   {
+   "7": {
+   "Titulo": "Gmail Keys - Two-factor authentication",
+   "video": "node-ts-10-07-Gmail_Keys_-_Two-factor_authentication.mp4",
+   "links": {}
+   }
+   },
+   {
+   "8": {
+   "Titulo": "Nodemailer - Gmail",
+   "video": "node-ts-10-08-Nodemailer_-_Gmail.mp4",
+   "links": {}
+   }
+   },
+   {
+   "9": {
+   "Titulo": "Enviar archivos adjuntos",
+   "video": "node-ts-10-09-Enviar_archivos_adjuntos.mp4",
+   "links": {}
+   }
+   },
+   {
+   "10": {
+   "Titulo": "Inyectar Repositorio",
+   "video": "node-ts-10-10-Inyectar_Repositorio.mp4",
+   "links": {}
+   }
+   },
+   {
+   "11": {
+   "Titulo": "SendEmail - UseCase",
+   "video": "node-ts-10-11-SendEmail_-_UseCase.mp4",
+   "links": {}
+   }
+   },
+   {
+   "12": {
+   "Titulo": "Resumen de lo visto",
+   "video": "node-ts-10-12-Resumen_de_lo_visto.mp4",
+   "links": {}
+   }
+   },
+   {
+   "13": {
+   "Titulo": "Código fuente de la sección",
+   "Texto": "Aquí les dejo el código fuente de la sección tal cual lo dejé en el último video, en la siguiente sección lo continuaremos.",
+   "links": [
+   {
+   "titulo-link": "Node NOC - Fin sección 10 - Envío de Correo",
+   "link": "https://github.com/Klerith/node-noc/tree/fin-seccion-10"
+   }
+   ]
+   }
+   }
+   ]
+   },
+   "11": {
+   "sectionName": "Sección 11: MongoDB y PostgreSQL",
+   "videos": [
+   {
+   "1": {
+   "Titulo": "Introducción a la sección",
+   "video": "node-ts-11-01-Introduccion_a_la_seccion",
+   "links": {}
+   }
+   },
+   {
+   "2": {
+   "Titulo": "Temas puntuales de la sección",
+   "Texto": "Esta sección es para integrar las bases de datos Mongo y PostgreSQL en nuestra aplicación de monitoreo, puntualmente veremos: Mongoose Prisma TypeORM (superficialmente) Migraciones de prisma Insertar en base de datos Leer de base de datos Mapeo de data a Entidades Creación de datasources Caso de uso nuevo, para grabar en múltiples destinos simultáneamente Es una sección importante en la cual culminaremos nuestro proyecto de NOC.",
+   "links": {}
+   }
+   },
+   {
+   "3": {
+   "Titulo": "Continuación de proyecto",
+   "video": "node-ts-11-03-Continuacion_de_proyecto",
+   "links": {}
+   }
+   },
+   {
+   "4": {
+   "Titulo": "Base de datos MongoDB",
+   "video": "node-ts-11-04-Base_de_datos_MongoDB",
+   "links": [
+   {
+   "titulo-link": "mongo",
+   "link": "https://hub.docker.com/_/mongo"
+   },
+   {
+   "titulo-link": "docker-compose.yml",
+   "link": "https://import.cdn.thinkific.com/643563/courses/2405661/dockercompose-230830-100436.yml"
+   }
+   ]
+   }
+   },
+   {
+   "5": {
+   "Titulo": "Probar MongoDB",
+   "video": "node-ts-11-05-Probar_MongoDB",
+   "links": {}
+   }
+   },
+   {
+   "6": {
+   "Titulo": "Node + Mongo - Mongoose",
+   "video": "node-ts-11-06-Node_Mongo_-_Mongoose",
+   "links": [
+   {
+   "titulo-link": "mongoose",
+   "link": "https://mongoosejs.com/"
+   }
+   ]
+   }
+   },
+   {
+   "7": {
+   "Titulo": "Schema & Models Mongo",
+   "video": "node-ts-11-07-Schemas_y_Modelos_de_Mongo",
+   "links": {}
+   }
+   },
+   {
+   "8": {
+   "Titulo": "Crear y leer de Mongo",
+   "video": "node-ts-11-08-Crear_y_leer_de_Mongo",
+   "links": {}
+   }
+   },
+   {
+   "9": {
+   "Titulo": "MongoLogDatasource",
+   "video": "node-ts-11-09-MongoLogDatasource",
+   "links": {}
+   }
+   },
+   {
+   "10": {
+   "Titulo": "Grabar Logs en Mongo",
+   "video": "node-ts-11-10-Grabar_Logs_en_Mongo",
+   "links": {}
+   }
+   },
+   {
+   "11": {
+   "Titulo": "LogEntity FromJson - Depuración",
+   "video": "node-ts-11-11-LogEntity_FromJson_-_Depuracion",
+   "links": {}
+   }
+   },
+   {
+   "12": {
+   "Titulo": "PostgreSQL - Instalación",
+   "video": "node-ts-11-12-PostgreSQL_-_Instalacion",
+   "links": {}
+   }
+   },
+   {
+   "13": {
+   "Titulo": "Probar instalación de PostgreSQL",
+   "video": "node-ts-11-13-Probar_instalacion_de_PostgreSQL",
+   "links": {}
+   }
+   },
+   {
+   "14": {
+   "Titulo": "Prisma - ORM",
+   "video": "node-ts-11-14-Prisma_-_ORM",
+   "links": {}
+   }
+   },
+   {
+   "15": {
+   "Titulo": "Pruebas de inserción y lectura",
+   "video": "node-ts-11-15-Pruebas_de_insercion_y_lectura",
+   "links": {}
+   }
+   },
+   {
+   "16": {
+   "Titulo": "PosgresLog DataSource",
+   "video": "node-ts-11-16-PosgresLogData_Source.mp4",
+   "links": {}
+   }
+   },
+   {
+   "17": {
+   "Titulo": "Grabar en Mongo, PosgreSQL y FS simultáneamente",
+   "video": "node-ts-11-17-Grabar_en_Mongo_PosgreSQL_y_FS_simultaneamente.mp4",
+   "links": {}
+   }
+   },
+   {
+   "18": {
+   "Titulo": "Cierre de la sección",
+   "video": "node-ts-11-18-Cierre_de_la_seccion",
+   "links": {}
+   }
+   },
+   {
+   "19": {
+   "Titulo": "Código fuente de la sección",
+   "Texto": "Aquí les dejo el código fuente de la sección tal cual lo dejé en el último video, en la siguiente sección lo continuaremos.",
+   "links": [
+   {
+   "titulo-link": "Node NOC - Fin sección 11 - Mongo y PostgreSQL",
+   "link": "https://github.com/Klerith/node-noc/tree/fin-seccion-11"
+   }
+   ]
+   }
+   }
+   ]
+   },
+   "12": {
+   "sectionName": "Sección 12: NOC - Testing - Clean Architecture",
+   "videos": [
+   {
+   "1": {
+   "Titulo": "Introducción a la sección",
+   "video": "node-ts-12-01-Introduccion_a_la_seccion.mp4",
+   "links": {}
+   }
+   },
+   {
+   "2": {
+   "Titulo": "Temas puntuales de la sección",
+   "Texto": "Esta es otra sección de testing en la que nos enfocaremos en probar conceptos como clases abstractas, variables de entorno, su configuración para el testing y más. La idea principal es que como tenemos todo modularizado, debería de ser fácil probar cada pieza de forma individual. También al final se explica que tener el 100% del coverage es tedioso en algunos casos porque hay que realizar muchas pruebas adicionales que técnicamente no deberían de ser necesarias.",
+   "links": {}
+   }
+   },
+   {
+   "3": {
+   "Titulo": "Preparación del testing",
+   "video": "node-ts-12-03-Preparacion_del_testing.mp4",
+   "links": {}
+   }
+   },
+   {
+   "4": {
+   "Titulo": "Configurar Testing",
+   "video": "node-ts-12-04-Configurar_Testing.mp4",
+   "links": [
+   {
+   "titulo-link": "Configurar_Jest_con_TypeScript_en_Node.pdf",
+   "link": "https://import.cdn.thinkific.com/643563/courses/2405661/Configurar_Jest_con_TypeScript_en_Node-230914-091434.pdf"
+   }
+   ]
+   }
+   },
+   {
+   "5": {
+   "Titulo": "Montar Bases de datos y ENVs de Testing",
+   "video": "",
+   "links": [
+   {
+   "titulo-link": "",
+   "link": ""
+   }
+   ]
+   }
+   },
+   {
+   "6": {
+   "Titulo": "Pruebas en ENVs",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "7": {
+   "Titulo": "Pruebas en la conexión de MongoDB",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "8": {
+   "Titulo": "Pruebas en modelo de Mongo",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "9": {
+   "Titulo": "Pruebas en clases abstractas",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "10": {
+   "Titulo": "Pruebas en el LogEntity",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "11": {
+   "Titulo": "Pruebas en CheckService UseCase",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "12": {
+   "Titulo": "Pruebas en CheckServiceMultiple UseCase",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "13": {
+   "Titulo": "Pruebas en SendEmailLogs UseCase",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "14": {
+   "Titulo": "Pruebas en MongoLogDatasource",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "15": {
+   "Titulo": "Pruebas en FileSystemDatasource",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "16": {
+   "Titulo": "FileSystem Datasource - Pruebas faltantes",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "17": {
+   "Titulo": "100% Coverage y sus implicaciones",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "18": {
+   "Titulo": "Pruebas en LogRepositoryImpl",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "19": {
+   "Titulo": "Pruebas en CronService",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "20": {
+   "Titulo": "Pruebas con EmailService",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "21": {
+   "Titulo": "Código fuente de la sección",
+   "Texto": "",
+   "links": {}
+   }
+   }
+   ]
+   },
+   "13": {
+   "sectionName": "Sección 13: WebServer - Http/Http2",
+   "videos": [
+   {
+   "1": {
+   "Titulo": "Introducción a la sección",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "2": {
+   "Titulo": "Temas puntuales de la sección",
+   "Texto": "",
+   "links": {}
+   }
+   },
+   {
+   "3": {
+   "Titulo": "Inicio de proyecto - RestWeb",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "4": {
+   "Titulo": "Webserver http/1",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "5": {
+   "Titulo": "Diferentes respuestas",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "6": {
+   "Titulo": "Responder demás archivos",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "7": {
+   "Titulo": "Http2 - OpenSSL",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "8": {
+   "Titulo": "Express",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "9": {
+   "Titulo": "Servir SPA con Router",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "10": {
+   "Titulo": "Variables de entorno",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "11": {
+   "Titulo": "Subir repositorio a GitHub",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "12": {
+   "Titulo": "Desplegar en Railway",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "13": {
+   "Titulo": "Código fuente de la sección",
+   "Texto": "",
+   "links": {}
+   }
+   }
+   ]
+   },
+   "14": {
+   "sectionName": "Sección 14: RestServer",
+   "videos": [
+   {
+   "1": {
+   "Titulo": "Introducción a la sección",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "2": {
+   "Titulo": "Temas puntuales de la sección",
+   "Texto": "",
+   "links": {}
+   }
+   },
+   {
+   "3": {
+   "Titulo": "Continuación de la sección",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "4": {
+   "Titulo": "Rest Server",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "5": {
+   "Titulo": "Rutas y Controladores",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "6": {
+   "Titulo": "Todo Controller",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "7": {
+   "Titulo": "CRUD - Read",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "8": {
+   "Titulo": "CRUD - Create",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "9": {
+   "Titulo": "Crear el TODO en el arreglo",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "10": {
+   "Titulo": "CRUD - Actualizar",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "11": {
+   "Titulo": "CRUD - Delete",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "12": {
+   "Titulo": "Desplegar Restful API a la web",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "13": {
+   "Titulo": "Código fuente de la sección",
+   "Texto": "",
+   "links": {}
+   }
+   }
+   ]
+   },
+   "15": {
+   "sectionName": "Sección 15: RestServer + PostgreSQL",
+   "videos": [
+   {
+   "1": {
+   "Titulo": "Introducción a la sección",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "2": {
+   "Titulo": "Temas puntuales de la sección",
+   "Texto": "",
+   "links": {}
+   }
+   },
+   {
+   "3": {
+   "Titulo": "Continuación de aplicación",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "4": {
+   "Titulo": "Base de datos - Postgres",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "5": {
+   "Titulo": "Prisma - Postgres",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "6": {
+   "Titulo": "Crear TODO",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "7": {
+   "Titulo": "CRUD Completo",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "8": {
+   "Titulo": "DTOs - Data Transfer Objects",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "9": {
+   "Titulo": "Update Todo DTO",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "10": {
+   "Titulo": "Aprovisionar base de datos en la nube",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "11": {
+   "Titulo": "Desplegar cambios a Railway",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "12": {
+   "Titulo": "Código fuente de la sección",
+   "Texto": "",
+   "links": {}
+   }
+   }
+   ]
+   },
+   "16": {
+   "sectionName": "Sección 16: Rest - Clean Architecture",
+   "videos": [
+   {
+   "1": {
+   "Titulo": "Introducción a la sección",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "2": {
+   "Titulo": "Temas puntuales de la sección",
+   "Texto": "",
+   "links": {}
+   }
+   },
+   {
+   "3": {
+   "Titulo": "Continuación de la sección",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "4": {
+   "Titulo": "TodoEntity",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "5": {
+   "Titulo": "DataSources y Repositorios",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "6": {
+   "Titulo": "TodoDatasource Implementation",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "7": {
+   "Titulo": "Finalizar la implementación",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "8": {
+   "Titulo": "Uso del repositorio en los controladores",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "9": {
+   "Titulo": "Casos de Uso",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "10": {
+   "Titulo": "Consumir los casos de uso",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "11": {
+   "Titulo": "Express Best Practices + CleanArchitecture",
+   "video": "",
+   "links": {}
+   }
+   },
+   {
+   "12": {
+   "Titulo": "Código fuente de la sección",
+   "Texto": "",
+   "links": {}
+   }
+   }
+   ]
+   }
+   }
+   

@@ -1,6 +1,5 @@
 export function isAuthorized(req, res, next) {
-    if (req.app.locals.user) {
-      console.log("Usuario");
+    if (req.app.locals.user || req.user) {
       return next();
     } 
 

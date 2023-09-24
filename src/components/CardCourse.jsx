@@ -1,43 +1,46 @@
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import Information from './Information';
+import Information from './DetalleCourse';
+import { Link } from "react-router-dom";
 
-function CardCourse() {
+function CardCourse( {listCourse }) {
+  
+ /*const [hoverStates, setHoverStates] = useState(Array(listCourse).fill(false));
 
-  const [hover, setHover]=useState(false)
-
-  const handleMouseEnter = () => {
-    
-    setHover(true);
+  const handleMouseEnter = (index) => {
+    const newHoverStates = [...hoverStates];
+    newHoverStates[index] = true;
+    setHoverStates(newHoverStates);
   };
 
-  const handleMouseLeave = () => {
-    setHover(false);
-  };
+  const handleMouseLeave = (index) => {
+    const newHoverStates = [...hoverStates];
+    newHoverStates[index] = false;
+    setHoverStates(newHoverStates);
+  };*/
 
   return (
-
-
-
-      <Card style={{ width: '23rem' }}>
-        <Card.Img variant="top" src="src/images/img_reactjs.jpg" onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}/>
-        <Card.Body>
-          <Card.Text className='fw-7 fs-22'>
-            Curso completo de Reactjs: De cero a avanzado.
-          </Card.Text>
-          <Card.Subtitle className="mb-2 text-muted fs-15">Fernando Herrera</Card.Subtitle>
-          <Button variant="primary">Suscribirse</Button>
-        </Card.Body>
-        {hover && <Information/>}
-        
-      </Card>
-  
+    <>
     
-    
-  )
+      {listCourse.map((curso, index) => (
+        <Card style={{ width: '23rem' }} key={index}>
+          <Card.Img
+            variant="top"
+            src={curso.portada}
+           
+          />
+          <Card.Body>
+            <Card.Text className='fw-7 fs-22'>
+              {curso.titulo}
+            </Card.Text>
+            <Card.Subtitle className="mb-2 text-muted fs-15">{curso.autor}</Card.Subtitle>
+            <Link to={`/course/${curso.nombre}`}>Ver Curso</Link>
+          </Card.Body>
+          
+        </Card>
+      ))}
+    </>
+  );
 }
-
 
 export default CardCourse;
