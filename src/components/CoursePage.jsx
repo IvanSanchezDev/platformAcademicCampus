@@ -16,7 +16,7 @@ const CoursePage=()=>{
         (async()=>{
             try {
                 
-                const response=await fetch(`../../${nameCourse}.json`);
+                const response=await fetch(`http://192.168.128.23:5010/cursos?course=${nameCourse}`);
                 const result=await response.json();
                 
                 setSections(result)
