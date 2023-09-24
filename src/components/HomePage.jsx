@@ -18,10 +18,16 @@ const [listCourses, setCourses]=useState([]);
     useEffect(()=>{
         (async()=>{
             try {
-                const response=await fetch("../../courses.json");
+                const response = await fetch(`http://localhost:1234/api/curso/traerCursos`, {
+                method: "GET",
+                headers: {
+                  "Content-Type": "application/json",         
+                },
+                credentials: 'include'
+              });
                 const result=await response.json();
                 
-                setCourses(result.cursos)
+                setCourses(result.data)
             } catch (error) {
                 console.log(error);
             }

@@ -3,8 +3,9 @@ import Card from 'react-bootstrap/Card';
 import Information from './DetalleCourse';
 import { Link } from "react-router-dom";
 
-function CardCourse({ listCourse }) {
-  const [hoverStates, setHoverStates] = useState(Array(listCourse.length).fill(false));
+function CardCourse( {listCourse }) {
+  
+ /*const [hoverStates, setHoverStates] = useState(Array(listCourse).fill(false));
 
   const handleMouseEnter = (index) => {
     const newHoverStates = [...hoverStates];
@@ -16,26 +17,26 @@ function CardCourse({ listCourse }) {
     const newHoverStates = [...hoverStates];
     newHoverStates[index] = false;
     setHoverStates(newHoverStates);
-  };
+  };*/
 
   return (
     <>
-      {Object.keys(listCourse).map((c, index) => (
+    
+      {listCourse.map((curso, index) => (
         <Card style={{ width: '23rem' }} key={index}>
           <Card.Img
             variant="top"
-            src={listCourse[c].portada}
-            onMouseEnter={() => handleMouseEnter(index)}
-            onMouseLeave={() => handleMouseLeave(index)}
+            src={curso.portada}
+           
           />
           <Card.Body>
             <Card.Text className='fw-7 fs-22'>
-              {listCourse[c].titulo}
+              {curso.titulo}
             </Card.Text>
-            <Card.Subtitle className="mb-2 text-muted fs-15">{listCourse[c].autor}</Card.Subtitle>
-            <Link to={`/course/${c}`}>Ver Curso</Link>
+            <Card.Subtitle className="mb-2 text-muted fs-15">{curso.autor}</Card.Subtitle>
+            <Link to={`/course/${curso.nombre}`}>Ver Curso</Link>
           </Card.Body>
-          {/* {hoverStates[index] && <Information />} */}
+          
         </Card>
       ))}
     </>
