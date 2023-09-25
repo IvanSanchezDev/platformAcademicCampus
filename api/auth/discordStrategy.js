@@ -1,16 +1,16 @@
 import { connect, closeConnection} from '../database/connection.js'
 import passport from "passport";
 import { Strategy as DiscordStrategy} from 'passport-discord'
-import { config } from "dotenv";
 import { ObjectId } from 'mongodb';
+import { loadEnv } from 'vite'
+const env=loadEnv("development", process.cwd(), 'VITE')
 
 
-config()
 
 
 passport.use(new DiscordStrategy({
-    clientID: process.env.DISCORD_CLIENT_ID,
-    clientSecret: process.env.DISCORD_CLIENT_SECRET,
+    clientID: env.DISCORD_CLIENT_ID,
+    clientSecret: env.DISCORD_CLIENT_SECRET,
     callbackURL: '/auth/redirect',
     scope: ['identify', 'guilds', 'email']
 }, async (accestoken, refreshtoken, profile, done) =>{

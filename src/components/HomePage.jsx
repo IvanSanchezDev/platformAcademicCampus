@@ -18,7 +18,7 @@ const [listCourses, setCourses]=useState([]);
     useEffect(()=>{
         (async()=>{
             try {
-                const response = await fetch(`http://localhost:1234/api/curso/traerCursos`, {
+                const response = await fetch(`http://${import.meta.env.VITE_HOSTNAME}:${import.meta.env.VITE_PORT_BACKEND}/api/curso/traerCursos`, {
                 method: "GET",
                 headers: {
                   "Content-Type": "application/json",         

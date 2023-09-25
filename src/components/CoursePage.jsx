@@ -17,7 +17,7 @@ const CoursePage=()=>{
         (async()=>{
             try {
                 
-                const response=await fetch(`http://192.168.128.23:5010/cursos?course=${nameCourse}`);
+                const response=await fetch(`http://${import.meta.env.VITE_HOSTNAME}:${import.meta.env.VITE_PORT_BACKEND}/cursos?course=${nameCourse}`);
                 const result=await response.json();
                 
                 setSections(result)
@@ -34,7 +34,7 @@ const CoursePage=()=>{
         <>
         <Layout/>
         <Container>
-        <video controls width="1300"  key={videoKey} >
+        <video controls width="1300" autoPlay key={videoKey} >
           <source src={url} type="video/mp4" />
          
         </video>     

@@ -16,10 +16,10 @@ const Login=()=>{
     }
 
     const logearse=async()=>{
-        const win = window.open('http://localhost:1234/auth/login', '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes');
+        const win = window.open(`http://${import.meta.env.VITE_HOSTNAME}:${import.meta.env.VITE_PORT_BACKEND}/auth/login`, '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes');
         win.focus();
         window.addEventListener('message', async(event) => {
-            if (event.origin === 'http://localhost:1234' && event.data === 'auth_success') {               
+            if (event.origin === `http://${import.meta.env.VITE_HOSTNAME}:${import.meta.env.VITE_PORT_BACKEND}` && event.data === 'auth_success') {               
                 localStorage.setItem("estado", true);
                 setIsAuthenticated(true)           
             }

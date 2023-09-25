@@ -16,7 +16,7 @@ const Navbar=()=>{
         <NavbarWrapper className='bg-white flex'>
             <Container className='w-100'>
                 <div className='brand-and-toggler flex flex-between w-100'>
-                    <Link to='/' className='navbar-brand text-uppercase ls-1 fw-8'>
+                    <Link to='/home' className='navbar-brand text-uppercase ls-1 fw-8'>
                         <span>C</span>ampusAcademic                
                     </Link>
 

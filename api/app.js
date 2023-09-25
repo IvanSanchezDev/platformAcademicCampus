@@ -7,15 +7,16 @@ import { router as routerCourse } from './routes/curso.routes.js';
 
 
 import session from "express-session";
-import { config } from 'dotenv';
+import { loadEnv } from 'vite'
+const env=loadEnv("development", process.cwd(), 'VITE')
 
-config()
+
 export const app = express()
 app.use(cors({origin:true, methods:"GET,POST",credentials:true}))
 
 app.use(
     session({
-      secret: process.env.SESSION_SECRET,
+      secret: env.SESSION_SECRET,
       resave: false,
       saveUninitialized: true,
     })
