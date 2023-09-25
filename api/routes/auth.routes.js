@@ -4,7 +4,7 @@ import { isAuthorized, isNotAuthorized } from "../middlewares/auth.js";
 
 export const router = Router();
 
-router.get('/login',isNotAuthorized, passport.authenticate('discord'))
+router.get('/login', isNotAuthorized ,passport.authenticate('discord'))
 
 router.get('/redirect', passport.authenticate('discord', {
     successRedirect: "/auth/success",
@@ -13,13 +13,13 @@ router.get('/redirect', passport.authenticate('discord', {
 
 //en caso de exito, enviamos un mensaje a la ventana principal
 router.get('/success', (req, res) => {
-    res.send('<script>window.opener.postMessage("auth_success", "http://localhost:5173");window.close();</script>');
+    res.send('<script>window.opener.postMessage("auth_success", "http://localhost:5123");window.close();</script>')
 });
 
 // Ruta para manejar la autenticación fallida
 router.get('/failure', (req, res) => {
-    // Puedes redirigir o mostrar un mensaje de error en caso de autenticación fallida
-    res.redirect('/');
+    
+    res.redirect("/")
 });
 
 router.get('/logout', isAuthorized, (req,res)=>{

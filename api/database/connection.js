@@ -3,7 +3,7 @@ import { loadEnv } from 'vite'
 const env=loadEnv("development", process.cwd(), 'VITE')
 
 
-const uri = `mongodb+srv://${env.ATLAS_USER}:${env.ATLAS_PASSWORD}@clusterauthenticacion.lobajpy.mongodb.net/`
+const uri = `mongodb+srv://${env.VITE_ATLAS_USER}:${env.VITE_ATLAS_PASSWORD}@clusterauthenticacion.lobajpy.mongodb.net/`
 
 const client = new MongoClient(uri, {
   serverApi: {

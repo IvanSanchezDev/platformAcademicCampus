@@ -9,13 +9,12 @@ const env=loadEnv("development", process.cwd(), 'VITE')
 
 
 passport.use(new DiscordStrategy({
-    clientID: env.DISCORD_CLIENT_ID,
-    clientSecret: env.DISCORD_CLIENT_SECRET,
-    callbackURL: '/auth/redirect',
+    clientID: env.VITE_DISCORD_CLIENT_ID,
+    clientSecret: env.VITE_DISCORD_CLIENT_SECRET,
+    callbackURL: `/auth/redirect`,
     scope: ['identify', 'guilds', 'email']
 }, async (accestoken, refreshtoken, profile, done) =>{
   try {
-
     const db=await connect()
     const usuarios=db.collection("usuarios")
     const user=await usuarios.findOne({discord_id:profile.id})
