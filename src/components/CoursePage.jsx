@@ -1,7 +1,7 @@
 import { Container } from "react-bootstrap";
 import { Layout } from "./Layout";
 import SectionsVideos from "./SectionsVideos/SectionsVideos";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import {  useParams } from "react-router-dom"
 import { useUrl } from "../context/urlContext";
 
@@ -11,6 +11,7 @@ const CoursePage=()=>{
     const{establecerNombreCourse, url}=useUrl()
     
     const [listSections, setSections]=useState([])
+    const videoKey = useMemo(() => Math.random(), [url]);
 
     useEffect(()=>{
         (async()=>{
@@ -25,14 +26,15 @@ const CoursePage=()=>{
                 console.log(error);
             }
         })();
-    }, [nameCourse])
+    }, [nameCourse, url])
 
+    console.log(url);
 
     return(
         <>
         <Layout/>
         <Container>
-        <video controls>
+        <video controls width="1300"  key={videoKey} >
           <source src={url} type="video/mp4" />
          
         </video>     

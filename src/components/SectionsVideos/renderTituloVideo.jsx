@@ -18,7 +18,7 @@ export const RenderTituloVideo = (videos, sectionName) => {
           const video = videoObj[videoKey]; 
   
           return (
-            <div className="videos" key={videoIndex} onClick={()=>handleVideo(video.Titulo)}>
+            <div className="videos" key={videoIndex} onClick={()=>handleVideo(video.video)}>
               <ul  className="d-flex flex-start items" >
                 <li className="mt-2">
                   <Form.Check aria-label="option 1" />
