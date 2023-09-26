@@ -5,19 +5,7 @@ import { Link } from "react-router-dom";
 
 function CardCourse( {listCourse }) {
   
- /*const [hoverStates, setHoverStates] = useState(Array(listCourse).fill(false));
 
-  const handleMouseEnter = (index) => {
-    const newHoverStates = [...hoverStates];
-    newHoverStates[index] = true;
-    setHoverStates(newHoverStates);
-  };
-
-  const handleMouseLeave = (index) => {
-    const newHoverStates = [...hoverStates];
-    newHoverStates[index] = false;
-    setHoverStates(newHoverStates);
-  };*/
 
   return (
     <>
@@ -34,7 +22,7 @@ function CardCourse( {listCourse }) {
               {curso.titulo}
             </Card.Text>
             <Card.Subtitle className="mb-2 text-muted fs-15">{curso.autor}</Card.Subtitle>
-            <Link to={`/course/${curso.nombre}`}>Ver Curso</Link>
+            <Link to={`/detailsCourse/${curso.nombre}`}>Ver Curso</Link>
           </Card.Body>
           
         </Card>

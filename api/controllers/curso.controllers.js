@@ -1,5 +1,6 @@
 import {connect, closeConnection} from '../database/connection.js'
 
+
 export class cursoController{
 
     static async getCursos(req, res){
@@ -14,5 +15,12 @@ export class cursoController{
             await closeConnection()
         }
     }
+
+    
+      
+
+   
+
+    
     
 }

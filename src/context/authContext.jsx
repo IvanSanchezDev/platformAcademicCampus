@@ -23,6 +23,11 @@ export const AuthProvider=({children})=>{
      setIsAuthenticated(true)
      setIsLoading(false)
     }
+
+
+    const getUser=()=>{
+      return user
+    }
     
     const logout = async () => {   
         try {
@@ -71,7 +76,7 @@ export const AuthProvider=({children})=>{
 
 
     return (
-        <AuthContext.Provider value={{logout,saveUser, isAuthenticated, user, isloading, setIsAuthenticated }}>
+        <AuthContext.Provider value={{logout,getUser,saveUser, isAuthenticated, user, isloading, setIsAuthenticated }}>
             {isloading ? <div>Loading...</div> : children}
         </AuthContext.Provider>
     )
