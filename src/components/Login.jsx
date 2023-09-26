@@ -8,27 +8,29 @@ import { Layout } from "./Layout";
 
 
 const Login=()=>{
-    const {isAuthenticated, setIsAuthenticated}=useAuth()
+    const {isAuthenticated, saveUser}=useAuth()
 
-    if (isAuthenticated) {
-        console.log("validacion" + isAuthenticated);
-        return <Navigate to="/home" />;
-    }
-
+   
     const logearse=async()=>{
         const win = window.open(`http://${import.meta.env.VITE_HOSTNAME}:${import.meta.env.VITE_PORT_BACKEND}/auth/login`, '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes');
         win.focus();
         window.addEventListener('message', async(event) => {
-            if (event.origin === `http://${import.meta.env.VITE_HOSTNAME}:${import.meta.env.VITE_PORT_BACKEND}` && event.data === 'auth_success') {               
-                localStorage.setItem("estado", true);
-                setIsAuthenticated(true)           
+            if (event.origin === `http://${import.meta.env.VITE_HOSTNAME}:${import.meta.env.VITE_PORT_BACKEND}`) {               
+            const userData = event.data;
+            if (userData) {
+              saveUser(userData);
+            }
+            win.close();          
             }
             
         });
         
     }
 
-   
+    if (isAuthenticated) {    
+        return <Navigate to="/home" />;
+    }
+
 
     return(
         <LoginWrapper>

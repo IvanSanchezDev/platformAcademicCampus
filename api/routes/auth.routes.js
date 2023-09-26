@@ -13,7 +13,21 @@ router.get('/redirect', passport.authenticate('discord', {
 
 //en caso de exito, enviamos un mensaje a la ventana principal
 router.get('/success', (req, res) => {
-    res.send('<script>window.opener.postMessage("auth_success", "http://localhost:5123");window.close();</script>')
+    try {
+        const user = JSON.stringify(req.user)
+        
+    res.status(200).send(`<!DOCTYPE html>
+    <html lang="en">
+      <body>
+      </body>
+      <script>
+        window.opener.postMessage(${user}, 'http://localhost:5123')
+      </script>
+    </html>`);
+    } catch (error) {
+        console.log(error.message);
+    }
+    
 });
 
 // Ruta para manejar la autenticación fallida

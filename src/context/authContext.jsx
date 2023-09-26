@@ -16,6 +16,13 @@ export const AuthProvider=({children})=>{
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [isloading, setIsLoading] = useState(true);
     const [user, setUser] = useState({});
+
+
+    const saveUser = (data) => {
+     setUser(data)
+     setIsAuthenticated(true)
+     setIsLoading(false)
+    }
     
     const logout = async () => {   
         try {
@@ -29,7 +36,7 @@ export const AuthProvider=({children})=>{
 
               const result=await response.json()
               console.log(result);
-              localStorage.removeItem("estado");
+              setUser(null);
                setIsAuthenticated(false)
                
           } catch (error) {
@@ -37,33 +44,34 @@ export const AuthProvider=({children})=>{
           }
     };
 
-    
-    async function checkAuth(){    
-        try {          
-          const token=localStorage.getItem('estado');
-          if (token) {
-                const userInfo=await traerInfo()      
-                setIsAuthenticated(true);         
-                setUser(userInfo)    
-                setIsLoading(false);
-          }else{
-            setIsLoading(false);
-         }
-                
-        } catch (error) {
-            setIsLoading(false);
+    async function checkAuth() {
+      try {
+        // Realiza una verificación de autenticación y obtén el usuario si está autenticado
+        const userInfo = await traerInfo();
+  
+        if (userInfo) {
+          setIsAuthenticated(true);
+          setUser(userInfo);
+        } else {
+          setIsAuthenticated(false);
         }
+  
+        setIsLoading(false);
+      } catch (error) {
+        setIsLoading(false);
+      }
     }
+  
     
     useEffect(() => {         
       checkAuth();
-    }, [isAuthenticated]);
+    }, []);
     
     
 
 
     return (
-        <AuthContext.Provider value={{logout, isAuthenticated, user, isloading, setIsAuthenticated }}>
+        <AuthContext.Provider value={{logout,saveUser, isAuthenticated, user, isloading, setIsAuthenticated }}>
             {isloading ? <div>Loading...</div> : children}
         </AuthContext.Provider>
     )

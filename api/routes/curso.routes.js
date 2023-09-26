@@ -5,4 +5,4 @@ import { isAuthorized } from "../middlewares/auth.js";
 export const router = Router();
 
 
-router.get('/traerCursos', cursoController.getCursos )
+router.get('/traerCursos', isAuthorized,cursoController.getCursos )
