@@ -9,7 +9,6 @@ import { loadEnv } from 'vite'
 import { Server as SocketServer } from 'socket.io';
 import http from 'node:http'
 import {connect, closeConnection } from './database/connection.js'
-import { ObjectId } from 'mongodb';
 
 
 const env=loadEnv("development", process.cwd(), 'VITE')
@@ -25,24 +24,24 @@ io.on('connection', socket=>{
   console.log('client connection');
   socket.on('nuevo-comentario', async(data)=>{
     try {
-      
+      const {nombre, texto, curso}=data
       const db=await connect()
       const cursos=db.collection("cursos")
       const result=await cursos.updateOne(
-        {nombre: data.nombre}, 
+        {nombre: curso}, 
         {
           $push: {
             comentarios: {
-              usuario_id: new ObjectId(data.idUsuario),
-              texto: data.texto
+              nombre_usuario: nombre,
+              texto: texto
             }
           }
         }
         
       )
       const nuevoComentario={
-        id: data.idUsuario,
-        texto: data.texto
+        nombre: nombre,
+        texto: texto
       }
       io.emit('nuevo-comentario', nuevoComentario);
       

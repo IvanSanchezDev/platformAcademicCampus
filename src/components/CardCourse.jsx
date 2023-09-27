@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Card from 'react-bootstrap/Card';
-import Information from './DetalleCourse';
 import { Link } from "react-router-dom";
 
 function CardCourse( {listCourse }) {

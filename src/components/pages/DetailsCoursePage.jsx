@@ -2,6 +2,7 @@ import { Container } from "react-bootstrap"
 import { Layout } from "../Layout"
 import { Comments } from "../DetailsCourse/Comments"
 import { useParams } from "react-router-dom"
+import DetalleCourse from "../DetailsCourse/DetalleCourse"
 
 
 export const DetailsCoursePage=()=>{
@@ -9,9 +10,10 @@ export const DetailsCoursePage=()=>{
     return (
         <>
             <Layout/>
-            <Container>
-                <Comments nombre={nameCourse}/>
-            </Container>
+            
+                <DetalleCourse nombreCurso={nameCourse}/>
+                
+            
         </>
     )
 }

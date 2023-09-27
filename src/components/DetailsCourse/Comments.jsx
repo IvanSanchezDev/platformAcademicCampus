@@ -2,18 +2,18 @@ import { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { io } from "socket.io-client";
 import { useAuth } from '../../context/authContext';
+import styled from "styled-components"
 
 const socket = io('/');
 
 
-export const Comments=({nombre})=>{
+export const Comments=({nombreCurso, listComments})=>{
     const {user}=useAuth()
-    console.log(user.data._id);
-    
+   
     const [nuevComentario, setNuevoComentario] =useState("")
-    const [comentarios, setComentarios] =useState([])
+    const [comentarios, setComentarios] =useState(listComments || [])
 
-    //socket.on: esucha los mensaje a lo que actuliza la lista de comentarios se renderiza de nuevo
+    console.log(comentarios);
 
     useEffect(() => {
         socket.on('nuevo-comentario', (comentario) => {
@@ -23,32 +23,107 @@ export const Comments=({nombre})=>{
 
     const enviarComentario = ()=>{
         socket.emit('nuevo-comentario', {
-            nombre: nombre,
+            curso: nombreCurso,
             texto: nuevComentario,
-            idUsuario: user.data._id
+            nombre: user.data.nombre_usuario
         })
         setNuevoComentario('')
     }
 
     return(
         <>
-            <Container>
-                <h1>Comentarios</h1>
-                <div>
+            <ComentariosWrapper>
+               
+                    <div className='course-sc-title'>Comentarios</div>
                     
-                    <input type="text" value={nuevComentario} onChange={(e)=>setNuevoComentario(e.target.value)}/>
-                    <button onClick={enviarComentario}>Enviar</button>
-                </div>
-                <div>
-                    {comentarios.map((comentario, index) => (
-                    <div key={index}>
-                        <strong>{comentario.id}:</strong> {comentario.texto}
-                    </div>
-                    ))}
-                </div>
-            </Container>
+                    <ul className='comentarios-list mt-5'>
+                        {comentarios && comentarios.map((comentario, index) => {
+                        
+                            return(
+                                <li key={index}>
+                                    <span className='fs-18 fw-7'>{comentario.nombre_usuario}:</span><span className='fs-16 fw-5 opacity-09 textoo'>{comentario.texto}</span>
+                                </li>
+                            )
+                        })}
+                       
+                        
+                    </ul>
+                    <div className='enviarComentario'>                       
+                        <input type="text" className='comment-box' value={nuevComentario} placeholder="Agrega un comentario" onChange={(e)=>setNuevoComentario(e.target.value)}/>
+                        <button className='comment-btn' onClick={enviarComentario}>Agregar</button>
+                    </div>               
+                
+            </ComentariosWrapper>
            
         </>
     )
 
 }
+
+
+const ComentariosWrapper=styled.div`
+    
+
+    .course-sc-title{
+        font-size: 22px;
+        font-weight: 700;
+        margin: 12px 0;
+      }
+
+    .comentarios-list{
+        display:flex;
+        //justify-content:center;
+        flex-wrap: wrap;
+        gap:2rem;
+        
+        li{
+           
+            overflow: hidden;
+            text-overflow: ellipsis; 
+            display:flex;
+            flex-direction:column;
+            width:400px;
+            //background-color: #f7f9fa;
+            padding: 12px 18px;
+            border-top: 1px solid rgba(0, 0, 0, 0.2);
+            overflow: auto;
+
+            
+        }
+
+        .textoo{
+            display:block;
+            
+        }
+    }
+
+    .enviarComentario{
+        width: 95%;
+        border: 1px solid #dfdfdf; /* Modificado */
+        display: flex;
+        //align-items: center;
+        justify-content:center;
+        box-sizing: border-box; /* Agregado */
+        padding: 20px 10px; /* Agregado */
+
+        .comment-box {
+            width: 70%;
+            height: 100%;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+        
+        .comment-btn {
+            width: 70px;
+            height: 100%;
+            background: none;
+            border: none;
+            outline: none;
+            text-transform: capitalize;
+            font-size: 18px;
+            color: rgb(0, 143, 226);
+            
+        }
+    }
+`;
