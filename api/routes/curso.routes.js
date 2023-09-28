@@ -6,4 +6,8 @@ export const router = Router();
 
 
 router.get('/traerCursos', isAuthorized,cursoController.getCursos )
-router.get('/traerCursoByName',cursoController.getCursosByName )
+router.get('/traerCursoByName',isAuthorized, cursoController.getCursosByName )
+router.post('/inscripcionCursos',isAuthorized,cursoController.inscripcionCursos )
+router.get('/verificarInscripcion',isAuthorized,cursoController.verificarInscripcion )
+
+
