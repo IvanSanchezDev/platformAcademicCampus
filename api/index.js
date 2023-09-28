@@ -1,4 +1,4 @@
-import { app } from "./app.js";
+import { server } from "./app.js";
 import { loadEnv } from 'vite'
 const env=loadEnv("development", process.cwd(), 'VITE')
 
@@ -9,6 +9,6 @@ const config={
     hostname:env.VITE_HOSTNAME
 }
 
-app.listen(config, ()=>{
+server.listen(config, ()=>{
     console.log(`server listening on http://${config.hostname}:${config.port}`);
 })

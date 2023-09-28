@@ -6,3 +6,4 @@ export const router = Router();
 
 
 router.get('/traerCursos', isAuthorized,cursoController.getCursos )
+router.get('/traerCursoByName',cursoController.getCursosByName )

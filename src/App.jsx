@@ -7,6 +7,7 @@ import Login from './components/Login'
 import { ProtectedRoute } from './protectedRoutes'
 import { Profile } from './components/Profile';
 import CoursePage from './components/CoursePage'
+import {DetailsCoursePage} from './components/pages/DetailsCoursePage';
 
 
 
@@ -22,7 +23,7 @@ function App() {
               <Route path='/home' element={<Home/>}/>
               <Route path='/profile' element={<Profile/>}/>
               <Route path="/course/:nameCourse" element={<CoursePage/>} />
-
+              <Route path='/detailsCourse/:nameCourse' element={<DetailsCoursePage/>}/>
             </Route>
           </Routes>
   )
