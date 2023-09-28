@@ -7,12 +7,79 @@ import { useEffect, useState } from "react";
 import {Comments} from './Comments'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { useAuth } from '../../context/authContext';
+
 
 
 const DetalleCourse=({nombreCurso})=>{
-
+  const {user}=useAuth()
     const [info, setInfo]=useState({})
     const [isLoading, setIsLoading] = useState(true);
+    const [message, setMessage] = useState("")
+    const [isEnrolled, setIsEnrolled] = useState(false);
+
+
+    const inscripcionCurso=async ()=>{
+      const data={
+        nombreUsuario:user.nombre_usuario,
+        nombreCurso
+      }
+      try {
+        const response=await fetch('http://localhost:5124/api/curso/inscripcionCursos', {
+          method:'POST',
+          headers:{
+            "Content-Type": "application/json"
+          },
+          credentials: 'include',
+          body:JSON.stringify(data)
+        })
+        console.log(response);
+        if (response.ok) {
+          const result=await response.json();
+          console.log(result);
+          setMessage(result.message)
+          setIsEnrolled(true);
+        }
+
+      } catch (error) {
+        
+        console.log(error);
+      }
+    }
+
+    useEffect(() => {
+        
+      async function verificarInscripcion() {
+        console.log("entrraaaa");
+        try {
+          const data={
+            nombreUsuario:user.nombre_usuario,
+            nombreCurso
+          }
+          console.log(data);
+          const response = await fetch("http://localhost:5124/api/curso/verificarInscripcion", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            credentials: 'include',
+            body: JSON.stringify(data),
+          });
+         
+            const result = await response.json();
+            if (result.estado) {
+              setIsEnrolled(true)
+            }else{
+              setIsEnrolled(false)
+            }
+            
+          
+        } catch (error) {
+          //console.log(error);
+        }
+      }
+      verificarInscripcion();
+    }, []);
 
     useEffect(() => {
         (async () => {
@@ -39,6 +106,9 @@ const DetalleCourse=({nombreCurso})=>{
       }, []);
 
       
+     
+
+      
       const {nombre, titulo, autor, portada, objetivos, temas, comentarios}=info
       
     
@@ -52,9 +122,19 @@ const DetalleCourse=({nombreCurso})=>{
                 <Card.Title>Card Title</Card.Title>
                 <Card.Text>
                   Some quick example text to build on the card title and make up the
-                  bulk of the card's content.
+                  bulk of the cards content.
                 </Card.Text>
-                <Button variant="primary">Obtener el curso</Button>
+                {isEnrolled ? (
+                  <Button variant="primary">Ir al curso</Button>
+                ) : (
+                  <>
+                    <Button variant="primary" onClick={inscripcionCurso}>
+                      Obtener el curso
+                    </Button>
+                    {message && <p>{message}</p>}
+                  </>
+                )}
+                {(message) &&<p>{message}</p>}
               </Card.Body>
             </Card>
             </div>
