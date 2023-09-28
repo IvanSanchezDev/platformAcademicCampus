@@ -9,11 +9,13 @@ const socket = io('/');
 
 export const Comments=({nombreCurso, listComments})=>{
     const {user}=useAuth()
+
+    
    
     const [nuevComentario, setNuevoComentario] =useState("")
     const [comentarios, setComentarios] =useState(listComments || [])
 
-    console.log(comentarios);
+    
 
     useEffect(() => {
         socket.on('nuevo-comentario', (comentario) => {
@@ -25,7 +27,7 @@ export const Comments=({nombreCurso, listComments})=>{
         socket.emit('nuevo-comentario', {
             curso: nombreCurso,
             texto: nuevComentario,
-            nombre: user.data.nombre_usuario
+            nombre: user.nombre_usuario
         })
         setNuevoComentario('')
     }

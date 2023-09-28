@@ -40,7 +40,7 @@ io.on('connection', socket=>{
         
       )
       const nuevoComentario={
-        nombre: nombre,
+        nombre_usuario: nombre,
         texto: texto
       }
       io.emit('nuevo-comentario', nuevoComentario);

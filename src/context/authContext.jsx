@@ -56,7 +56,7 @@ export const AuthProvider=({children})=>{
   
         if (userInfo) {
           setIsAuthenticated(true);
-          setUser(userInfo);
+          setUser(userInfo.data);
         } else {
           setIsAuthenticated(false);
         }
