@@ -113,6 +113,37 @@ db.createCollection('cursos', {
       }
     }
   })
+
+  use('platform_academic_campus')
+  db.createCollection('inscripcionesCursos', {
+    validator: {
+      $jsonSchema: {
+        bsonType: 'object',
+        required: ['_id', 'nombre_curso', 'nombre_usuario'],
+        properties: {
+          _id: {
+            bsonType: 'objectId',
+            description: 'El _id es requerido y de tipo ObjectId'
+          },
+          nombre_curso: {
+            bsonType: 'string',
+            description: 'El nombre del curso es requerido y de tipo string'
+          },
+          nombre_usuario: {
+            bsonType: 'string',
+            description: 'El username es requerido y de tipo string'
+          },
+          progreso:{
+            bsonType:'number',
+            description:'el progreso es de tipo number'
+          }
+          
+          
+        }
+        
+      }
+    }
+  })
   
 
   use('platform_academic_campus')
