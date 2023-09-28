@@ -5,6 +5,8 @@ import {BiCheck} from "react-icons/bi";
 import {RiClosedCaptioningFill} from "react-icons/ri";
 import { useEffect, useState } from "react";
 import {Comments} from './Comments'
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 
 const DetalleCourse=({nombreCurso})=>{
@@ -44,7 +46,17 @@ const DetalleCourse=({nombreCurso})=>{
         <SingleCourseWrapper>
           <div className='course-intro mx-auto grid'>
             <div className='course-img'>
-              <img src={portada}  />
+            <Card style={{ width: '30rem' }}>
+              <Card.Img variant="top" src={portada} />
+              <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up the
+                  bulk of the card's content.
+                </Card.Text>
+                <Button variant="primary">Obtener el curso</Button>
+              </Card.Body>
+            </Card>
             </div>
             <div className='course-details'>
               <div className='course-category bg-white text-dark text-capitalize fw-6 fs-12 d-inline-block'>programmming</div>
@@ -78,8 +90,8 @@ const DetalleCourse=({nombreCurso})=>{
     
               <div className='course-foot'>
                 <div className='course-price'>
-                  <span className='new-price fs-26 fw-8'>100.000</span>
-                  <span className='old-price fs-26 fw-6'>50.000</span>
+                  <span className='new-price fs-26 fw-8'></span>
+                  <span className='old-price fs-26 fw-6'></span>
                 </div>
               </div>
     
@@ -134,6 +146,14 @@ const DetalleCourse=({nombreCurso})=>{
       .course-intro{
         padding: 40px 16px;
         max-width: 992px;
+
+        .course-img {
+          position: fixed;
+          top: 100px;
+          right: 320px;
+          z-index: 100;
+          
+        }
     
         .course-details{
           padding-top: 20px;

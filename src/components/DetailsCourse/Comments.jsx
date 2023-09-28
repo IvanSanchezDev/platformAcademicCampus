@@ -75,10 +75,11 @@ const ComentariosWrapper=styled.div`
         //justify-content:center;
         flex-wrap: wrap;
         gap:2rem;
-        
+        //height:1000px;
+        overflow: auto;
         li{
-           
-            overflow: hidden;
+           height:auto;
+            overflowY:'auto';
             text-overflow: ellipsis; 
             display:flex;
             flex-direction:column;
@@ -86,15 +87,13 @@ const ComentariosWrapper=styled.div`
             //background-color: #f7f9fa;
             padding: 12px 18px;
             border-top: 1px solid rgba(0, 0, 0, 0.2);
+            word-wrap: break-word;
             overflow: auto;
 
             
         }
 
-        .textoo{
-            display:block;
-            
-        }
+        
     }
 
     .enviarComentario{
