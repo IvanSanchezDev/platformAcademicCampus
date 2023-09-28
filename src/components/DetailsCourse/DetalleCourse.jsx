@@ -147,13 +147,7 @@ const DetalleCourse=({nombreCurso})=>{
         padding: 40px 16px;
         max-width: 992px;
 
-        .course-img {
-          position: fixed;
-          top: 100px;
-          right: 320px;
-          z-index: 100;
-          
-        }
+        
     
         .course-details{
           padding-top: 20px;
