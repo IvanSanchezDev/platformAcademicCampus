@@ -8,6 +8,8 @@ import { ProtectedRoute } from './protectedRoutes'
 import { Profile } from './components/Profile';
 import CoursePage from './components/CoursePage'
 import {DetailsCoursePage} from './components/pages/DetailsCoursePage';
+import { NotFound } from './components/NotFound';
+import { NotAuthorized } from './components/NotAuthorized';
 
 
 
@@ -24,7 +26,9 @@ function App() {
               <Route path='/profile' element={<Profile/>}/>
               <Route path="/course/:nameCourse" element={<CoursePage/>} />
               <Route path='/detailsCourse/:nameCourse' element={<DetailsCoursePage/>}/>
+              <Route path='/no-authorized' element={<NotAuthorized/>}/>
             </Route>
+            <Route path="*" element={<NotFound/>}/>
           </Routes>
   )
 }

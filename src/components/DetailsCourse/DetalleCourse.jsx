@@ -7,12 +7,27 @@ import { useEffect, useState } from "react";
 import {Comments} from './Comments'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { useAuth } from '../../context/authContext';
+import { useInscripcion } from "../../context/inscripcionContext";
+import { Link } from "react-router-dom";
+
 
 
 const DetalleCourse=({nombreCurso})=>{
-
+  const {user}=useAuth()
+  const {inscripcionCurso, verificarInscripcion, message, isEnrolled}=useInscripcion()
     const [info, setInfo]=useState({})
     const [isLoading, setIsLoading] = useState(true);
+
+
+    const handleInscripcion=()=>{
+      
+        inscripcionCurso(user.nombre_usuario, nombreCurso)
+    }
+   
+    useEffect(() => {
+      verificarInscripcion(user.nombre_usuario, nombreCurso);
+    }, []);
 
     useEffect(() => {
         (async () => {
@@ -39,6 +54,9 @@ const DetalleCourse=({nombreCurso})=>{
       }, []);
 
       
+     
+
+      
       const {nombre, titulo, autor, portada, objetivos, temas, comentarios}=info
       
     
@@ -52,9 +70,20 @@ const DetalleCourse=({nombreCurso})=>{
                 <Card.Title>Card Title</Card.Title>
                 <Card.Text>
                   Some quick example text to build on the card title and make up the
-                  bulk of the card's content.
+                  bulk of the cards content.
                 </Card.Text>
-                <Button variant="primary">Obtener el curso</Button>
+                {isEnrolled ? (
+                  <Link to={`/course/${nombreCurso}`}><Button variant="primary">Ir al curso</Button></Link>
+                 
+                ) : (
+                  <>
+                    <Button variant="primary" onClick={handleInscripcion}>
+                      Obtener el curso
+                    </Button>
+                    {message && <p>{message}</p>}
+                  </>
+                )}
+                {(message) &&<p>{message}</p>}
               </Card.Body>
             </Card>
             </div>
