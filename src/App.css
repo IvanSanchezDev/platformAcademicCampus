@@ -59,6 +59,16 @@ button{
     font-family: inherit;
     font-size: 1.8rem;
 }
+
+button .btnVolver{
+    font-size: 24px;
+    padding: 12px 24px;
+    background-color:#481593;
+    color:yellow;
+    border: none;
+    
+  }
+
 input, textarea, select{
     outline: 0;
     border: none;

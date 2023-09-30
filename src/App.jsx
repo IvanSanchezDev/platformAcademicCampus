@@ -10,6 +10,7 @@ import CoursePage from './components/CoursePage'
 import {DetailsCoursePage} from './components/pages/DetailsCoursePage';
 import { NotFound } from './components/NotFound';
 import { NotAuthorized } from './components/NotAuthorized';
+import { OpinionesCourse } from './components/DetailsCourse/OpinionesCourse';
 
 
 
@@ -26,6 +27,8 @@ function App() {
               <Route path='/profile' element={<Profile/>}/>
               <Route path="/course/:nameCourse" element={<CoursePage/>} />
               <Route path='/detailsCourse/:nameCourse' element={<DetailsCoursePage/>}/>
+              {<Route path='/detailsCourse/:nameCourse/opiniones' element={<OpinionesCourse/>}/>}
+
               <Route path='/no-authorized' element={<NotAuthorized/>}/>
             </Route>
             <Route path="*" element={<NotFound/>}/>

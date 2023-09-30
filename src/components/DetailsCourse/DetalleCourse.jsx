@@ -5,11 +5,12 @@ import {BiCheck} from "react-icons/bi";
 
 import { useAuth } from '../../context/authContext';
 import { useInscripcion } from "../../context/inscripcionContext";
-import {Comments} from './Comments'
-
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import InfoCourse from "./InfoCourse";
+
 
 
 
@@ -20,10 +21,7 @@ const DetalleCourse=({nombreCurso})=>{
     const [isLoading, setIsLoading] = useState(true);
 
 
-    const handleInscripcion=()=>{
-      
-        inscripcionCurso(user.nombre_usuario, nombreCurso)
-    }
+    
    
     useEffect(() => {
       verificarInscripcion(user.nombre_usuario, nombreCurso);
@@ -63,22 +61,7 @@ const DetalleCourse=({nombreCurso})=>{
     return (
         <SingleCourseWrapper>
             <Container className="">
-              <Row className="pt-5 ">
-                <Col>
-                <div className="mb-5">
-                  <h2 className="fs-40">Curso {nombre}</h2>
-                </div>
-                <div>
-                  <p className="fs-21 fw-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis placeat dignissimos aspernatur, impedit aperiam corrupti, molestias odit numquam sed necessitatibus, veniam odio maiores quidem saepe dolores? Beatae laudantium nostrum consequatur!</p>
-                </div>
-                  
-                </Col>
-                <Col className="secondColumn" >
-                  <div className="imagen mr-5">
-                    <img src={portada} alt="" />
-                  </div>
-                </Col>
-              </Row>
+              <InfoCourse nombreCourse={nombre} portadaCourse={portada} comentarios={comentarios}/>
               <Row className="details">
                 <Col>
                   <div>
@@ -90,7 +73,7 @@ const DetalleCourse=({nombreCurso})=>{
                             return (
                               <div key = {idx} className="card d-flex">
                                
-                                <span className='fs-20 fw-4 opacity-09'> <span><BiCheck /></span >    {learnItem}</span>
+                                <span className='fs-20 fw-4 opacity-09'> <CheckCircleOutlineIcon/> {learnItem}</span>
                               </div>
                             )
                           })
@@ -116,21 +99,7 @@ const DetalleCourse=({nombreCurso})=>{
                 
               </Row>
             </Container>
-             <Container className="opiniones">
-                    <div>
-                      <h2 className="fs-40 mb-5">Opiniones sobre este curso</h2>
-                    </div>
-                    <div className="comments d-flex  flex-wrap">
-                    {comentarios && comentarios.map((comentario, index) => {
-                        
-                        return(
-                            <div key={index} className='comment d-flex flex-column'>
-                                <span className='fs-18 fw-7'>{comentario.nombre_usuario}:</span><span className='fs-16 fw-5 opacity-09 textoo'>{comentario.texto}</span>
-                            </div>
-                        )
-                    })}
-                  </div>
-            </Container> 
+            
           
         </SingleCourseWrapper>
       )
@@ -138,7 +107,48 @@ const DetalleCourse=({nombreCurso})=>{
     
     const SingleCourseWrapper = styled.div`
       background-color: #EDEDED;
-      height:200vh;
+      height:100vh;
+
+      .custom-rating {
+        font-size: 26px; 
+        color:#481593;
+      }
+      
+      .custom-button {
+        background-color:tranparent;
+        text-decoration:none;
+        color:#481593;
+        font-size: 22px; 
+        font-weight:400px;
+      }
+
+      .custom-button:hover {
+        text-decoration: underline;
+      }
+
+
+      .buttons{
+
+        .btnInscribirse{
+          font-size: 24px;
+          padding: 12px 24px;
+          background-color:#481593;
+          color:yellow;
+          border: none;
+          
+        }
+
+        .btnVolver{
+          font-size: 24px;
+          padding: 12px 24px;
+          background-color:#481593;
+          color:yellow;
+          border: none;
+        }
+
+        
+      }
+      
 
       h2{
        
