@@ -34,7 +34,7 @@ const Navbar=()=>{
 
 const NavbarWrapper=styled.nav`
 height: 80px; 
-box-shadow: rgba(50, 50, 93, 0.15) 0px 16px 12px -2px, rgba(0, 0, 0, 0.2) 0px 3px 7px -3px; //sombra
+
 
 .navbar-brand{
   font-size: 23px;

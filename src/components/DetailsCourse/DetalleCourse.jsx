@@ -1,15 +1,15 @@
 import styled from "styled-components"
-import {MdInfo} from "react-icons/md";
-import {TbWorld} from "react-icons/tb";
-import {BiCheck} from "react-icons/bi";
-import {RiClosedCaptioningFill} from "react-icons/ri";
+
 import { useEffect, useState } from "react";
-import {Comments} from './Comments'
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import {BiCheck} from "react-icons/bi";
+
 import { useAuth } from '../../context/authContext';
 import { useInscripcion } from "../../context/inscripcionContext";
-import { Link } from "react-router-dom";
+import {Comments} from './Comments'
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 
@@ -62,253 +62,138 @@ const DetalleCourse=({nombreCurso})=>{
     
     return (
         <SingleCourseWrapper>
-          <div className='course-intro mx-auto grid'>
-            <div className='course-img'>
-            <Card style={{ width: '30rem' }}>
-              <Card.Img variant="top" src={portada} />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up the
-                  bulk of the cards content.
-                </Card.Text>
-                {isEnrolled ? (
-                  <Link to={`/course/${nombreCurso}`}><Button variant="primary">Ir al curso</Button></Link>
-                 
-                ) : (
-                  <>
-                    <Button variant="primary" onClick={handleInscripcion}>
-                      Obtener el curso
-                    </Button>
-                    {message && <p>{message}</p>}
-                  </>
-                )}
-                {(message) &&<p>{message}</p>}
-              </Card.Body>
-            </Card>
-            </div>
-            <div className='course-details'>
-              <div className='course-category bg-white text-dark text-capitalize fw-6 fs-12 d-inline-block'>programmming</div>
-              <div className='course-head'>
-                <h5>{titulo}</h5>
-              </div>
-              <div className='course-body'>
-                <p className='course-para fs-18'>{nombre}</p>
-                <div className='course-rating flex'>
-                  <span className='students-count fs-14'>100542</span>
+            <Container className="">
+              <Row className="pt-5 ">
+                <Col>
+                <div className="mb-5">
+                  <h2 className="fs-40">Curso {nombre}</h2>
                 </div>
-    
-                <ul className='course-info'>
-                  <li>
-                    <span className='fs-14'>Created by <span className='fw-6 opacity-08'></span>{autor}</span>
-                  </li>
-                  <li className='flex'>
-                    <span><MdInfo /></span>
-                    <span className='fs-14 course-info-txt fw-5'>Last updated </span>
-                  </li>
-                  <li className='flex'>
-                    <span><TbWorld /></span>
-                    <span className='fs-14 course-info-txt fw-5'>ES</span>
-                  </li>
-                  <li className='flex'>
-                    <span><RiClosedCaptioningFill /></span>
-                    <span className='fs-14 course-info-txt fw-5'>Español [automático] </span>
-                  </li>
-                </ul>
-              </div>
-    
-              <div className='course-foot'>
-                <div className='course-price'>
-                  <span className='new-price fs-26 fw-8'></span>
-                  <span className='old-price fs-26 fw-6'></span>
+                <div>
+                  <p className="fs-21 fw-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis placeat dignissimos aspernatur, impedit aperiam corrupti, molestias odit numquam sed necessitatibus, veniam odio maiores quidem saepe dolores? Beatae laudantium nostrum consequatur!</p>
                 </div>
-              </div>
-    
-             
-            </div>
-          </div>
-    
-          <div className='course-full bg-white text-dark'>
-            <div className='course-learn mx-auto'>
-              <div className='course-sc-title'>Que aprenderas</div>
-              <ul className='course-learn-list grid'>
-            {
-              objetivos && objetivos.map((learnItem, idx) => {
-                return (
-                  <li key = {idx}>
-                    <span><BiCheck /></span>
-                    <span className='fs-14 fw-5 opacity-09'>{learnItem}</span>
-                  </li>
-                )
-              })
-            }
-          </ul>
-            </div>
-    
-            <div className='course-content mx-auto'>
-              <div className='course-sc-title'>Contenido del Curso</div>
-              <ul className='course-content-list'>
-            {
-              temas && temas.map((contentItem, idx) => {
-                return (
-                  <li key = {idx}>
-                    <span>{contentItem}</span>
-                  </li>
-                )
-              })
-            }
-          </ul>
-            </div>
-
-            <div className="comentarios mx-auto">
-                {isLoading? <div>Cargando...</div>:<Comments nombreCurso={nombre} listComments={comentarios}/>}
-            </div>
-          </div>
+                  
+                </Col>
+                <Col className="secondColumn" >
+                  <div className="imagen mr-5">
+                    <img src={portada} alt="" />
+                  </div>
+                </Col>
+              </Row>
+              <Row className="details">
+                <Col>
+                  <div>
+                    <h2 className="fs-35 mb-5">Con este curso aprenderas</h2>
+                  </div>
+                  <div className="cards d-flex flex-column">
+                      {
+                          objetivos && objetivos.map((learnItem, idx) => {
+                            return (
+                              <div key = {idx} className="card d-flex">
+                               
+                                <span className='fs-20 fw-4 opacity-09'> <span><BiCheck /></span >    {learnItem}</span>
+                              </div>
+                            )
+                          })
+                        }
+                  </div>
+                </Col>
+                <Col className="secondColumn" >
+                <div>
+                    <h2 className="fs-35 mb-5">Temas</h2>
+                  </div>
+                  <div className="lists">
+                    {
+                      temas && temas.map((contentItem, idx) => {
+                        return (
+                          <div key = {idx} className="list">
+                            <span className="fs-20 fw-4">{contentItem}</span>
+                          </div>
+                        )
+                      })
+                    }
+                  </div>
+                </Col>
+                
+              </Row>
+            </Container>
+             <Container className="opiniones">
+                    <div>
+                      <h2 className="fs-40 mb-5">Opiniones sobre este curso</h2>
+                    </div>
+                    <div className="comments d-flex  flex-wrap">
+                    {comentarios && comentarios.map((comentario, index) => {
+                        
+                        return(
+                            <div key={index} className='comment d-flex flex-column'>
+                                <span className='fs-18 fw-7'>{comentario.nombre_usuario}:</span><span className='fs-16 fw-5 opacity-09 textoo'>{comentario.texto}</span>
+                            </div>
+                        )
+                    })}
+                  </div>
+            </Container> 
+          
         </SingleCourseWrapper>
       )
     }
     
     const SingleCourseWrapper = styled.div`
-      background: var(--clr-dark);
-      color: var(--clr-white);
-    
-      .course-intro{
-        padding: 40px 16px;
-        max-width: 992px;
+      background-color: #EDEDED;
+      height:200vh;
 
+      h2{
+       
+        font-weight: 700;
+        color: #212121;
+        
+    }
+
+    .secondColumn{
+      margin-left:10rem;
+    }
+    .details, .opiniones{
+      margin-top:20rem;
+    }
+
+     .temario{
+      margin-top:10rem;
+    }
+      
+    .cards{
+    gap:3rem;
+
+    .card{
+      box-shadow:rgba(50, 50, 93, 0.15) 0px 16px 12px -2px, rgba(0, 0, 0, 0.2) 0px 3px 7px -3px;
+      border:none;
+      border-radius: 7px;
+      padding:20px 20px;
+      background-color:#FFFFFF;
+      margin-button:10px;
+      color:#212121;
+  }
+    }
+    
+    .lists{
+      line-height: 2;
+    }
+
+
+    .comments{
+
+      gap:3rem;
+
+      .comment{
+        padding:30px 30px;
+        width:400px;
+        background-color:#FFFFFF;
+        border:none;
+      border-radius: 7px;
+      box-shadow:rgba(50, 50, 93, 0.15) 0px 16px 12px -2px, rgba(0, 0, 0, 0.2) 0px 3px 7px -3px;
+
+      }
+    }
         
     
-        .course-details{
-          padding-top: 20px;
-        }
-    
-        .course-category{
-          padding: 0px 8px;
-          border-radius: 6px;
-        }
-    
-        .course-head{
-          font-size: 38px;
-          line-height: 1.2;
-          padding: 12px 0 0 0;
-        }
-        .course-para{
-          padding: 12px 0;
-        }
-        .rating-star-val{
-          margin-right: 7px;
-          padding-bottom: 5px;
-          color: var(--clr-orange);
-        }
-        .students-count{
-          margin-left: 8px;
-        }
-        .rating-count{
-          margin-left: 6px;
-          color: #d097f6;
-        }
-        .course-info{
-          li{
-            margin-bottom: 2px;
-            &:nth-child(2){
-              margin-top: 10px;
-            }
-          }
-          .course-info-txt{
-            text-transform: capitalize;
-            margin-left: 8px;
-            margin-bottom: 4px;
-          }
-        }
-        .course-price{
-          margin-top: 12px;
-          .old-price{
-            color: #eceb98;
-            text-decoration: line-through;
-            margin-left: 10px;
-          }
-        }
-        .course-btn{
-          margin-top: 16px;
-          .add-to-cart-btn{
-            padding: 12px 28px;
-            span{
-              margin-left: 12px;
-            }
-          }
-        }
-    
-        @media screen and (min-width: 880px){
-          grid-template-columns: repeat(2, 1fr);
-          column-gap: 40px;
-          .course-details{
-            padding-top: 0;
-          }
-          .course-img{
-            order: 2;
-          }
-        }
-    
-        @media screen and (min-width: 1400px){
-          grid-template-columns: 60% 40%;
-        }
-      }
-    
-      .course-full{
-        padding: 40px 16px;
-        .course-sc-title{
-          font-size: 22px;
-          font-weight: 700;
-          margin: 12px 0;
-        }
-        .course-learn{
-          max-width: 992px;
-          border: 1px solid rgba(0, 0, 0, 0.2);
-          padding: 12px 28px 22px 28px;
-    
-          .course-learn-list{
-            li{
-              margin: 5px 0;
-              display: flex;
-              span{
-                &:nth-child(1){
-                  opacity: 0.95;
-                  margin-right: 12px;
-                }
-              }
-            }
-    
-            @media screen and (min-width: 992px){
-              grid-template-columns: repeat(2, 1fr);
-            }
-          }
-        }
-    
-        .course-content{
-          max-width: 992px;
-          margin-top: 30px;
-          border: 1px solid rgba(0, 0, 0, 0.2);
-          padding: 12px 28px 22px 28px;
-    
-          .course-content-list{
-            li{
-              background-color: #f7f9fa;
-              padding: 12px 18px;
-              border: 1px solid rgba(0, 0, 0, 0.2);
-              margin-bottom: 10px;
-              font-weight: 800;
-              font-size: 15px;
-            }
-          }
-        }
-
-        .comentarios{
-            max-width: 992px;
-            margin-top: 30px;
-            border: 1px solid rgba(0, 0, 0, 0.2);
-            padding: 12px 28px 22px 28px;
-        }
-      }
+     
     
     `;
 

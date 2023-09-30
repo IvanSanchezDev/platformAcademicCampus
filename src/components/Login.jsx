@@ -38,7 +38,10 @@ const Login=()=>{
         <Container className="loginContainer">
             <h2>Inicia con Discord</h2>
             <BsDiscord className="fs-50"/>
-            <Button onClick={logearse}>Inicia Sesion</Button>        
+            <div className="d-grid">
+                <Button size="lg" onClick={logearse}>Inicia Sesion</Button>        
+
+            </div>
        </Container>
         </LoginWrapper>
       
@@ -49,16 +52,27 @@ const Login=()=>{
 
 const LoginWrapper=styled.div`
 
+background-color:#481593;
+height: 100vh;
+
 .loginContainer{
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    width: 500px;
+    width: 450px;
     border: 1px solid;
     margin-top: 20rem;
     padding:10px;
-    box-shadow:rgba(50, 50, 93, 0.15) 0px 16px 12px -2px, rgba(0, 0, 0, 0.2) 0px 3px 7px -3px;
+    background:#FFFFFF;
+    height:40vh;
+    border-radius: 7px;
+    
+
+    button{
+        background-color:#481593;
+        border:none;
+    }
 }
     
     

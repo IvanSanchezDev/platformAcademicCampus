@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&display=swap');
 
 :root{
-    --base-font: 'Raleway', sans-serif;
+    --base-font: 'Open-Sans', sans-serif;
     --clr-white: #fff;
     --clr-black: #000;
     --clr-orange: #fd9644;
@@ -40,10 +41,7 @@ a{
 a:hover{
     color: unset;
 }
-h1{
-    letter-spacing: var(--spacing);
-    text-transform: capitalize;
-}
+
 img{
     width: 100%;
     display: block;
@@ -188,11 +186,11 @@ input, textarea, select{
 .fs-24{font-size: 24px;}
 .fs-25{font-size: 25px;}
 .fs-26{font-size: 26px;}
+.fs-35{font-size: 35px;}
+.fs-40{font-size: 40px;}
 .fs-50{font-size: 50px;}
 
-.cardd{
-    gap: 6rem;
-}
+
 /* letter spacing */
 .ls-1{letter-spacing: 1px;}
 .ls-2{letter-spacing: 2px;}
