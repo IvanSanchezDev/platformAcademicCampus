@@ -9,13 +9,8 @@ export default defineConfig({
   server: {
     port: env.VITE_PORT_FRONTEND,
     host:"localhost",
-    open: '/home',
-    proxy:{
-      '/socket.io':{
-        target:'http://localhost:5124',
-        ws: true
-      }
-    }
+    open: '/home'
+    
   }
   
 })

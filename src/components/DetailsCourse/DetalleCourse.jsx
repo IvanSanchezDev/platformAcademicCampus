@@ -5,7 +5,7 @@ import {BiCheck} from "react-icons/bi";
 
 import { useAuth } from '../../context/authContext';
 import { useInscripcion } from "../../context/inscripcionContext";
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -73,7 +73,7 @@ const DetalleCourse=({nombreCurso})=>{
                             return (
                               <div key = {idx} className="card d-flex">
                                
-                                <span className='fs-20 fw-4 opacity-09'> <CheckCircleOutlineIcon/> {learnItem}</span>
+                                <span className='fs-20 fw-4 opacity-09'> <BiCheck/> {learnItem}</span>
                               </div>
                             )
                           })

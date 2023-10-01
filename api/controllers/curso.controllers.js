@@ -12,8 +12,6 @@ export class cursoController{
         } catch (error) {
             console.log(error);
             res.status(500).json({"status":500, "error":'No se pudo traer los cursos'})
-        }finally{
-            await closeConnection()
         }
     }
 
@@ -27,8 +25,6 @@ export class cursoController{
         } catch (error) {
             console.log(error);
             res.status(500).json({"status":500, "error":'No se pudo traer el curso especifico'})
-        }finally{
-            await closeConnection()
         }
     }
 
