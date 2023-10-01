@@ -46,6 +46,8 @@ export class cursoController{
             
         } catch (error) {
             res.status(500).json({"status":500, "error":'No se pudo realizar la inscripcion al curso'})
+        }finally{
+            await closeConnection()
         }
     }
 
@@ -61,6 +63,8 @@ export class cursoController{
             res.status(200).json({"status":200, "message":'esta inscrito al curso', estado:true})
         } catch (error) {
             res.status(500).json({"status":500, "message":'No se pudo realizar la inscripcion al curso'})
+        }finally{
+            await closeConnection()
         }
     }
     

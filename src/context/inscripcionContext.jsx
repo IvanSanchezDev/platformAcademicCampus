@@ -1,6 +1,7 @@
 import { useContext, createContext, useState} from "react";
 
 
+
 const InscripcionContext=createContext()
 
 
@@ -10,72 +11,58 @@ export function useInscripcion() {
 
 
 export const InscripcionProvider=({children})=>{
-    const [isEnrolled, setIsEnrolled] = useState(false);
-    const [message, setMessage] = useState('');
+ 
 
-    async function verificarInscripcion(username, nameCourse) {
-     
-      try {
-        const data={
-          nombreUsuario:username,
-          nombreCurso:nameCourse
-        }
-        
-        const response = await fetch("http://localhost:5124/api/curso/verificarInscripcion", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          credentials: 'include',
-          body: JSON.stringify(data),
-        });
-       
-          const result = await response.json();
-          
-          setIsEnrolled(result.estado)
-         
-          
-        
-      } catch (error) {
-        console.log(error);
+
+    const fetchVerificarInscripcion = async ( username, nameCourse ) => {
+      const data = {
+        nombreUsuario: username,
+        nombreCurso: nameCourse
+      };
+    
+      console.log(data);
+      const response = await fetch('http://localhost:5124/api/curso/verificarInscripcion', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify(data),
+      });
+    
+      const result = await response.json();
+      console.log(result);
+      return result;
+    };
+    
+    // Función para inscribirse en un curso
+    const fetchInscripcionCurso = async (username, nameCourse) => {
+      const data = {
+        nombreUsuario: username,
+        nombreCurso: nameCourse
+      };
+    
+      const response = await fetch('http://localhost:5124/api/curso/inscripcionCursos', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify(data),
+      });
+    
+      if (response.ok) {
+        const result = await response.json();
+        return result.message;
       }
-    }
-
-
-    const inscripcionCurso=async (username, nameCourse)=>{
-      
-      try {
-        const data={
-          nombreUsuario:username,
-          nombreCurso:nameCourse
-        }
-        const response=await fetch('http://localhost:5124/api/curso/inscripcionCursos', {
-          method:'POST',
-          headers:{
-            "Content-Type": "application/json"
-          },
-          credentials: 'include',
-          body:JSON.stringify(data)
-        })
-        
-        if (response.ok) {
-          const result=await response.json();
-          console.log(result);
-          setMessage(result.message)
-          setIsEnrolled(true);
-        }
-
-      } catch (error) {
-        
-        console.log(error);
-      }
-    }
+      return 'Error en la inscripción';
+    };
 
 
     return(
       
       
-      <InscripcionContext.Provider value={{verificarInscripcion, inscripcionCurso, isEnrolled, message}}>
+      <InscripcionContext.Provider value={{ fetchVerificarInscripcion, fetchInscripcionCurso }}>
         {children}
       </InscripcionContext.Provider>
       

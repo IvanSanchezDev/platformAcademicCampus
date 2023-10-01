@@ -4,25 +4,37 @@ import Rating from '@mui/material/Rating';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import { useInscripcion } from '../../context/inscripcionContext';
-import { useEffect } from 'react';
 import { useAuth } from '../../context/authContext';
+import { useQuery } from "react-query";
+
+
+
+
 
 const InfoCourse=({nombreCourse, portadaCourse, comentarios})=>{
+
   const {user}=useAuth()
-  const {inscripcionCurso, verificarInscripcion, message, isEnrolled}=useInscripcion()
+  const {fetchVerificarInscripcion, fetchInscripcionCurso}=useInscripcion()
   const location = useLocation();
 
-  const handleInscripcion=()=>{    
-    inscripcionCurso(user.nombre_usuario, nombreCourse)
+  const username=user.nombre_usuario
+
+  
+    const { isLoading, error, data } = useQuery(
+      'verification', ()=>fetchVerificarInscripcion(username, nombreCourse)
+    );
+
+   if (isLoading) {
+    return 'Cargandooo'
+   }
+
+
+   const handleInscripcion=()=>{    
+    fetchInscripcionCurso(user.nombre_usuario, nombreCourse)
 }
 
-useEffect(() => {
-  verificarInscripcion(user.nombre_usuario, nombreCourse);
-}, []);
-
-
-
-
+  
+    
     return(
         <Row className="pt-5 ">
                 <Col>
@@ -40,7 +52,7 @@ useEffect(() => {
                 </div>
                 <div className='buttons mt-5'>
                 {!location.state ? (
-                    !isEnrolled ? (<Button className="btnInscribirse fs-35" onClick={handleInscripcion}>Inscribirse</Button>) : <Link to={`/course/${nombreCourse}`}><Button className="btnInscribirse fs-35">Ir al curso</Button></Link>
+                    !data.estado ? (<Button className="btnInscribirse fs-35" onClick={handleInscripcion} >Inscribirse</Button>) : <Link to={`/course/${nombreCourse}`}><Button className="btnInscribirse fs-35">Ir al curso</Button></Link>
                   
                 ) : (
                   <Link to={`/detailsCourse/${nombreCourse}`}><button className="btnVolver fs-35">Volver</button></Link>

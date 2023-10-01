@@ -1,67 +1,52 @@
 import styled from "styled-components"
-
-import { useEffect, useState } from "react";
-import {BiCheck} from "react-icons/bi";
-
-import { useAuth } from '../../context/authContext';
-import { useInscripcion } from "../../context/inscripcionContext";
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import InfoCourse from "./InfoCourse";
+import { useQuery } from "react-query";
+import axios from "axios";
+
+const fetchTraerCursoByName=async(nombreCurso)=>{
+  
+  const response = await axios.get(
+    `http://${import.meta.env.VITE_HOSTNAME}:${import.meta.env.VITE_PORT_BACKEND}/api/curso/traerCursoByName?nombre=${nombreCurso}`,
+    {
+     withCredentials:true
+    }
+  );
+  
+
+  
+  return response.data
+}
 
 
 
 
 const DetalleCourse=({nombreCurso})=>{
-  const {user}=useAuth()
-  const {inscripcionCurso, verificarInscripcion, message, isEnrolled}=useInscripcion()
-    const [info, setInfo]=useState({})
-    const [isLoading, setIsLoading] = useState(true);
+
+  const {isLoading, error, data}=useQuery(
+    'infoCourse', ()=>fetchTraerCursoByName(nombreCurso)
+  )
+
+  if(isLoading) return 'Cargandoo...'
 
 
+  if (error) {
     
-   
-    useEffect(() => {
-      verificarInscripcion(user.nombre_usuario, nombreCurso);
-    }, []);
-
-    useEffect(() => {
-        (async () => {
-          try {
-            const response = await fetch(
-              `http://${import.meta.env.VITE_HOSTNAME}:${import.meta.env.VITE_PORT_BACKEND}/api/curso/traerCursoByName?nombre=${nombreCurso}`,
-              {
-                method: "GET",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                credentials: 'include',
-              }
-            );
-            
-            const result = await response.json();
-           setInfo(result.data)
-           setIsLoading(false)
-          } catch (error) {
-            console.log(error);
-            
-          }
-        })();
-      }, []);
-
-      
+    return 'Ha ocurrido un error' + error;
+  }
      
 
-      
-      const {nombre, titulo, autor, portada, objetivos, temas, comentarios}=info
+  
+  
+    
       
     
     return (
         <SingleCourseWrapper>
             <Container className="">
-              <InfoCourse nombreCourse={nombre} portadaCourse={portada} comentarios={comentarios}/>
+              <InfoCourse nombreCourse={data.data.nombre} portadaCourse={data.data.portada} comentarios={data.data.comentarios}/>
               <Row className="details">
                 <Col>
                   <div>
@@ -69,11 +54,11 @@ const DetalleCourse=({nombreCurso})=>{
                   </div>
                   <div className="cards d-flex flex-column">
                       {
-                          objetivos && objetivos.map((learnItem, idx) => {
+                          data.data.objetivos && data.data.objetivos.map((learnItem, idx) => {
                             return (
                               <div key = {idx} className="card d-flex">
                                
-                                <span className='fs-20 fw-4 opacity-09'> <CheckCircleOutlineIcon/> {learnItem}</span>
+                                <span className='fs-20 fw-4 opacity-09'>  {learnItem}</span>
                               </div>
                             )
                           })
@@ -86,7 +71,7 @@ const DetalleCourse=({nombreCurso})=>{
                   </div>
                   <div className="lists">
                     {
-                      temas && temas.map((contentItem, idx) => {
+                      data.data.temas && data.data.temas.map((contentItem, idx) => {
                         return (
                           <div key = {idx} className="list">
                             <span className="fs-20 fw-4">{contentItem}</span>

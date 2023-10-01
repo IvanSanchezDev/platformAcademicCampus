@@ -5,14 +5,38 @@ import Container from 'react-bootstrap/Container';
 import { useAuth } from "../context/authContext"
 import { Layout } from "./Layout";
 import { useEffect, useState } from "react";
-import { RiDivideFill } from "react-icons/ri";
+import { useQuery } from "react-query";
 
 
+
+
+const fetchCursos=async()=>{
+    const response = await fetch(`http://${import.meta.env.VITE_HOSTNAME}:${import.meta.env.VITE_PORT_BACKEND}/api/curso/traerCursos`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: 'include',
+      }
+    );
+    const result = await response.json();
+    return result
+}
 
 
 const Home = () => {
+
+  const {isLoading, error, data}=useQuery(
+    'courses', ()=> fetchCursos()
+  )
+
+  if(isLoading) return 'Cargandoo...'
+
+
+  if(error) return 'Ha ocurrido un error'
    
-    const [listCourses, setCourses] = useState([]);
+   /* const [listCourses, setCourses] = useState([]);
     const [isLoading, setIsLoading] = useState(true); // Agregar un estado para el indicador de carga
   
     useEffect(() => {
@@ -37,7 +61,7 @@ const Home = () => {
           setIsLoading(false); // Marcar la carga como completa en caso de error
         }
       })();
-    }, []);
+    }, []);*/
   
     return (
       <HomeWrapper>
@@ -51,11 +75,9 @@ const Home = () => {
           </div>
              
           <div className="d-flex flex-wrap cardd mt-5">
-            {isLoading ? (
-              <div>Cargando...</div> // Mostrar un indicador de carga
-            ) : (
-              <CardCourse listCourse={listCourses} />
-            )}
+           
+              <CardCourse listCourse={data.data} />
+          
           </div>
         </Container>
       </HomeWrapper>

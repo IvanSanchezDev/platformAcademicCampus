@@ -6,9 +6,7 @@ import { router as routerUser } from './routes/user.routes.js';
 import { router as routerCourse } from './routes/curso.routes.js';
 import session from "express-session";
 import { loadEnv } from 'vite'
-import { Server as SocketServer } from 'socket.io';
-import http from 'node:http'
-import {connect, closeConnection } from './database/connection.js'
+
 
 
 const env=loadEnv("development", process.cwd(), 'VITE')
@@ -17,43 +15,6 @@ const env=loadEnv("development", process.cwd(), 'VITE')
 
 export const app = express()
 
-export const server=http.createServer(app)//server http
-const io=new SocketServer(server) //server websocket
-
-io.on('connection', socket=>{
-  console.log('client connection');
-  socket.on('nuevo-comentario', async(data)=>{
-    try {
-      const {nombre, texto, curso}=data
-      const db=await connect()
-      const cursos=db.collection("cursos")
-      const result=await cursos.updateOne(
-        {nombre: curso}, 
-        {
-          $push: {
-            comentarios: {
-              nombre_usuario: nombre,
-              texto: texto
-            }
-          }
-        }
-        
-      )
-      const nuevoComentario={
-        nombre_usuario: nombre,
-        texto: texto
-      }
-      io.emit('nuevo-comentario', nuevoComentario);
-      
-    } catch (error) {
-      console.log(error);
-      
-    }finally{
-      await closeConnection()
-    }
-    
-  })
-})
 
 app.use(cors({origin:true, methods:"GET,POST",credentials:true}))
 
