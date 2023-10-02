@@ -14,14 +14,14 @@ function CardCourse( {listCourse }) {
         <Card style={{ width: '40rem', background: 'transparent', border:'none' }} key={index}>
           <Card.Img
             variant="top"
-            src={curso.portada}          
+            src={curso.imagenCourse}          
           />
           <Card.Body>
             <Card.Text className='fw-7 fs-20 titulo'>
-              {curso.titulo}
+              {curso.nameCourse}
             </Card.Text>
             <Card.Subtitle className="mb-2 text-muted fs-15">{curso.autor}</Card.Subtitle>
-            <Link to={`/detailsCourse/${curso.nombre}`}>Ver Curso</Link>
+            <Link to={`/detailsCourse/${curso.folder}`}>Ver Curso</Link>
           </Card.Body>
           
         </Card>

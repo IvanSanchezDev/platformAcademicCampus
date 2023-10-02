@@ -20,7 +20,7 @@ export class cursoController{
             const{nombre}=req.query
             const db=await connect()
             const cursos=db.collection("cursos")
-            const result=await cursos.findOne({nombre:nombre})
+            const result=await cursos.findOne({folder:nombre})
             res.status(200).json({"status":200, "data":result})
         } catch (error) {
             console.log(error);

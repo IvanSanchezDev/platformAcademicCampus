@@ -42,6 +42,7 @@ const DetalleCourse=({nombreCurso})=>{
             );
             
             const result = await response.json();
+            
            setInfo(result.data)
            setIsLoading(false)
           } catch (error) {
@@ -55,13 +56,14 @@ const DetalleCourse=({nombreCurso})=>{
      
 
       
-      const {nombre, titulo, autor, portada, objetivos, temas, comentarios}=info
+      const {folder, nameCourse, duracion, imagenCourse, objetivos, temas, comentarios}=info
+
       
     
     return (
         <SingleCourseWrapper>
             <Container className="">
-              <InfoCourse nombreCourse={nombre} portadaCourse={portada} comentarios={comentarios}/>
+              <InfoCourse  titulo={nameCourse} nombreCourse={folder} portadaCourse={imagenCourse} comentarios={comentarios} duracion={duracion}/>
               <Row className="details">
                 <Col>
                   <div>

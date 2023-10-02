@@ -8,7 +8,7 @@ export const OpinionesCourse=()=>{
 
     const { state } = useLocation()
 
-    const {nombre, portada, comentarios}=state
+    const {titulo, nombre, duracion,  portada, comentarios}=state
     
     
 
@@ -16,7 +16,7 @@ export const OpinionesCourse=()=>{
         <SingleCourseWrapper>
              <Layout/>
             <Container className="">
-              <InfoCourse nombreCourse={nombre} portadaCourse={portada}/>          
+              <InfoCourse nombreCourse={nombre} portadaCourse={portada} titulo={titulo} duracion={duracion}/>          
             </Container>
              <Container className="opiniones">
                     <div>

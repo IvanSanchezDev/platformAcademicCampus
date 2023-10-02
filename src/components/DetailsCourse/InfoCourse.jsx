@@ -7,7 +7,7 @@ import { useInscripcion } from '../../context/inscripcionContext';
 import { useEffect } from 'react';
 import { useAuth } from '../../context/authContext';
 
-const InfoCourse=({nombreCourse, portadaCourse, comentarios})=>{
+const InfoCourse=({nombreCourse, portadaCourse, comentarios, titulo, duracion})=>{
   const {user}=useAuth()
   const {inscripcionCurso, verificarInscripcion, message, isEnrolled}=useInscripcion()
   const location = useLocation();
@@ -22,6 +22,20 @@ useEffect(() => {
 
 
 
+function segundosAHoras(segundos) {
+  // 1 minuto = 60 segundos
+  // 1 hora = 60 minutos
+
+  const minutos = segundos / 60;
+  const horas = minutos / 60;
+
+  // Redondear el resultado a la cantidad más cercana de horas
+  return Math.round(horas);
+}
+
+const cantidadComentarios = comentarios ? comentarios.length : 0;
+
+
 
     return(
         <Row className="pt-5 ">
@@ -30,12 +44,13 @@ useEffect(() => {
                   <h2 className="fs-40">Curso {nombreCourse}</h2>
                 </div>
                 <div>
-                  <p className="fs-21 fw-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis placeat dignissimos aspernatur, impedit aperiam corrupti, molestias odit numquam sed necessitatibus, veniam odio maiores quidem saepe dolores? Beatae laudantium nostrum consequatur!</p>
+                  <p className="fs-21 fw-4">{titulo}</p>
+                  <p className="fs-21 fw-4">{segundosAHoras(duracion)}</p>
                 </div>
                 <div className="d-flex rating mt-5">
                   <Rating name="half-rating-read" className="mt-2 custom-rating" defaultValue={3.5} precision={0.5} readOnly />
-                  <Link className="custom-button" to={`opiniones`} state={{ nombre:nombreCourse, portada:portadaCourse, comentarios }}>
-                    {!location.state && `Ver Opiniones (5)` }
+                  <Link className="custom-button" to={`opiniones`} state={{ titulo:titulo, duracion:duracion,  nombre:nombreCourse, portada:portadaCourse, comentarios:comentarios }}>
+                    {!location.state && `Ver Opiniones ${cantidadComentarios}` }
                     </Link>
                 </div>
                 <div className='buttons mt-5'>
