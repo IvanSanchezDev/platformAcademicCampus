@@ -1,6 +1,6 @@
 import Form from 'react-bootstrap/Form';
 import { useUrl } from '../../context/urlContext';
-
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 
 export const RenderTituloVideo = (videos, sectionName) => {
     const videoArray = Object.values(videos);
@@ -20,8 +20,8 @@ export const RenderTituloVideo = (videos, sectionName) => {
           return (
             <div className="videos" key={videoIndex} onClick={()=>handleVideo(video.video)}>
               <ul  className="d-flex flex-start items" >
-                <li className="mt-2">
-                  <Form.Check aria-label="option 1" />
+                <li className="mt-2 check">
+                 <CheckBoxOutlineBlankIcon/>
                 </li>
                 <li className="fs-15">{video.Titulo}</li>
                 

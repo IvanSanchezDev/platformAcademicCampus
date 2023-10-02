@@ -55,7 +55,7 @@ const cantidadComentarios = comentarios ? comentarios.length : 0;
                 </div>
                 <div className='buttons mt-5'>
                 {!location.state ? (
-                    !isEnrolled ? (<Button className="btnInscribirse fs-35" onClick={handleInscripcion}>Inscribirse</Button>) : <Link to={`/course/${nombreCourse}`}><Button className="btnInscribirse fs-35">Ir al curso</Button></Link>
+                    !isEnrolled ? (<Button className="btnInscribirse fs-35" onClick={handleInscripcion}>Inscribirse</Button>) : <Link to={`/course/${nombreCourse}`} state={{ titulo:titulo }}><Button className="btnInscribirse fs-35">Ir al curso</Button></Link>
                   
                 ) : (
                   <Link to={`/detailsCourse/${nombreCourse}`}><button className="btnVolver fs-35">Volver</button></Link>
