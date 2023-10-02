@@ -3,6 +3,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import {RenderTituloVideo} from './renderTituloVideo'
 
 export const renderTituloSection = (section, sectionIndex) => {
+
     return (
       <Accordion.Item key={sectionIndex} eventKey={sectionIndex.toString()}>
         <Accordion.Header>

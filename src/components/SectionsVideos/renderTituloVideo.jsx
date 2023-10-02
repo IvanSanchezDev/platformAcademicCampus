@@ -3,7 +3,8 @@ import { useUrl } from '../../context/urlContext';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 
 export const RenderTituloVideo = (videos, sectionName) => {
-    const videoArray = Object.values(videos);
+    
+  
 
     const{establecerNuevaUrl}=useUrl()
 
@@ -13,17 +14,15 @@ export const RenderTituloVideo = (videos, sectionName) => {
 
     return (
       <>
-        {videoArray.map((videoObj, videoIndex) => {
-          const videoKey = Object.keys(videoObj)[0]; 
-          const video = videoObj[videoKey]; 
-  
+        {videos.map((videoObj, videoIndex) => {
+         
           return (
-            <div className="videos" key={videoIndex} onClick={()=>handleVideo(video.video)}>
+            <div className="videos" key={videoIndex} onClick={()=>handleVideo(videoObj.video)}>
               <ul  className="d-flex flex-start items" >
                 <li className="mt-2 check">
                  <CheckBoxOutlineBlankIcon/>
                 </li>
-                <li className="fs-15">{video.Titulo}</li>
+                <li className="fs-15">{videoObj.Titulo}</li>
                 
               </ul>
             </div>

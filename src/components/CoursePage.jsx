@@ -23,6 +23,7 @@ const CoursePage=()=>{
     const [listSections, setSections]=useState([])
     const navigate = useNavigate();
     const videoKey = useMemo(() => Math.random(), [url]);
+    const [isLoading,setLoading]=useState(true)
 
     useEffect(() => {
         verificarInscripcion(user.nombre_usuario, nameCourse);
@@ -34,10 +35,11 @@ const CoursePage=()=>{
                 if (!isEnrolled) {
                         navigate(`/detailsCourse/${nameCourse}`); // Redirige a una página de error
                 } else {
-                    const response=await fetch(`http://192.168.128.23:5010/cursos?course=${nameCourse}`);
+                    const response=await fetch(`http://192.168.128.23:5010/cursos/v2?course=${nameCourse}`);
                     const result=await response.json();                
                     setSections(result)
                     establecerNombreCourse(nameCourse)
+                    setLoading(false)
                 }
             } catch (error) {
                 console.log(error);
@@ -45,7 +47,7 @@ const CoursePage=()=>{
         })();
     }, [nameCourse, url])
 
-    console.log(url);
+    
 
     return(
         <>
@@ -59,7 +61,10 @@ const CoursePage=()=>{
                 </video>
             </div>
         </Col>
-        <Col lg={3}><SectionsVideos listSection={listSections} /></Col>
+        <Col lg={3}>
+            {isLoading ? <div>Cargandooo...</div> : <SectionsVideos listSection={listSections} />}
+            
+        </Col>
       </Row>
                 
             
