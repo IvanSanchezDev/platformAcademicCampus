@@ -52,7 +52,7 @@ export class cursoController{
             const inscripcionCursos=db.collection("inscripcionesCursos")
             const result=await inscripcionCursos.findOne({nombre_usuario:nombreUsuario, nombre_curso:nombreCurso})
             if (!result) {               
-                return res.status(403).json({"status":403, "message":'No esta inscrito al curso ', estado:false})
+                return res.status(200).json({"status":403, "message":'No esta inscrito al curso ', estado:false})
             }
             res.status(200).json({"status":200, "message":'esta inscrito al curso', estado:true})
         } catch (error) {
