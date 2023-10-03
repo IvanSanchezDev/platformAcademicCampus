@@ -65,7 +65,7 @@ const Home = () => {
 
   export const HomeWrapper=styled.div`
   background-color:#EDEDED;
-  height:200vh;
+  height:150vh;
 
 
   .enunciado{

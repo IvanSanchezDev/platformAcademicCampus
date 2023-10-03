@@ -8,6 +8,7 @@ export const UrlProvider = ({ children }) => {
 const [url, setUrl]=useState('')
 const[nameCourse, setNameCourse ]=useState('')
 const[texto, nuevoTexto]=useState('')
+const[links, setLinks]=useState([])
 
   const establecerNuevaUrl = (numeroSection, nameVideo, texto) => {
     if(nameVideo){
@@ -26,7 +27,7 @@ const[texto, nuevoTexto]=useState('')
     setNameCourse(name)
 }
 
-  return <MyContext.Provider value={{ url, texto, establecerNuevaUrl, establecerNombreCourse }}>{children}</MyContext.Provider>;
+  return <MyContext.Provider value={{ url, texto, establecerNuevaUrl, establecerNombreCourse,links, setLinks }}>{children}</MyContext.Provider>;
 };
 
 export const useUrl = () => {

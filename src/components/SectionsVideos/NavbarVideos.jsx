@@ -86,18 +86,20 @@ const NavbarVideos=({tituloCourse, nameCourse})=>{
                     </Link>
                   </div>
                 </Col>
-                <Col xs={3}>
-                  <div className="fs-16 subtitulo" style={{marginLeft:'-60px', color:'white'}}>
+                <Col xs={3} className="d-none d-md-block">
+                  <div className="fs-16 subtitulo mt-1" style={{marginLeft:'-45px', color:'white'}}>
                     <div className="vr linea" style={{ color:'white'}}></div>
                     <Link style={{marginLeft:'20px',color: 'white', textDecoration:'none'}}  className='name' to={`/detailsCourse/${nameCourse}`}>{tituloCourse}</Link>
                   </div>
                 </Col>
 
-                <Col  className="d-flex justify-content-center">
-                  <div className="calificacion-container flex">
-                    <div className="calificacion-button" >
-                      <Button onClick={handleOpen} className='btnCalificacion'><span style={{color: 'white'}} ><AiOutlineStar style={{marginRight:'3px'}}/> Calificar este curso</span></Button>
-                    </div>
+                <Col className="d-flex justify-content-center calificacion">
+                  <div className="flex">
+                      <Button onClick={handleOpen} className='btnCalificacion'>
+                        <AiOutlineStar style={{marginRight:'3px', color: 'white', fontSize: '20px'}} className='icono ml-auto'/> 
+                        <span style={{color: 'white', fontSize: '14px'}} className='textoo'>Calificar este curso</span>
+                      </Button>
+                    
                   </div>
                 </Col>
 
@@ -108,57 +110,68 @@ const NavbarVideos=({tituloCourse, nameCourse})=>{
 
             <div>
            
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-      
-        <Box sx={style}>
-          <Typography className="modal-modal-title fs-20 fw-7" variant="h6" component="h2"  sx={{ fontSize: '22px', fontWeight: 'bold' }}>
-            ¿Como calificarias este curso?
-          </Typography>
-          <Typography className="modal-modal-description" >
-          <Rating
-        name="simple-controlled"
-        value={rating}
-        onChange={(event, newValue) => {
-          setRating(newValue);
-          setShowTextField(true);
+            <Modal
+  open={open}
+  onClose={handleClose}
+  aria-labelledby="modal-modal-title"
+  aria-describedby="modal-modal-description"
+>
+  <Box sx={style} className="responsive-modal">
+    <Typography variant="h6" component="h2" sx={{ fontSize: '22px', fontWeight: 'bold' }}>
+      ¿Cómo calificarías este curso?
+    </Typography>
+    <Rating
+      name="simple-controlled"
+      value={rating}
+      onChange={(event, newValue) => {
+        setRating(newValue);
+        setShowTextField(true);
+      }}
+      sx={{ mt: 3, fontSize: '50px' }}
+    />
+
+    <Typography sx={{ mt: 5 }}>
+      <TextField
+        sx={{
+          width: '100%', // Usa el 100% del ancho disponible
+          '& .MuiInputBase-input': {
+            fontSize: '18px', // Tamaño de fuente deseado para el input
+          },
         }}
-        sx={{ mt:3,
-          fontSize: '50px', 
-        }}/>
-       
-          </Typography>
-          
+        id="outlined-textarea"
+        placeholder="Deja tu Comentario"
+        multiline
+        value={comentario}
+        onChange={(e) => setNuevoComentario(e.target.value)}
+      />
+    </Typography>
 
-          <Typography className="modal-modal-title fs-20 fw-7" variant="h6" component="h2"  sx={{ mt:5}}>
-          <TextField sx={{  width: 500,'& .MuiInputBase-input': {
-        fontSize: '18px', // Tamaño de fuente deseado para el input
-      },   }}
-          id="outlined-textarea"
-          placeholder="Deja tu Comentario"
-          multiline
-          value={comentario}
-          onChange={(e)=> setNuevoComentario(e.target.value)}
-        />
-          </Typography >
+    {!message ? (
+      <Button
+        onClick={() => {
+          enviarComentario();
+        }}
+        sx={{
+          mt: 3,
+          fontSize: '15px',
+          padding: '10px 20px',
+          backgroundColor: '#2D2F31',
+          color: 'white',
+          border: 'none',
+        }}
+      >
+        Enviar
+      </Button>
+    ) : (
+      <Typography>
+        <Alert severity="success" className="mt-5">
+          {message}
+        </Alert>
+      </Typography>
+    )}
+  </Box>
+</Modal>
 
-          {!message ?(<Button onClick={()=>{enviarComentario(); } }  sx={{ mt:3, fontSize: '15px',
-  padding: '10px 20px',
-  backgroundColor:'#2D2F31',
-  color:'white',
-  border:' none'}}>Enviar</Button>) :(
-    <Typography> 
-    <Alert severity="success" className="mt-5">{message}</Alert></Typography>
-   
-  ) }
-
-        </Box>
-        
-      </Modal>
     </div>        
         </NavbarWrapper>
     )
@@ -169,17 +182,6 @@ height: 80px;
 background-color:#2D2F31;
 
 
-.calificacion-container{
-  span{
-    font-size:15px;
-  }
-
- 
-}
-
-
-
-
 .navbar-brand{
   font-size: 20px;
   color:white;
@@ -188,6 +190,20 @@ background-color:#2D2F31;
   }
 }
 
+
+@media (max-width: 767px) { 
+.navbar-brand{
+  font-size: 10px;
+
+}
+
+
+
+.textoo{
+  display:none;
+}
+
+  }
 
 
 `;

@@ -51,8 +51,8 @@ function segundosAHoras(segundos) {
 
 
     return(
-        <Row className="pt-5 ">
-                <Col>
+        <Row className="pt-5">
+                <Col xs={12} md={6} className='mb-5'>
                 <div className="mb-5">
                   <h2 className="fs-40">Curso {nombreCourse}</h2>
                 </div>
@@ -85,9 +85,9 @@ function segundosAHoras(segundos) {
     ) 
   )}
 </div>
-                </Col>
-                <Col className="secondColumn" >
-                  <div className="imagen mr-5">
+                </Col >
+                <Col className="secondColumn mt-5 ml-5"  >
+                  <div className="imagen" style={{width:'100%', marginLeft:'-60px'}}>
                     <img src={portadaCourse} alt="" />
                   </div>
                 </Col>

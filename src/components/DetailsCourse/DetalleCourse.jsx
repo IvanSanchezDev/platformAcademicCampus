@@ -109,7 +109,7 @@ const DetalleCourse=({nombreCurso})=>{
     
     const SingleCourseWrapper = styled.div`
       background-color: #EDEDED;
-      height:100vh;
+      height:120vh;
 
       .custom-rating {
         font-size: 26px; 

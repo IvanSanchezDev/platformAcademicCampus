@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 
 export const RenderTituloVideo = (videos, sectionName) => {
 
-    const{establecerNuevaUrl, establecerTexto}=useUrl()
+    const{establecerNuevaUrl, setLinks}=useUrl()
 
     useEffect(() => {
       if (videos.length > 0) {
@@ -23,7 +23,7 @@ export const RenderTituloVideo = (videos, sectionName) => {
         {videos.map((videoObj, videoIndex) => {
          
           return (
-            <div className="videos" key={videoIndex} onClick={()=>handleVideo(videoObj.video, videoObj.Texto)}>
+            <div className="videos" key={videoIndex} onClick={()=>{handleVideo(videoObj.video, videoObj.Texto); setLinks(videoObj.links)}}>
               <ul  className="d-flex flex-start items" >
                 <li className="mt-2 check">
                  <CheckBoxOutlineBlankIcon/>
