@@ -57,6 +57,10 @@ db.createCollection('cursos', {
                   bsonType: 'string',
                   description: 'El nombre del usuario requerido y de tipo String'
                 },
+                rating:{
+                  bsonType: 'number',
+                  description: 'El rating es numerico'
+                },
                 texto: {
                   bsonType: 'string',
                   description: 'El texto del comentario es requerido y de tipo string'
@@ -147,7 +151,7 @@ db.createCollection('cursos', {
     "autor":"Fernando Herrera",
     "temas": ["Context API", "MERN", "Hooks", "Firestore", "JWT", "Multiple Routers."],
     "objetivos": ["Aprender React a profundidad", "MERN - Mongo Express React Node", "Redux, Context y otros manejadores de estado"],
-    "comentarios":[{"nombre_usuario":"ivansachez24", "texto":"Excelente el curso"},{"nombre_usuario":"kamilo13", "texto":"Recomendado"}]
+    "comentarios":[{"nombre_usuario":"kamilo13", "rating":4, "texto":"Recomendado"}]
   },
   {
     "folder": "docker",
