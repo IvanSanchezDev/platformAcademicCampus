@@ -9,15 +9,20 @@ import { useAuth } from '../../context/authContext';
 
 const InfoCourse=({nombreCourse, portadaCourse, comentarios, titulo, duracion})=>{
   const {user}=useAuth()
-  const {inscripcionCurso, verificarInscripcion, message, isEnrolled}=useInscripcion()
+  const {inscripcionCurso, verificarInscripcion, message, isLoading, isEnrolled}=useInscripcion()
   const location = useLocation();
+
+ 
 
   const handleInscripcion=()=>{    
     inscripcionCurso(user.nombre_usuario, nombreCourse)
 }
 
 useEffect(() => {
-  verificarInscripcion(user.nombre_usuario, nombreCourse);
+  if (user.nombre_usuario && nombreCourse) {
+    verificarInscripcion(user.nombre_usuario, nombreCourse);
+  }
+  
 }, []);
 
 
@@ -25,15 +30,23 @@ useEffect(() => {
 function segundosAHoras(segundos) {
   // 1 minuto = 60 segundos
   // 1 hora = 60 minutos
-
-  const minutos = segundos / 60;
+  if (isNaN(segundos)) {
+    return 0
+  }
+  
+    const minutos = segundos / 60;
   const horas = minutos / 60;
 
   // Redondear el resultado a la cantidad más cercana de horas
   return Math.round(horas);
-}
 
-const cantidadComentarios = comentarios ? comentarios.length : 0;
+  }
+  
+
+
+  const cantidadComentarios = comentarios ? comentarios.length : 0;
+
+
 
 
 
@@ -48,20 +61,30 @@ const cantidadComentarios = comentarios ? comentarios.length : 0;
                   <p className="fs-21 fw-4">{segundosAHoras(duracion)}</p>
                 </div>
                 <div className="d-flex rating mt-5">
-                  <Rating name="half-rating-read" className="mt-2 custom-rating" defaultValue={3.5} precision={0.5} readOnly />
+                  <Rating name="half-rating-read" className="mt-2 custom-rating" defaultValue={5} readOnly />
                   <Link className="custom-button" to={`opiniones`} state={{ titulo:titulo, duracion:duracion,  nombre:nombreCourse, portada:portadaCourse, comentarios:comentarios }}>
                     {!location.state && `Ver Opiniones ${cantidadComentarios}` }
                     </Link>
                 </div>
                 <div className='buttons mt-5'>
-                {!location.state ? (
-                    !isEnrolled ? (<Button className="btnInscribirse fs-35" onClick={handleInscripcion}>Inscribirse</Button>) : <Link to={`/course/${nombreCourse}`} state={{ titulo:titulo }}><Button className="btnInscribirse fs-35">Ir al curso</Button></Link>
-                  
-                ) : (
-                  <Link to={`/detailsCourse/${nombreCourse}`}><button className="btnVolver fs-35">Volver</button></Link>
-                  
-                )}
-                </div>
+  {location.state ? (
+    <Link to={`/detailsCourse/${nombreCourse}`}>
+      <button className="btnVolver fs-35">Volver</button>
+    </Link>
+  ) : (
+    !isLoading && (
+      isEnrolled ? (
+        <Link to={`/course/${nombreCourse}`} state={{ titulo: titulo }}>
+          <Button className="btnInscribirse fs-35">Ir al curso</Button>
+        </Link>
+      ) : (
+        <Button className="btnInscribirse fs-35" onClick={handleInscripcion}>
+          Inscribirse
+        </Button>
+      )
+    ) 
+  )}
+</div>
                 </Col>
                 <Col className="secondColumn" >
                   <div className="imagen mr-5">

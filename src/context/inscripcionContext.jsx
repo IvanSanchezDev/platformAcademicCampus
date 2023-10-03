@@ -12,6 +12,7 @@ export function useInscripcion() {
 export const InscripcionProvider=({children})=>{
     const [isEnrolled, setIsEnrolled] = useState(false);
     const [message, setMessage] = useState('');
+    const [isLoading, setLoading]=useState(true)
 
     async function verificarInscripcion(username, nameCourse) {
      
@@ -31,6 +32,7 @@ export const InscripcionProvider=({children})=>{
         });
        
           const result = await response.json();
+          setLoading(false)
           
           setIsEnrolled(result.estado)
          
@@ -75,7 +77,7 @@ export const InscripcionProvider=({children})=>{
     return(
       
       
-      <InscripcionContext.Provider value={{verificarInscripcion, inscripcionCurso, isEnrolled, message}}>
+      <InscripcionContext.Provider value={{isLoading, verificarInscripcion, inscripcionCurso, isEnrolled, message}}>
         {children}
       </InscripcionContext.Provider>
       

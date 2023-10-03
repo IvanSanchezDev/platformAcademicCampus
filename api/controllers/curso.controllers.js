@@ -59,6 +59,37 @@ export class cursoController{
             res.status(500).json({"status":500, "message":'No se pudo realizar la inscripcion al curso'})
         }
     }
+
+    static async hacerComentarios(req, res){
+        try {
+            const {nombre,rating, texto, curso}=req.body
+            
+            const db=await connect()
+            const cursos=db.collection("cursos")
+            const result=await cursos.updateOne(
+              {folder: curso}, 
+              {
+                $push: {
+                  comentarios: {
+                    nombre_usuario: nombre,
+                    rating:rating,
+                    texto: texto
+                  }
+                }
+              }
+              
+            )
+           if (result.modifiedCount===0) {
+           res.status(400).json({status:400, message:'No se puedo enviar el mensaje, intentalo de nuevo', estado:false})
+                
+           }
+           
+           res.status(200).json({status:200,message:'Mensaje enviado con exito!', estado:true})
+          } catch (error) {
+            console.log(error);
+            
+          }
+    }
     
       
 

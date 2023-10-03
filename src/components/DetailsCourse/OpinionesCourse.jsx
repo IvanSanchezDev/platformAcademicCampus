@@ -3,6 +3,8 @@ import InfoCourse from "./InfoCourse";
 import styled from "styled-components"
 import { useLocation } from 'react-router-dom';
 import { Layout } from '../Layout';
+import Rating from '@mui/material/Rating';
+
 
 export const OpinionesCourse=()=>{
 
@@ -27,7 +29,9 @@ export const OpinionesCourse=()=>{
                         
                         return(
                             <div key={index} className='comment d-flex flex-column'>
-                                <span className='fs-18 fw-7'>{comentario.nombre_usuario}:</span><span className='fs-16 fw-5 opacity-09 textoo'>{comentario.texto}</span>
+                                <span className='fs-20 fw-7'>{comentario.nombre_usuario}:</span>
+                                <Rating name="half-rating-read" className="mt-2 custom-rating" defaultValue={comentario.rating} readOnly />
+                                <span className='fs-20 fw-5 opacity-09 textoo mt-5'>{comentario.texto}</span>
                             </div>
                         )
                     })}
