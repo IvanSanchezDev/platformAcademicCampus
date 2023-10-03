@@ -1,15 +1,21 @@
-import Form from 'react-bootstrap/Form';
+
 import { useUrl } from '../../context/urlContext';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
+import { useEffect } from 'react';
 
 export const RenderTituloVideo = (videos, sectionName) => {
-    
-  
 
-    const{establecerNuevaUrl}=useUrl()
+    const{establecerNuevaUrl, establecerTexto}=useUrl()
 
-    const handleVideo=(titulo)=>{
-      establecerNuevaUrl(parseInt(sectionName+1), titulo)
+    useEffect(() => {
+      if (videos.length > 0) {
+        sectionName === 0 && establecerNuevaUrl(parseInt(sectionName + 1), videos[0].video);
+      }
+    }, []);
+
+    const handleVideo=(titulo, texto)=>{
+      establecerNuevaUrl(parseInt(sectionName+1), titulo, texto)
+     
     }
 
     return (
@@ -17,7 +23,7 @@ export const RenderTituloVideo = (videos, sectionName) => {
         {videos.map((videoObj, videoIndex) => {
          
           return (
-            <div className="videos" key={videoIndex} onClick={()=>handleVideo(videoObj.video)}>
+            <div className="videos" key={videoIndex} onClick={()=>handleVideo(videoObj.video, videoObj.Texto)}>
               <ul  className="d-flex flex-start items" >
                 <li className="mt-2 check">
                  <CheckBoxOutlineBlankIcon/>

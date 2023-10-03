@@ -21,20 +21,24 @@ export const InscripcionProvider=({children})=>{
           nombreUsuario:username,
           nombreCurso:nameCourse
         }
+
+        if (data) {
+          const response = await fetch("http://localhost:5124/api/curso/verificarInscripcion", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            credentials: 'include',
+            body: JSON.stringify(data),
+          });
+         
+            const result = await response.json();
+            setLoading(false)           
+            setIsEnrolled(result.estado)
+            
+        }
         
-        const response = await fetch("http://localhost:5124/api/curso/verificarInscripcion", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          credentials: 'include',
-          body: JSON.stringify(data),
-        });
        
-          const result = await response.json();
-          setLoading(false)
-          
-          setIsEnrolled(result.estado)
          
           
         

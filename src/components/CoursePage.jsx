@@ -10,15 +10,14 @@ import { useNavigate } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import NavbarVideos from "./SectionsVideos/NavbarVideos";
+import ReactPlayer from 'react-player'
 
 
 const CoursePage=()=>{
     const { state } = useLocation()
-
-    const {titulo}=state
     const {nameCourse}=useParams();
     const {user}=useAuth()
-    const{establecerNombreCourse, url}=useUrl()
+    const{establecerNombreCourse, url, texto}=useUrl()
     const {verificarInscripcion, isEnrolled}=useInscripcion()
     const [listSections, setSections]=useState([])
     const navigate = useNavigate();
@@ -29,39 +28,54 @@ const CoursePage=()=>{
         verificarInscripcion(user.nombre_usuario, nameCourse);
       }, []);
 
-    useEffect(()=>{
-        (async()=>{
+      useEffect(() => {
+        (async () => {
             try {
-                if (!isEnrolled) {
-                        navigate(`/detailsCourse/${nameCourse}`); // Redirige a una página de error
-                } else {
-                    const response=await fetch(`http://192.168.128.23:5010/cursos/v2?course=${nameCourse}`);
-                    const result=await response.json();                
-                    setSections(result)
-                    establecerNombreCourse(nameCourse)
-                    setLoading(false)
+                if (isEnrolled) {
+                    const response = await fetch(`http://192.168.128.23:5010/cursos/v2?course=${nameCourse}`);
+                    const result = await response.json();
+                    setLoading(false);
+                    setSections(result);
+                    establecerNombreCourse(nameCourse);
                 }
+                
+                
             } catch (error) {
                 console.log(error);
+                
             }
         })();
-    }, [nameCourse, url])
-
+    }, [nameCourse, url, isEnrolled]);
     
+    useEffect(() => {
+
+        if (!isLoading && !isEnrolled) {
+            navigate(`/detailsCourse/${nameCourse}`);
+        }
+    }, [isLoading, isEnrolled, nameCourse]);
 
     return(
         <>
-        <NavbarVideos tituloCourse={titulo} nameCourse={nameCourse}/>
+         <NavbarVideos tituloCourse={state ? state.titulo : "Título no disponible"} nameCourse={nameCourse} />
         <Container fluid>
         <Row>
         <Col lg={9}>
-            <div style={{width:'100%'}}>
-                <video controls style={{width:'100%'}} autoPlay key={videoKey} >
-                    <source src={url} type="video/mp4" /> 
-                </video>
+        {url ? ( 
+            <div style={{ width: '100%' }}>
+              <video controls style={{ width: '100%' }} autoPlay key={videoKey}>
+                <source src={url} type="video/mp4" />
+              </video>
             </div>
+          ) : (
+            <div className="fs-20 flex flex-center mt-5">
+                <div style={{ width: '50%' }}>
+                    {texto.toString()}
+                </div>
+               
+            </div> // Muestra un div con texto si no hay video
+          )}
         </Col>
-        <Col lg={3}>
+        <Col lg={3} >
             {isLoading ? <div>Cargandooo...</div> : <SectionsVideos listSection={listSections} />}
             
         </Col>

@@ -9,6 +9,9 @@ import Modal from '@mui/material/Modal';
 import Rating from '@mui/material/Rating';
 import TextField from '@mui/material/TextField';
 import { useAuth } from '../../context/authContext';
+import {AiOutlineStar} from "react-icons/ai"
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 const style = {
@@ -70,21 +73,38 @@ const NavbarVideos=({tituloCourse, nameCourse})=>{
 
     return(
         <NavbarWrapper className='flex'>
-            <Container className='w-100 d-flex ' fluid>
-                <div className='titulo'>
-                    <Link to='/home' className='navbar-brand text-uppercase ls-1 fw-8'>
-                        <span>C</span>ampusAcademic                
-                    </Link>                
-                </div>
-                <div className="vr"></div>
-                <div className='fs-16 subtitulo flex '>
-                  <Link to={`/detailsCourse/${nameCourse}`} >{tituloCourse}</Link>           
-                </div>
+            <Container fluid>
+              <Row className="align-items-center">
+                <Col xs={2}>
+                  <div className="titulo">
+                    <Link to="/home" className="navbar-brand text-uppercase ls-1 fw-8">
+                      <span>C</span>ampusAcademic
+                    </Link>
+                  </div>
+                </Col>
+                <Col xs={3}>
+                  <div className="fs-16 subtitulo">
+                    <div className="vr linea"></div>
+                    <Link to={`/detailsCourse/${nameCourse}`}>{tituloCourse}</Link>
+                  </div>
+                </Col>
 
-                <div className='flex flex-end'>
-                <Button onClick={handleOpen}>Open modal</Button>
-                </div>
-            </Container>  
+                <Col  className="d-flex justify-content-end">
+                  <div className="calificacion-container flex">
+                    <div className="calificacion-icon">
+                      <span><AiOutlineStar/></span>
+                    </div>
+                    <div className="calificacion-button">
+                      <Button onClick={handleOpen}><span>Calificar este curso</span></Button>
+                    </div>
+                  </div>
+                </Col>
+
+                
+              </Row>
+            </Container>
+
+
             <div>
            
       <Modal
@@ -141,21 +161,11 @@ const NavbarWrapper=styled.nav`
 height: 80px; 
 
 
-.titulo, .subtitulo, .vr{
-  margin-left: 10px;
-}
-
-
-.subitulo:hover{
-  color:#481593;
-}
-
-
 
 .navbar-brand{
   font-size: 20px;
   span{
-    color: var(--clr-orange);
+    color:#481593;
   }
 }
 
