@@ -10,7 +10,9 @@ import { useNavigate } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import NavbarVideos from "./SectionsVideos/NavbarVideos";
-import ReactPlayer from 'react-player'
+import styled from 'styled-components'
+
+
 
 
 const CoursePage=()=>{
@@ -55,14 +57,14 @@ const CoursePage=()=>{
     }, [isLoading, isEnrolled, nameCourse]);
 
     return(
-        <>
+        <VideoWrapper>
          <NavbarVideos tituloCourse={state ? state.titulo : "Título no disponible"} nameCourse={nameCourse} />
-        <Container fluid>
+        <Container className="mt-5">
         <Row>
         <Col lg={9}>
         {url ? ( 
             <div style={{ width: '100%' }}>
-              <video controls style={{ width: '100%' }} autoPlay key={videoKey}>
+              <video controls style={{ width: '100%' }}  key={videoKey}>
                 <source src={url} type="video/mp4" />
               </video>
             </div>
@@ -86,9 +88,14 @@ const CoursePage=()=>{
         
             
             
-        </>
+        </VideoWrapper>
         
         )
 }
+
+
+const VideoWrapper=styled.div`
+background-color: #EDEDED;
+`;
 
 export default CoursePage

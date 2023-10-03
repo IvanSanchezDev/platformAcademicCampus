@@ -12,6 +12,7 @@ import { useAuth } from '../../context/authContext';
 import {AiOutlineStar} from "react-icons/ai"
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Alert from '@mui/material/Alert';
 
 
 const style = {
@@ -53,17 +54,20 @@ const NavbarVideos=({tituloCourse, nameCourse})=>{
           texto:comentario,
           curso: nameCourse
         }
-        const response=await fetch('http://localhost:5124/api/curso/hacerComentario',{
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          credentials: 'include',
-          body: JSON.stringify(data),
-      })
-
-      const result=await response.json()
-      setMessage(result.message)
+        if(data.texto && data.rating){
+          const response=await fetch('http://localhost:5124/api/curso/hacerComentario',{
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            credentials: 'include',
+            body: JSON.stringify(data),
+        })
+  
+        const result=await response.json()
+        setMessage(result.message)
+        }
+        
       } catch (error) {
         console.log(error);
       }
@@ -72,30 +76,27 @@ const NavbarVideos=({tituloCourse, nameCourse})=>{
 
 
     return(
-        <NavbarWrapper className='flex'>
+        <NavbarWrapper className='flex'>       
             <Container fluid>
               <Row className="align-items-center">
                 <Col xs={2}>
-                  <div className="titulo">
+                  <div className="titulo" style={{marginLeft:'20px'}}>
                     <Link to="/home" className="navbar-brand text-uppercase ls-1 fw-8">
                       <span>C</span>ampusAcademic
                     </Link>
                   </div>
                 </Col>
                 <Col xs={3}>
-                  <div className="fs-16 subtitulo">
-                    <div className="vr linea"></div>
-                    <Link to={`/detailsCourse/${nameCourse}`}>{tituloCourse}</Link>
+                  <div className="fs-16 subtitulo" style={{marginLeft:'-60px', color:'white'}}>
+                    <div className="vr linea" style={{ color:'white'}}></div>
+                    <Link style={{marginLeft:'20px',color: 'white', textDecoration:'none'}}  className='name' to={`/detailsCourse/${nameCourse}`}>{tituloCourse}</Link>
                   </div>
                 </Col>
 
-                <Col  className="d-flex justify-content-end">
+                <Col  className="d-flex justify-content-center">
                   <div className="calificacion-container flex">
-                    <div className="calificacion-icon">
-                      <span><AiOutlineStar/></span>
-                    </div>
-                    <div className="calificacion-button">
-                      <Button onClick={handleOpen}><span>Calificar este curso</span></Button>
+                    <div className="calificacion-button" >
+                      <Button onClick={handleOpen} className='btnCalificacion'><span style={{color: 'white'}} ><AiOutlineStar style={{marginRight:'3px'}}/> Calificar este curso</span></Button>
                     </div>
                   </div>
                 </Col>
@@ -133,10 +134,10 @@ const NavbarVideos=({tituloCourse, nameCourse})=>{
           </Typography>
           
 
-          <Typography className="modal-modal-title fs-20 fw-7" variant="h6" component="h2"  sx={{ mt:5 }}>
-          <TextField sx={{  width: 500, '& .MuiInputBase-input': {
+          <Typography className="modal-modal-title fs-20 fw-7" variant="h6" component="h2"  sx={{ mt:5}}>
+          <TextField sx={{  width: 500,'& .MuiInputBase-input': {
         fontSize: '18px', // Tamaño de fuente deseado para el input
-      }, }}
+      },   }}
           id="outlined-textarea"
           placeholder="Deja tu Comentario"
           multiline
@@ -145,9 +146,15 @@ const NavbarVideos=({tituloCourse, nameCourse})=>{
         />
           </Typography >
 
-
-          <Button onClick={enviarComentario} sx={{ mt:2 }}>Enviar</Button>
-          {message &&  <Typography className="modal-modal-description" >{message}</Typography>}
+          {!message ?(<Button onClick={()=>{enviarComentario(); } }  sx={{ mt:3, fontSize: '15px',
+  padding: '10px 20px',
+  backgroundColor:'#2D2F31',
+  color:'white',
+  border:' none'}}>Enviar</Button>) :(
+    <Typography> 
+    <Alert severity="success" className="mt-5">{message}</Alert></Typography>
+   
+  ) }
 
         </Box>
         
@@ -159,13 +166,25 @@ const NavbarVideos=({tituloCourse, nameCourse})=>{
 
 const NavbarWrapper=styled.nav`
 height: 80px; 
+background-color:#2D2F31;
+
+
+.calificacion-container{
+  span{
+    font-size:15px;
+  }
+
+ 
+}
+
 
 
 
 .navbar-brand{
   font-size: 20px;
+  color:white;
   span{
-    color:#481593;
+    color: var(--clr-orange);
   }
 }
 
