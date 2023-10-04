@@ -53,7 +53,7 @@ export const Profile=()=>{
             </div>
           <div>
             
-            <div className="flex flex-wrap cardd mt-5 justify-content-center text-center cardss">
+            <div className="containerCards text-center">
             {isLoading ? (
               <div>Cargando...</div> // Mostrar un indicador de carga
             ) : (
@@ -79,5 +79,24 @@ min-height: 100vh;
   align-items: center;
   margin-top:10rem;;
 }
+
+@media (max-width: 767px) { 
+
+  
+  
+  .containerCards img {
+    max-width: 90%; 
+   
+  }
+
+  .containerCards card {
+    margin-right:-30px;
+   
+  }
+}
+
+
+
+
 
 `;

@@ -6,7 +6,7 @@ import { Button } from 'react-bootstrap';
 import { useInscripcion } from '../../context/inscripcionContext';
 import { useEffect } from 'react';
 import { useAuth } from '../../context/authContext';
-import { Padding } from '@mui/icons-material';
+
 
 const InfoCourse=({nombreCourse, portadaCourse, comentarios, titulo, duracion})=>{
   const {user}=useAuth()
@@ -29,8 +29,7 @@ useEffect(() => {
 
 
 function segundosAHoras(segundos) {
-  // 1 minuto = 60 segundos
-  // 1 hora = 60 minutos
+  
   if (isNaN(segundos)) {
     return 0
   }
@@ -38,19 +37,17 @@ function segundosAHoras(segundos) {
     const minutos = segundos / 60;
   const horas = minutos / 60;
 
-  // Redondear el resultado a la cantidad más cercana de horas
+  
   return Math.round(horas);
 
   }
   
-
-
   const cantidadComentarios = comentarios ? comentarios.length : 0;
 
+  
+  
 
-
-
-
+  
     return(
         <Row className="pt-5">
                 <Col className="secondColumn mt-5 ml-5"  md={{ order: 'last' }}>
