@@ -1,5 +1,4 @@
 import { Container } from "react-bootstrap";
-import { Layout } from "./Layout";
 import SectionsVideos from "./SectionsVideos/SectionsVideos";
 import { useState, useEffect, useMemo } from "react";
 import {  useLocation, useParams } from "react-router-dom"

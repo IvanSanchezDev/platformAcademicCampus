@@ -24,7 +24,7 @@ export const RenderTituloVideo = (videos, sectionName) => {
          
           return (
             <div className="videos" key={videoIndex} onClick={()=>{handleVideo(videoObj.video, videoObj.Texto); setLinks(videoObj.links)}}>
-              <ul  className="d-flex flex-start items" >
+              <ul  className="d-flex flex-start items" key={videoIndex}>
                 <li className="mt-2 check">
                  <CheckBoxOutlineBlankIcon/>
                 </li>

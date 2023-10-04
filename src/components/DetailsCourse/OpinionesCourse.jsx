@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 import { Layout } from '../Layout';
 import Rating from '@mui/material/Rating';
 import Avatar from '@mui/material/Avatar';
-import moment from 'moment';
+
 
 
 export const OpinionesCourse=()=>{

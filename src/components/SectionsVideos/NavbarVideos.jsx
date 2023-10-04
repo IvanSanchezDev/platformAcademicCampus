@@ -59,7 +59,7 @@ const NavbarVideos=({tituloCourse, nameCourse})=>{
           fecha:new Date()
         }
         if(data.texto && data.rating){
-          const response=await fetch('http://localhost:5124/api/curso/hacerComentario',{
+          const response=await fetch(`http://${import.meta.env.VITE_HOSTNAME}:${import.meta.env.VITE_PORT_BACKEND}/api/curso/hacerComentario`,{
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -85,12 +85,12 @@ const NavbarVideos=({tituloCourse, nameCourse})=>{
               <Row className="align-items-center">
                 <Col xs={2}>
                   <div className="titulo" style={{marginLeft:'20px'}}>
-                    <Link to="/home" className="navbar-brand text-uppercase ls-1 fw-8">
+                    <Link to="/" className="navbar-brand text-uppercase ls-1 fw-8">
                       <span>C</span>ampusAcademic
                     </Link>
                   </div>
                 </Col>
-                <Col xs={3} className="d-none d-md-block">
+                <Col xs={4} className="d-none d-md-block">
                   <div className="fs-16 subtitulo mt-1" style={{marginLeft:'-10px', color:'white'}}>
                     <div className="vr linea" style={{ color:'white'}}></div>
                     <Link style={{marginLeft:'40px',color: 'white', textDecoration:'none'}}  className='name' to={`/detailsCourse/${nameCourse}`}>{tituloCourse}</Link>

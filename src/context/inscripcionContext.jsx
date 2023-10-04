@@ -23,7 +23,7 @@ export const InscripcionProvider=({children})=>{
         }
 
         if (data) {
-          const response = await fetch("http://localhost:5124/api/curso/verificarInscripcion", {
+          const response = await fetch(`http://${import.meta.env.VITE_HOSTNAME}:${import.meta.env.VITE_PORT_BACKEND}/api/curso/verificarInscripcion`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -55,7 +55,7 @@ export const InscripcionProvider=({children})=>{
           nombreUsuario:username,
           nombreCurso:nameCourse
         }
-        const response=await fetch('http://localhost:5124/api/curso/inscripcionCursos', {
+        const response=await fetch(`http://${import.meta.env.VITE_HOSTNAME}:${import.meta.env.VITE_PORT_BACKEND}/api/curso/inscripcionCursos`, {
           method:'POST',
           headers:{
             "Content-Type": "application/json"

@@ -29,7 +29,7 @@ const Login=()=>{
     }
 
     if (isAuthenticated) {    
-        return <Navigate to="/home" />;
+        return <Navigate to="/" />;
     }
 
 
@@ -87,10 +87,11 @@ const LoginWrapper=styled.div`
     position: absolute; 
     width: 450px;
     height:500px;
+    max-width: 90%;
     top: 50%; 
     left: 55%;
     right: 0;
-    transform: translateY(-50%); 
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction:column;
     padding:90px 60px;
@@ -109,6 +110,23 @@ const LoginWrapper=styled.div`
     position: relative; 
   }
   
+
+  @media (max-width: 768px) {
+    
+    .two-color-layout {
+      flex-direction: column; 
+    }
+  
+    .left-color, .right-color {
+      flex: 1;
+    }
+  
+    .form-container {
+      width: 90%; 
+      margin-left:-20px;
+      max-width: none; 
+    }
+  }
     
     
 
