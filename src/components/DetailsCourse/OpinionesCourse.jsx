@@ -63,6 +63,20 @@ export const OpinionesCourse=()=>{
         text-decoration: underline;
       }
 
+      .buttons{
+
+       
+
+        .btnVolver{
+          font-size: 24px;
+          padding: 12px 24px;
+          background-color:#481593;
+          color:yellow;
+          border: none;
+        }
+
+        
+      }
 
       h2{
        
@@ -71,11 +85,9 @@ export const OpinionesCourse=()=>{
         
     }
 
-    .secondColumn{
-      margin-left:10rem;
-    }
+   
     .details, .opiniones{
-      margin-top:20rem;
+      margin-top:100px;
     }
 
      .temario{
@@ -116,8 +128,20 @@ export const OpinionesCourse=()=>{
       }
     }
         
-    
-     
+    @media (max-width: 767px) { 
+      h2 {
+        font-size: 27px; 
+      }
+      p {
+        font-size: 18px; 
+
+      span{
+        font-size: 14px;
+      }
+
+      
+      
+    }
     
     `;
 

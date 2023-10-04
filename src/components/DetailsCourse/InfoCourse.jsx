@@ -6,6 +6,7 @@ import { Button } from 'react-bootstrap';
 import { useInscripcion } from '../../context/inscripcionContext';
 import { useEffect } from 'react';
 import { useAuth } from '../../context/authContext';
+import { Padding } from '@mui/icons-material';
 
 const InfoCourse=({nombreCourse, portadaCourse, comentarios, titulo, duracion})=>{
   const {user}=useAuth()
@@ -52,7 +53,12 @@ function segundosAHoras(segundos) {
 
     return(
         <Row className="pt-5">
-                <Col xs={12} md={6} className='mb-5'>
+                <Col className="secondColumn mt-5 ml-5"  md={{ order: 'last' }}>
+                  <div className="imagen" style={{width:'100%', marginLeft:'-5px', padding:'0 10px'}}>
+                    <img src={portadaCourse} alt="" className="mx-auto" />
+                  </div>
+                </Col>
+                <Col xs={12} md={6} className='mb-5' style={{marginTop:'25px'}}>
                 <div className="mb-5">
                   <h2 className="fs-40">Curso {nombreCourse}</h2>
                 </div>
@@ -74,7 +80,7 @@ function segundosAHoras(segundos) {
   ) : (
     !isLoading && (
       isEnrolled ? (
-        <Link to={`/course/${nombreCourse}`} state={{ titulo: titulo }}>
+        <Link to={`/course/${nombreCourse}`}  className="d-grip" state={{ titulo: titulo }} >
           <Button className="btnInscribirse fs-35">Ir al curso</Button>
         </Link>
       ) : (
@@ -86,11 +92,7 @@ function segundosAHoras(segundos) {
   )}
 </div>
                 </Col >
-                <Col className="secondColumn mt-5 ml-5"  >
-                  <div className="imagen" style={{width:'100%', marginLeft:'-60px'}}>
-                    <img src={portadaCourse} alt="" />
-                  </div>
-                </Col>
+                
               </Row>
         )
 }
