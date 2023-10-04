@@ -90,6 +90,44 @@ export class cursoController{
             
           }
     }
+
+    static async getCursosPropios(req, res){
+        try {
+            const{usuario}=req.query
+            const db=await connect()
+            const inscripcionesCursos=db.collection("inscripcionesCursos")
+            const result=await inscripcionesCursos.aggregate([
+                {
+                  $match: {
+                    nombre_usuario: usuario
+                  }
+                },
+                {
+                  $lookup: {
+                    from: 'cursos',
+                    localField: 'nombre_curso',
+                    foreignField: 'folder',
+                    as: 'cursoInfo'
+                  }
+                },
+                {
+                  $unwind: '$cursoInfo'
+                },
+                {
+                  $project: {
+                    folder: '$cursoInfo.folder',
+                    nameCourse: '$cursoInfo.nameCourse',
+                    autor: '$cursoInfo.autor',      
+                    imagenCourse: '$cursoInfo.imagenCourse',     
+                  }
+                }
+              ]).toArray()
+            res.status(200).json({"status":200, "data":result})
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({"status":500, "error":'No se pudo traer el curso especifico'})
+        }
+    }
     
       
 
