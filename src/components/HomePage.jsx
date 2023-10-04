@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 const Home = () => {
    
     const [listCourses, setCourses] = useState([]);
-    const [isLoading, setIsLoading] = useState(true); // Agregar un estado para el indicador de carga
+    const [isLoading, setIsLoading] = useState(true); 
   
     useEffect(() => {
       (async () => {
