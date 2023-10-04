@@ -20,7 +20,7 @@ export class cursoController{
             const{nombre}=req.query
             const db=await connect()
             const cursos=db.collection("cursos")
-            const result=await cursos.findOne({nombre:nombre})
+            const result=await cursos.findOne({folder:nombre})
             res.status(200).json({"status":200, "data":result})
         } catch (error) {
             console.log(error);
@@ -52,12 +52,43 @@ export class cursoController{
             const inscripcionCursos=db.collection("inscripcionesCursos")
             const result=await inscripcionCursos.findOne({nombre_usuario:nombreUsuario, nombre_curso:nombreCurso})
             if (!result) {               
-                return res.status(403).json({"status":403, "message":'No esta inscrito al curso ', estado:false})
+                return res.status(200).json({"status":403, "message":'No esta inscrito al curso ', estado:false})
             }
             res.status(200).json({"status":200, "message":'esta inscrito al curso', estado:true})
         } catch (error) {
             res.status(500).json({"status":500, "message":'No se pudo realizar la inscripcion al curso'})
         }
+    }
+
+    static async hacerComentarios(req, res){
+        try {
+            const {nombre,rating, texto, curso}=req.body
+            
+            const db=await connect()
+            const cursos=db.collection("cursos")
+            const result=await cursos.updateOne(
+              {folder: curso}, 
+              {
+                $push: {
+                  comentarios: {
+                    nombre_usuario: nombre,
+                    rating:rating,
+                    texto: texto
+                  }
+                }
+              }
+              
+            )
+           if (result.modifiedCount===0) {
+           res.status(400).json({status:400, message:'No se puedo enviar el mensaje, intentalo de nuevo', estado:false})
+                
+           }
+           
+           res.status(200).json({status:200,message:'Mensaje enviado con exito!', estado:true})
+          } catch (error) {
+            console.log(error);
+            
+          }
     }
     
       

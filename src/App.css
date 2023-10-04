@@ -99,6 +99,11 @@ input, textarea, select{
     display: flex;
     align-items: center;
 }
+
+.flexx{
+    display: flex;
+  
+}
 .flex-wrap{
     flex-wrap: wrap;
 }

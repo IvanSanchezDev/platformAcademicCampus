@@ -3,12 +3,14 @@ import InfoCourse from "./InfoCourse";
 import styled from "styled-components"
 import { useLocation } from 'react-router-dom';
 import { Layout } from '../Layout';
+import Rating from '@mui/material/Rating';
+
 
 export const OpinionesCourse=()=>{
 
     const { state } = useLocation()
 
-    const {nombre, portada, comentarios}=state
+    const {titulo, nombre, duracion,  portada, comentarios}=state
     
     
 
@@ -16,7 +18,7 @@ export const OpinionesCourse=()=>{
         <SingleCourseWrapper>
              <Layout/>
             <Container className="">
-              <InfoCourse nombreCourse={nombre} portadaCourse={portada}/>          
+              <InfoCourse nombreCourse={nombre} portadaCourse={portada} titulo={titulo} duracion={duracion}/>          
             </Container>
              <Container className="opiniones">
                     <div>
@@ -27,7 +29,9 @@ export const OpinionesCourse=()=>{
                         
                         return(
                             <div key={index} className='comment d-flex flex-column'>
-                                <span className='fs-18 fw-7'>{comentario.nombre_usuario}:</span><span className='fs-16 fw-5 opacity-09 textoo'>{comentario.texto}</span>
+                                <span className='fs-20 fw-7'>{comentario.nombre_usuario}:</span>
+                                <Rating name="half-rating-read" className="mt-2 custom-rating" defaultValue={comentario.rating} readOnly />
+                                <span className='fs-20 fw-5 opacity-09 textoo mt-5'>{comentario.texto}</span>
                             </div>
                         )
                     })}
@@ -59,6 +63,20 @@ export const OpinionesCourse=()=>{
         text-decoration: underline;
       }
 
+      .buttons{
+
+       
+
+        .btnVolver{
+          font-size: 24px;
+          padding: 12px 24px;
+          background-color:#481593;
+          color:yellow;
+          border: none;
+        }
+
+        
+      }
 
       h2{
        
@@ -67,11 +85,9 @@ export const OpinionesCourse=()=>{
         
     }
 
-    .secondColumn{
-      margin-left:10rem;
-    }
+   
     .details, .opiniones{
-      margin-top:20rem;
+      margin-top:100px;
     }
 
      .temario{
@@ -112,8 +128,20 @@ export const OpinionesCourse=()=>{
       }
     }
         
-    
-     
+    @media (max-width: 767px) { 
+      h2 {
+        font-size: 27px; 
+      }
+      p {
+        font-size: 18px; 
+
+      span{
+        font-size: 14px;
+      }
+
+      
+      
+    }
     
     `;
 

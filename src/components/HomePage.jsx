@@ -43,14 +43,14 @@ const Home = () => {
       <HomeWrapper>
         
         <Layout />
-        <Container className="flex-center text-center">
+        <Container className="flex-center text-center" fluid >
           
           <div className="enunciado">
             <h2 className="fs-50 titulo fw-7">Cursos disponibles</h2>
-            <div className="fs-35 fw-4 text">¡Despega tu carrera como Developer!</div>
+            <div className="fs-35 fw-4  sub text">¡Despega tu carrera como Developer!</div>
           </div>
              
-          <div className="d-flex flex-wrap cardd mt-5">
+          <div className="flex flex-wrap cardd mt-5 justify-content-center cardss">
             {isLoading ? (
               <div>Cargando...</div> // Mostrar un indicador de carga
             ) : (
@@ -65,7 +65,8 @@ const Home = () => {
 
   export const HomeWrapper=styled.div`
   background-color:#EDEDED;
-  height:200vh;
+  min-height: 100vh;
+  
 
 
   .enunciado{
@@ -83,6 +84,34 @@ const Home = () => {
     }
 
   }
+
+  .cardd img {
+    max-width: 100%; 
+  }
+
+  .cardss{
+    padding: 0 40px; 
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  @media (max-width: 767px) { 
+    .enunciado{
+      .titulo{
+        font-size: 30px;
+      }
+
+      .sub{
+        font-size: 20px;
+      }
+      
+    }
+    .cardd img {
+      max-width: 80%; 
+      
+    }
+  }
+
   
   `
 

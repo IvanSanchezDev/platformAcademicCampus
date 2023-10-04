@@ -49,6 +49,15 @@ height: 80px;
     opacity: 0.7;
   }
 }
+
+
+@media (max-width: 767px) { 
+  .navbar-brand{
+    font-size: 16px;
+  }
+}
+
+
 `;
 
 export default Navbar
