@@ -1,3 +1,4 @@
+
 import {connect, closeConnection} from '../database/connection.js'
 
 
@@ -62,8 +63,8 @@ export class cursoController{
 
     static async hacerComentarios(req, res){
         try {
-            const {nombre,rating, texto, curso}=req.body
-            
+            const {nombre,rating, texto, curso,avatar, discordId, fecha}=req.body
+           
             const db=await connect()
             const cursos=db.collection("cursos")
             const result=await cursos.updateOne(
@@ -71,9 +72,12 @@ export class cursoController{
               {
                 $push: {
                   comentarios: {
-                    nombre_usuario: nombre,
+                    discord_id:discordId,
+                    nombre_usuario: nombre,               
+                    imagen_perfil:avatar,
                     rating:rating,
-                    texto: texto
+                    texto: texto,
+                    fecha:new Date(fecha)
                   }
                 }
               }

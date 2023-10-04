@@ -53,9 +53,17 @@ db.createCollection('cursos', {
               bsonType: 'object',
               required: ['nombre_usuario', 'texto'],
               properties: {
+                discord_id: {
+                  bsonType: 'string',
+                  description: 'El codigo de discord es requerido y de tipo string'
+                },
                 nombre_usuario: {
                   bsonType: 'string',
                   description: 'El nombre del usuario requerido y de tipo String'
+                },
+                imagen_perfil: {
+                  bsonType: 'string',
+                  description: 'La url de la imagen_perfil es de tipo string'
                 },
                 rating:{
                   bsonType: 'number',
@@ -64,6 +72,10 @@ db.createCollection('cursos', {
                 texto: {
                   bsonType: 'string',
                   description: 'El texto del comentario es requerido y de tipo string'
+                },
+                fecha:{
+                  bsonType:'date',
+                  description:'la fecha es opcional y de tipo date'
                 }
               }
             } 
@@ -150,8 +162,7 @@ db.createCollection('cursos', {
     "duracion": 179499638,
     "autor":"Fernando Herrera",
     "temas": ["Context API", "MERN", "Hooks", "Firestore", "JWT", "Multiple Routers."],
-    "objetivos": ["Aprender React a profundidad", "MERN - Mongo Express React Node", "Redux, Context y otros manejadores de estado"],
-    "comentarios":[{"nombre_usuario":"kamilo13", "rating":4, "texto":"Recomendado"}]
+    "objetivos": ["Aprender React a profundidad", "MERN - Mongo Express React Node", "Redux, Context y otros manejadores de estado"]
   },
   {
     "folder": "docker",
@@ -188,4 +199,14 @@ db.createCollection('cursos', {
     "autor":"Fernando Herrera",
     "temas": ["Bases de datos relacionales", "Lenguaje SQL", "Consultas SELECT", "Diseño de bases de datos", "Optimización de consultas"],
     "objetivos": ["Dominar SQL y el diseño de bases de datos relacionales", "Realizar consultas eficientes y optimizar el rendimiento de las bases de datos"]
-  }])
+  },
+{
+    "folder": "javascript",
+    "nameCourse": "JavaScript Moderno: Guía para dominar el lenguaje",
+    "imagenCourse": "https://import.cdn.thinkific.com/643563/courses/1907483/IaFyqRTQCAph7DfFVjuA_Javascript-moderno-refresh1.png",
+    "duracion": 73438818,
+    "autor":"Fernando Herrera",
+    "temas": ["Fundamentos Javascript", "Promesas", "Callbacks", "Carga de archivos", "Manipulación del DOM"],
+    "objetivos": ["Aprender JavaScript y su sintaxis", "Uso de importaciones y sintaxis moderna de JavaScript", "Conocer formas modernas de trabajar en JavaScript", "Webpack e importaciones de módulos"]
+  ,
+}])
