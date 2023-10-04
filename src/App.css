@@ -1,8 +1,12 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
+
+
+
 
 :root{
-    --base-font: 'Open-Sans', sans-serif;
+    --base-font: 'Outfit', sans-serif;
     --clr-white: #fff;
     --clr-black: #000;
     --clr-orange: #fd9644;
