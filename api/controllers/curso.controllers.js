@@ -1,3 +1,4 @@
+
 import {connect, closeConnection} from '../database/connection.js'
 
 
@@ -62,8 +63,8 @@ export class cursoController{
 
     static async hacerComentarios(req, res){
         try {
-            const {nombre,rating, texto, curso}=req.body
-            
+            const {nombre,rating, texto, curso,avatar, discordId, fecha}=req.body
+           
             const db=await connect()
             const cursos=db.collection("cursos")
             const result=await cursos.updateOne(
@@ -71,9 +72,12 @@ export class cursoController{
               {
                 $push: {
                   comentarios: {
-                    nombre_usuario: nombre,
+                    discord_id:discordId,
+                    nombre_usuario: nombre,               
+                    imagen_perfil:avatar,
                     rating:rating,
-                    texto: texto
+                    texto: texto,
+                    fecha:new Date(fecha)
                   }
                 }
               }
@@ -89,6 +93,44 @@ export class cursoController{
             console.log(error);
             
           }
+    }
+
+    static async getCursosPropios(req, res){
+        try {
+            const{usuario}=req.query
+            const db=await connect()
+            const inscripcionesCursos=db.collection("inscripcionesCursos")
+            const result=await inscripcionesCursos.aggregate([
+                {
+                  $match: {
+                    nombre_usuario: usuario
+                  }
+                },
+                {
+                  $lookup: {
+                    from: 'cursos',
+                    localField: 'nombre_curso',
+                    foreignField: 'folder',
+                    as: 'cursoInfo'
+                  }
+                },
+                {
+                  $unwind: '$cursoInfo'
+                },
+                {
+                  $project: {
+                    folder: '$cursoInfo.folder',
+                    nameCourse: '$cursoInfo.nameCourse',
+                    autor: '$cursoInfo.autor',      
+                    imagenCourse: '$cursoInfo.imagenCourse',     
+                  }
+                }
+              ]).toArray()
+            res.status(200).json({"status":200, "data":result})
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({"status":500, "error":'No se pudo traer el curso especifico'})
+        }
     }
     
       

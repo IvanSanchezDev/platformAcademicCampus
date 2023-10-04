@@ -10,5 +10,6 @@ router.get('/traerCursoByName',isAuthorized, cursoController.getCursosByName )
 router.post('/inscripcionCursos',isAuthorized,cursoController.inscripcionCursos )
 router.post('/verificarInscripcion',isAuthorized,cursoController.verificarInscripcion )
 router.post('/hacerComentario', isAuthorized, cursoController.hacerComentarios)
+router.get('/traerCursosInscrito', cursoController.getCursosPropios)
 
 

@@ -25,7 +25,7 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 600,
+  width: 'auto',
   height: 'auto',
   bgcolor: 'background.paper',
   p:4,
@@ -48,11 +48,15 @@ const NavbarVideos=({tituloCourse, nameCourse})=>{
 
     const enviarComentario=async ()=>{
       try {
+        
         const data={
           nombre: user.nombre_usuario,
           rating:rating,
           texto:comentario,
-          curso: nameCourse
+          curso: nameCourse,
+          avatar:user.imagen_perfil,
+          discordId:user.discord_id,
+          fecha:new Date()
         }
         if(data.texto && data.rating){
           const response=await fetch('http://localhost:5124/api/curso/hacerComentario',{
@@ -64,8 +68,8 @@ const NavbarVideos=({tituloCourse, nameCourse})=>{
             body: JSON.stringify(data),
         })
   
-        const result=await response.json()
-        setMessage(result.message)
+          const result=await response.json()
+          setMessage(result.message)
         }
         
       } catch (error) {
@@ -87,9 +91,9 @@ const NavbarVideos=({tituloCourse, nameCourse})=>{
                   </div>
                 </Col>
                 <Col xs={3} className="d-none d-md-block">
-                  <div className="fs-16 subtitulo mt-1" style={{marginLeft:'-45px', color:'white'}}>
+                  <div className="fs-16 subtitulo mt-1" style={{marginLeft:'-10px', color:'white'}}>
                     <div className="vr linea" style={{ color:'white'}}></div>
-                    <Link style={{marginLeft:'20px',color: 'white', textDecoration:'none'}}  className='name' to={`/detailsCourse/${nameCourse}`}>{tituloCourse}</Link>
+                    <Link style={{marginLeft:'40px',color: 'white', textDecoration:'none'}}  className='name' to={`/detailsCourse/${nameCourse}`}>{tituloCourse}</Link>
                   </div>
                 </Col>
 
@@ -130,9 +134,9 @@ const NavbarVideos=({tituloCourse, nameCourse})=>{
       sx={{ mt: 3, fontSize: '50px' }}
     />
 
-    <Typography sx={{ mt: 5 }}>
       <TextField
         sx={{
+          mt:5,
           width: '100%', // Usa el 100% del ancho disponible
           '& .MuiInputBase-input': {
             fontSize: '18px', // Tamaño de fuente deseado para el input
@@ -144,7 +148,7 @@ const NavbarVideos=({tituloCourse, nameCourse})=>{
         value={comentario}
         onChange={(e) => setNuevoComentario(e.target.value)}
       />
-    </Typography>
+    
 
     {!message ? (
       <Button
@@ -190,12 +194,21 @@ background-color:#2D2F31;
   }
 }
 
+@media (max-width: 1450px) { 
+  .subtitulo{
+    display:none;
+  }
+
+}
+
 
 @media (max-width: 767px) { 
 .navbar-brand{
   font-size: 10px;
 
 }
+
+
 
 
 

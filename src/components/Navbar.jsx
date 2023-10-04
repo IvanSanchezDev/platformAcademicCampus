@@ -1,16 +1,12 @@
 
 import styled from 'styled-components'
-import {MdMenu} from 'react-icons/md'
-import { Link } from 'react-router-dom'
-import { useSidebarContext } from '../context/sidebar_context'
-import Container from 'react-bootstrap/Container';
 
+import { Link } from 'react-router-dom'
+import Container from 'react-bootstrap/Container';
+import MenuPerfil from './MenuPerfil';
 
 
 const Navbar=()=>{
-
-    const {openSidebar}=useSidebarContext()
-
 
     return(
         <NavbarWrapper className='bg-white flex'>
@@ -20,10 +16,9 @@ const Navbar=()=>{
                         <span>C</span>ampusAcademic                
                     </Link>
 
-                    <div className='navbar-btns flex'>                     
-                        <button type='button' className='sidebar-open-btn' onClick={()=>openSidebar()}>
-                          <MdMenu className="fs-26"/>
-                        </button>
+                    <div className='navbar-btns flex'>
+                      
+                      <MenuPerfil/>
                     </div>
 
                 </div>
@@ -48,6 +43,17 @@ height: 80px;
   &:hover{
     opacity: 0.7;
   }
+}
+
+/* Quitar el color azul del enlace del Dropdown */
+.dropdown-item:focus, .dropdown-item:hover {
+  background-color: transparent;
+  text-decoration: none;
+}
+
+/* Quitar la flecha */
+.dropdown-toggle::after {
+  display: none;
 }
 
 

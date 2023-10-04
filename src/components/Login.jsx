@@ -33,16 +33,16 @@ const Login=()=>{
 
 
     return(
-        <LoginWrapper>
-        <Layout/>
-        <Container className="loginContainer">
-            <h2>Inicia con Discord</h2>
-            <BsDiscord className="fs-50"/>
-            <div className="d-grid">
-                <Button size="lg" onClick={logearse}>Inicia Sesion</Button>        
+        <LoginWrapper >
+            
+            <Container className="loginContainer">
+                <h2>Inicia con Discord</h2>
+                <BsDiscord className="fs-50"/>
+                <div className="d-grid">
+                    <Button size="lg" onClick={logearse}>Inicia Sesion</Button>        
 
-            </div>
-       </Container>
+                </div>
+            </Container>
         </LoginWrapper>
       
     )

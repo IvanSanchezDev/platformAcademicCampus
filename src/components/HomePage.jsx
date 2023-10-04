@@ -2,10 +2,9 @@
 import CardCourse from "./CardCourse";
 import styled from "styled-components"
 import Container from 'react-bootstrap/Container';
-import { useAuth } from "../context/authContext"
 import { Layout } from "./Layout";
 import { useEffect, useState } from "react";
-import { RiDivideFill } from "react-icons/ri";
+
 
 
 
@@ -13,7 +12,7 @@ import { RiDivideFill } from "react-icons/ri";
 const Home = () => {
    
     const [listCourses, setCourses] = useState([]);
-    const [isLoading, setIsLoading] = useState(true); // Agregar un estado para el indicador de carga
+    const [isLoading, setIsLoading] = useState(true); 
   
     useEffect(() => {
       (async () => {

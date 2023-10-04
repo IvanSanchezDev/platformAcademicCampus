@@ -4,6 +4,8 @@ import styled from "styled-components"
 import { useLocation } from 'react-router-dom';
 import { Layout } from '../Layout';
 import Rating from '@mui/material/Rating';
+import Avatar from '@mui/material/Avatar';
+import moment from 'moment';
 
 
 export const OpinionesCourse=()=>{
@@ -12,7 +14,7 @@ export const OpinionesCourse=()=>{
 
     const {titulo, nombre, duracion,  portada, comentarios}=state
     
-    
+   
 
     return (
         <SingleCourseWrapper>
@@ -26,12 +28,20 @@ export const OpinionesCourse=()=>{
                     </div>
                     <div className="comments d-flex  flex-wrap">
                     {comentarios && comentarios.map((comentario, index) => {
-                        
+                         
                         return(
                             <div key={index} className='comment d-flex flex-column'>
-                                <span className='fs-20 fw-7'>{comentario.nombre_usuario}:</span>
-                                <Rating name="half-rating-read" className="mt-2 custom-rating" defaultValue={comentario.rating} readOnly />
-                                <span className='fs-20 fw-5 opacity-09 textoo mt-5'>{comentario.texto}</span>
+                                <div className='flex'>
+                                  <Avatar alt="Remy Sharp" src={`https://cdn.discordapp.com/avatars/${comentario.discord_id}/${comentario.imagen_perfil}.png`} />
+                                  <div className='flex flex-column info' style={{marginLeft:'20px'}}>
+                                    <span className='fs-20 fw-7'>{comentario.nombre_usuario}</span>
+                                    <Rating name="half-rating-read" className="mt-2 custom-rating" defaultValue={comentario.rating} readOnly />
+                                  </div>
+                                  
+                                </div>
+                                
+                                
+                                <span className='fs-14  opacity-09 textoo mt-5'>{comentario.texto}</span>
                             </div>
                         )
                     })}
@@ -46,6 +56,7 @@ export const OpinionesCourse=()=>{
       background-color: #F7F7F7;
       height:200vh;
 
+      
       .custom-rating {
         font-size: 26px; 
         color:#481593;
