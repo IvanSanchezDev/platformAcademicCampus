@@ -1,5 +1,6 @@
 
 import {connect, closeConnection} from '../database/connection.js'
+import { envioCorreo } from '../helpers/sendEmail.js'
 
 
 export class cursoController{
@@ -32,12 +33,14 @@ export class cursoController{
 
     static async inscripcionCursos(req, res){
         try {
-            const {nombreCurso, nombreUsuario}=req.body
+            const {nombreCurso, nombreUsuario, email, mensaje}=req.body
+            
             const db=await connect()
             const inscripcionCursos=db.collection("inscripcionesCursos")
             const result=await inscripcionCursos.insertOne({nombre_usuario:nombreUsuario, nombre_curso:nombreCurso, progreso:0})
            
             if (result.acknowledged) {
+                envioCorreo(email, mensaje)
                 res.status(200).json({"status":200, "message":'Te has inscrito Correctamente'})
             }
             

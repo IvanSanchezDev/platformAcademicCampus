@@ -38,23 +38,23 @@ export const InscripcionProvider=({children})=>{
             
         }
         
-       
-         
-          
-        
       } catch (error) {
         console.log(error);
       }
     }
 
 
-    const inscripcionCurso=async (username, nameCourse)=>{
+    const inscripcionCurso=async (username, nameCourse,  mensaje, email)=>{
       
       try {
         const data={
           nombreUsuario:username,
-          nombreCurso:nameCourse
+          nombreCurso:nameCourse,
+          email:email,
+          mensaje:mensaje
         }
+
+        
         const response=await fetch(`http://${import.meta.env.VITE_HOSTNAME}:${import.meta.env.VITE_PORT_BACKEND}/api/curso/inscripcionCursos`, {
           method:'POST',
           headers:{
@@ -66,7 +66,7 @@ export const InscripcionProvider=({children})=>{
         
         if (response.ok) {
           const result=await response.json();
-          console.log(result);
+         
           setMessage(result.message)
           setIsEnrolled(true);
         }
@@ -81,7 +81,7 @@ export const InscripcionProvider=({children})=>{
     return(
       
       
-      <InscripcionContext.Provider value={{isLoading, verificarInscripcion, inscripcionCurso, isEnrolled, message}}>
+      <InscripcionContext.Provider value={{isLoading, verificarInscripcion, inscripcionCurso, isEnrolled, message, setMessage}}>
         {children}
       </InscripcionContext.Provider>
       

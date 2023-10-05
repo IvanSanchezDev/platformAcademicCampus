@@ -41,10 +41,9 @@ db.createCollection('cursos', {
               bsonType:'string'
             }
           },
-         
-          nivel: {
+          mensaje_bienvenida:{
             bsonType: 'string',
-            description: 'El nivel es requerido y de tipo string'
+            description: 'La msg de tipo string'
           },
           comentarios: {
             bsonType: 'array',
@@ -162,7 +161,8 @@ db.createCollection('cursos', {
     "duracion": 179499638,
     "autor":"Fernando Herrera",
     "temas": ["Context API", "MERN", "Hooks", "Firestore", "JWT", "Multiple Routers."],
-    "objetivos": ["Aprender React a profundidad", "MERN - Mongo Express React Node", "Redux, Context y otros manejadores de estado"]
+    "objetivos": ["Aprender React a profundidad", "MERN - Mongo Express React Node", "Redux, Context y otros manejadores de estado"],
+    "mensaje_bienvenida": "¡Bienvenido al curso 'React: De cero a experto (Hooks y MERN)'! Estamos emocionados de tenerte a bordo. Este curso te llevará a través de un emocionante viaje para dominar React y MERN. ¡Comencemos!"
   },
   {
     "folder": "docker",
@@ -171,7 +171,8 @@ db.createCollection('cursos', {
     "duracion": 49535654,
     "autor":"Fernando Herrera",
     "temas": ["Introducción a Docker", "Docker Compose", "Kubernetes", "Despliegue de aplicaciones", "Gestión de imágenes"],
-    "objetivos": ["Aprender a crear y gestionar contenedores con Docker", "Orquestar contenedores en Kubernetes", "Desplegar aplicaciones en entornos de producción"]
+    "objetivos": ["Aprender a crear y gestionar contenedores con Docker", "Orquestar contenedores en Kubernetes", "Desplegar aplicaciones en entornos de producción"],
+    "mensaje_bienvenida": "¡Bienvenido al curso 'Docker - Guía práctica de uso para desarrolladores'! Estamos emocionados de tenerte a bordo. A lo largo de este curso, te adentrarás en el emocionante mundo de Docker y aprenderás a crear y gestionar contenedores. ¡Comencemos a contener aplicaciones!"
   },
   {
     "folder": "git",
@@ -180,7 +181,8 @@ db.createCollection('cursos', {
     "duracion": 41102686,
     "autor":"Fernando Herrera",
     "temas": ["Fundamentos de Git", "Control de versiones distribuido", "Ramificación (Branching)", "Resolución de conflictos", "Colaboración en proyectos"],
-    "objetivos": ["Dominar Git y el control de versiones", "Colaborar eficazmente en proyectos de desarrollo de software"]
+    "objetivos": ["Dominar Git y el control de versiones", "Colaborar eficazmente en proyectos de desarrollo de software"],
+    "mensaje_bienvenida": "¡Bienvenido al curso 'GIT+GitHub: Todo un sistema de control de versiones de cero'! Estamos emocionados de tenerte a bordo. En este curso, te sumergirás en el mundo de Git y GitHub, aprendiendo a controlar versiones y colaborar en proyectos de software. ¡Comencemos a rama-nos!"
   },
   {
     "folder": "nodejs",
@@ -189,7 +191,8 @@ db.createCollection('cursos', {
     "duracion": 85942936,
     "autor":"Fernando Herrera",
     "temas": ["Introducción a Node.js", "Express.js", "Manejo de paquetes con NPM", "Desarrollo de API RESTful", "Bases de datos con Node.js"],
-    "objetivos": ["Aprender a construir aplicaciones web utilizando Node.js", "Crear API RESTful y trabajar con bases de datos en Node.js"]
+    "objetivos": ["Aprender a construir aplicaciones web utilizando Node.js", "Crear API RESTful y trabajar con bases de datos en Node.js"],
+    "mensaje_bienvenida": "¡Bienvenido al curso 'Node.Js: De cero a experto'! Estamos emocionados de tenerte a bordo. A lo largo de este curso, te adentrarás en el mundo de Node.js y aprenderás a construir aplicaciones web y desarrollar API RESTful. ¡Comencemos a programar en Node.js!"
   },
   {
     "folder": "sql",
@@ -198,7 +201,8 @@ db.createCollection('cursos', {
     "duracion": 57502789,
     "autor":"Fernando Herrera",
     "temas": ["Bases de datos relacionales", "Lenguaje SQL", "Consultas SELECT", "Diseño de bases de datos", "Optimización de consultas"],
-    "objetivos": ["Dominar SQL y el diseño de bases de datos relacionales", "Realizar consultas eficientes y optimizar el rendimiento de las bases de datos"]
+    "objetivos": ["Dominar SQL y el diseño de bases de datos relacionales", "Realizar consultas eficientes y optimizar el rendimiento de las bases de datos"],
+    "mensaje_bienvenida": "¡Bienvenido al curso 'SQL de cero: Tu guía práctica con PostgreSQL'! Estamos emocionados de tenerte a bordo. Durante este curso, te adentrarás en el mundo de las bases de datos relacionales y aprenderás a dominar SQL con PostgreSQL. ¡Comencemos a consultar y optimizar!"
   },
 {
     "folder": "javascript",
@@ -207,6 +211,6 @@ db.createCollection('cursos', {
     "duracion": 73438818,
     "autor":"Fernando Herrera",
     "temas": ["Fundamentos Javascript", "Promesas", "Callbacks", "Carga de archivos", "Manipulación del DOM"],
-    "objetivos": ["Aprender JavaScript y su sintaxis", "Uso de importaciones y sintaxis moderna de JavaScript", "Conocer formas modernas de trabajar en JavaScript", "Webpack e importaciones de módulos"]
-  ,
+    "objetivos": ["Aprender JavaScript y su sintaxis", "Uso de importaciones y sintaxis moderna de JavaScript", "Conocer formas modernas de trabajar en JavaScript", "Webpack e importaciones de módulos"],
+    "mensaje_bienvenida": "¡Bienvenido al curso 'JavaScript Moderno: Guía para dominar el lenguaje'! Estamos emocionados de tenerte a bordo. A lo largo de este curso, te sumergirás en el mundo de JavaScript moderno y aprenderás a dominar su sintaxis y herramientas. ¡Comencemos a programar en JavaScript!"
 }])

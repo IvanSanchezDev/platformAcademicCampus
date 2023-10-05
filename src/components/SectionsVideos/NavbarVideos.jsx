@@ -168,7 +168,7 @@ const NavbarVideos=({tituloCourse, nameCourse})=>{
       </Button>
     ) : (
       <Typography>
-        <Alert severity="success" className="mt-5">
+        <Alert severity="success" className="mt-5" sx={{fontSize:'18px'}}>
           {message}
         </Alert>
       </Typography>

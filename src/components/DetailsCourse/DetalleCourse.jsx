@@ -56,14 +56,14 @@ const DetalleCourse=({nombreCurso})=>{
      
 
       
-      const {folder, nameCourse, duracion, imagenCourse, objetivos, temas, comentarios}=info
+      const {folder, nameCourse, duracion, imagenCourse, objetivos, temas, mensaje_bienvenida, comentarios}=info
 
       
     
     return (
         <SingleCourseWrapper>
             <Container className="">
-              <InfoCourse  titulo={nameCourse} nombreCourse={folder} portadaCourse={imagenCourse} comentarios={comentarios} duracion={duracion}/>
+              <InfoCourse  titulo={nameCourse} nombreCourse={folder} portadaCourse={imagenCourse} comentarios={comentarios} duracion={duracion} mensaje={mensaje_bienvenida}/>
               <Row className="details">
                 <Col xs={12} md={6} >
                   <div>

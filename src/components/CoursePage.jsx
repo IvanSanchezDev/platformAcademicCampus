@@ -64,8 +64,7 @@ const CoursePage=()=>{
         }
     }, [isLoading, isEnrolled, nameCourse]);
 
-    console.log(typeof links);
-    console.log(links);
+    
 
 
     return(

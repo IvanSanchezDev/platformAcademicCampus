@@ -4,25 +4,46 @@ import Rating from '@mui/material/Rating';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import { useInscripcion } from '../../context/inscripcionContext';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useAuth } from '../../context/authContext';
+import Alert from '@mui/material/Alert';
 
 
-const InfoCourse=({nombreCourse, portadaCourse, comentarios, titulo, duracion})=>{
+const InfoCourse=({nombreCourse, portadaCourse, comentarios, titulo, duracion, mensaje})=>{
   const {user}=useAuth()
-  const {inscripcionCurso, verificarInscripcion, message, isLoading, isEnrolled}=useInscripcion()
+  const {inscripcionCurso, verificarInscripcion, message, isLoading, isEnrolled, setMessage}=useInscripcion()
   const location = useLocation();
+  const [showAlert, setShowAlert] = useState(false);
+
+  
+
+useEffect(() => {
+  if (message) {
+    setShowAlert(true);
+
+    setTimeout(() => {
+      setShowAlert(false);
+      setMessage("")
+    }, 3000); 
+  }
+}, [message]);
 
  
 
+ 
+ 
+
   const handleInscripcion=()=>{    
-    inscripcionCurso(user.nombre_usuario, nombreCourse)
+    inscripcionCurso(user.nombre_usuario, nombreCourse, user.correo_electronico, mensaje)
 }
+
+
 
 useEffect(() => {
   if (user.nombre_usuario && nombreCourse) {
     verificarInscripcion(user.nombre_usuario, nombreCourse);
   }
+  
   
 }, []);
 
@@ -45,7 +66,7 @@ function segundosAHoras(segundos) {
   const cantidadComentarios = comentarios ? comentarios.length : 0;
 
   
-  
+  console.log(message);
 
   
     return(
@@ -72,21 +93,32 @@ function segundosAHoras(segundos) {
                 <div className='buttons mt-5'>
   {location.state ? (
     <Link to={`/detailsCourse/${nombreCourse}`}>
-      <button className="btnVolver fs-35">Volver</button>
+      <button className="btnVolver fs-35 ">Volver</button>
     </Link>
   ) : (
     !isLoading && (
       isEnrolled ? (
         <Link to={`/course/${nombreCourse}`}  className="d-grip" state={{ titulo: titulo }} >
-          <Button className="btnInscribirse fs-35">Ir al curso</Button>
+          <Button className="btnInscribirse fs-35 mb-5">Ir al curso</Button>
         </Link>
       ) : (
-        <Button className="btnInscribirse fs-35" onClick={handleInscripcion}>
+        <Button className="btnInscribirse fs-35 mb-5" onClick={handleInscripcion}>
           Inscribirse
         </Button>
       )
     ) 
   )}
+  {showAlert && (
+  <Alert
+    severity="success" // Puedes cambiar el severity según tus necesidades
+    onClose={() => setShowAlert(false)}
+    sx={{fontSize:'20px'}}
+  >
+    {message}
+  </Alert>
+)}
+
+  
 </div>
                 </Col >
                 
