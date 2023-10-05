@@ -21,7 +21,7 @@ router.get('/success', (req, res) => {
       <body>
       </body>
       <script>
-        window.opener.postMessage(${user}, 'http://localhost:5123')
+        window.opener.postMessage(${user}, 'http://192.168.129.72:5123')
       </script>
     </html>`);
     } catch (error) {
