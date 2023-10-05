@@ -20,15 +20,7 @@
 | valoracion_promedio | Decimal          | **Opcional**.  Valoración promedio del curso (puntuación)  |
 | comentarios         | Array de objetos | **Opcional**. Comentarios y valoraciones del curso         |
 
-### Videos
 
-| Campo       | Tipo de Dato     | Descripción                                                  |
-| ----------- | ---------------- | ------------------------------------------------------------ |
-| titulo      | String           | **Requerido**. Título del video                              |
-| url         | String           | **Requerido**. URL del video                                 |
-| duracion    | String           | **Opcional**. Duración del video (por ejemplo, "15 minutos") |
-| orden       | Integer          | **Requerido**. Orden del video en el curso (por ejemplo, 1)  |
-| comentarios | Array de objetos | **Opcional**. Lista de comentarios sobre el video            |
 
 
 
@@ -54,21 +46,16 @@
   "duracion": "8 semanas",
   "nivel": "Principiante",
   "instructor": "John Doe",
-  "videos": [
-	{ 
-    "titulo": "Introducción a Python",
-  	"url": "https://www.example.com/video1.mp4",
-  	"duracion": "15 minutos",
-  	"orden": 1,
-  	"comentarios":[
+  "comentarios":[
 	 	{
             "usuario_id":ObjectId("usuario_id"),
             "texto":"Este curso es excelente. Lo recomiendo."
       	}	
 	]
-	}
-  ]
+	
 }
+  
+
 ```
 
 
@@ -100,8 +87,7 @@
   "correo_electronico": "usuario@correo.com",
    "imagen_perfil": "https://www.example.com/perfil_usuario.jpg",
   "biografia": "Estudiante apasionado por la programación.",
-  "cursos_matriculados": [ObjectId("curso_id1"), ObjectId("curso_id2")],
-  "rol": "camper" // o "trainer"
+  "cursos_matriculados": [ObjectId("curso_id1"), ObjectId("curso_id2")]
 }
 ```
 
