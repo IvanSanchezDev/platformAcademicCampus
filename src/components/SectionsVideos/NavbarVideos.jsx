@@ -38,7 +38,7 @@ const NavbarVideos=({tituloCourse, nameCourse})=>{
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [showTextField, setShowTextField] = useState(false);
+  const [showTextField, setShowTextField] = useState(false); 
   const [message, setMessage]=useState('')
 
 
@@ -115,66 +115,69 @@ const NavbarVideos=({tituloCourse, nameCourse})=>{
             <div>
            
             <Modal
-  open={open}
-  onClose={handleClose}
-  aria-labelledby="modal-modal-title"
-  aria-describedby="modal-modal-description"
->
-  <Box sx={style} className="responsive-modal">
-    <Typography variant="h6" component="h2" sx={{ fontSize: '22px', fontWeight: 'bold' }}>
-      ¿Cómo calificarías este curso?
-    </Typography>
-    <Rating
-      name="simple-controlled"
-      value={rating}
-      onChange={(event, newValue) => {
-        setRating(newValue);
-        setShowTextField(true);
-      }}
-      sx={{ mt: 3, fontSize: '50px' }}
-    />
+      open={open}
+      onClose={handleClose}
+      aria-labelledby="modal-modal-title"
+      aria-describedby="modal-modal-description"
+    >
+      <Box sx={style} className="responsive-modal">
+        <Typography variant="h6" component="h2" sx={{ fontSize: '22px', fontWeight: 'bold' }}>
+          ¿Cómo calificarías este curso?
+        </Typography>
+        <Rating
+          name="simple-controlled"
+          value={rating}
+          onChange={(event, newValue) => {
+            setRating(newValue);
+            setShowTextField(true); // Mostrar TextField cuando se selecciona un valor
+          }}
+          sx={{ mt: 3, fontSize: '50px' }}
+        />
 
-      <TextField
-        sx={{
-          mt:5,
-          width: '100%', // Usa el 100% del ancho disponible
-          '& .MuiInputBase-input': {
-            fontSize: '18px', // Tamaño de fuente deseado para el input
-          },
-        }}
-        id="outlined-textarea"
-        placeholder="Deja tu Comentario"
-        multiline
-        value={comentario}
-        onChange={(e) => setNuevoComentario(e.target.value)}
-      />
-    
+        {showTextField && (
+          <TextField
+            sx={{
+              mt: 5,
+              width: '100%',
+              '& .MuiInputBase-input': {
+                fontSize: '18px',
+              },
+            }}
+            id="outlined-textarea"
+            placeholder="Deja tu Comentario"
+            multiline
+            value={comentario}
+            onChange={(e) => setNuevoComentario(e.target.value)}
+          />
+        )}
 
-    {!message ? (
-      <Button
-        onClick={() => {
-          enviarComentario();
-        }}
-        sx={{
-          mt: 3,
-          fontSize: '15px',
-          padding: '10px 20px',
-          backgroundColor: '#2D2F31',
-          color: 'white',
-          border: 'none',
-        }}
-      >
-        Enviar
-      </Button>
-    ) : (
-      <Typography>
-        <Alert severity="success" className="mt-5" sx={{fontSize:'18px'}}>
-          {message}
-        </Alert>
-      </Typography>
-    )}
-  </Box>
-</Modal>
+        {showTextField && !message ? (
+          <Button
+            onClick={() => {
+              enviarComentario();
+            }}
+            sx={{
+              mt: 3,
+              fontSize: '15px',
+              padding: '10px 20px',
+              backgroundColor: '#2D2F31',
+              color: 'white',
+              border: 'none',
+            }}
+          >
+            Enviar
+          </Button>
+        ) : null}
+
+        { message && (
+          <Typography>
+            <Alert severity="success" className="mt-5" sx={{ fontSize: '18px' }}>
+              {message}
+            </Alert>
+          </Typography>
+        )}
+      </Box>
+    </Modal>
 
     </div>        
         </NavbarWrapper>

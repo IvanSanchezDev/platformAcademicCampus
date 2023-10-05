@@ -89,7 +89,7 @@ const LoginWrapper=styled.div`
     height:500px;
     max-width: 90%;
     top: 50%; 
-    left: 55%;
+    left: 67%;
     right: 0;
     transform: translate(-50%, -50%);
     display: flex;
