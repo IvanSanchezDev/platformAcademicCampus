@@ -139,6 +139,7 @@ const CoursePage=()=>{
 
 const VideoWrapper=styled.div`
 background-color: #EDEDED;
+height:auto;
 `;
 
 export default CoursePage
