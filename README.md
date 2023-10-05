@@ -11,11 +11,46 @@
     -Correr proyecto frontend => npm run dev (en otra terminal)
 
 
+### Apis
+
+```
+Iniciar Sesion:  GET  /auth/login
+```
+
+```
+Ver la informacion del usuario:  GET   /api/user
+```
+
+```
+Traer cursos disponibles:  GET  /api/curso/traerCursos
+```
+
+```
+Traer curso especifico: GET  /api/curso/traerCursoByName
+```
+
+```
+Inscripcion a cursos: POST  /api/curso/inscripcionCursos
+```
+
+```
+Verificar inscripcion: POST  /api/curso/verificarInscripcion
+```
+
+    Traer cursos en los cuales estoy inscrito: GET  /api/curso/traerCursosInscrito
+
+
+
 ### Guia de uso
+
+
 
 En primer lugar tenemos el login, con el cual iniciamos sesion mediante nuestra cuenta de  discord
 
 <img src="./public//Interfaces/login1.png" alt="Texto alternativo de la imagen" width="60%" />
+
+
+
 
 
 
@@ -24,13 +59,19 @@ En segundo Lugar tenemos la interfaz principal donde visualizamos todos los curs
 <img src="./public//Interfaces/home.png" alt="Texto alternativo de la imagen" width="60%" />
 
 
-Por otra parte tenemos la vista general de un curso en especifico- podemos observar que no sale la opcion de inscribirnos y otra informacion acerca de lo que trata el curso
 
--darle click inscribir, se nos habilitara la opcion de ver el curso y asi mmismo nos llegara un correo electronico dandonos la bienvenida al curso
+
+
+
+Por otra parte tenemos la vista general de un curso en especifico, aqui  podemos observar que no sale la opcion de inscribirnos y otra informacion acerca de lo que trata el curso
+
+-darle click inscribir, se nos habilitara la opcion de ver el curso y asi mismo nos llegara un correo electronico dandonos la bienvenida al curso
 
 <img src="./public//Interfaces/detalles1.png" alt="Texto alternativo de la imagen" width="60%" />
 
 <img src="./public//Interfaces/detalles2.png" alt="Texto alternativo de la imagen" width="60%" />
+
+
 
 
 
@@ -40,7 +81,11 @@ En otra instancia tenemos el apartado de opiniones, aqui observamos cada una de 
 <img src="./public//Interfaces/opiniones.png" alt="Texto alternativo de la imagen" width="60%" />
 
 
--Ahora iremos a ver la interfaz de ver un curso
+
+
+
+
+Ahora iremos a ver la interfaz de ver un curso
 
 como podemos ver tenemos una lista deplegable en la cual podemos encontrar todos las secciones y videos del correspondiente curso
 
@@ -49,6 +94,8 @@ en la parte superior derecha podemos observa el texto calificar curso, alli pode
 <img src="./public//Interfaces/videos.png" alt="Texto alternativo de la imagen" width="60%" />
 
 <img src="./public//Interfaces/modal.png" alt="Texto alternativo de la imagen" width="60%" />
+
+
 
 
 
