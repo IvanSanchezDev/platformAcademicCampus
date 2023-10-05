@@ -1,14 +1,26 @@
 # Platform Academic Campus
 
 
+
+### Instalacion local
+
+    -Descargar o clonar el repositorio
+    -Configurar las variables de entorno (tome como guia el .env-example)
+    -instalar las dependencias con el comando =>  npm install
+    -Correr proyecto backend => npm run prueba
+    -Correr proyecto frontend => npm run dev (en otra terminal)
+
+
 ### Guia de uso
 
 En primer lugar tenemos el login, con el cual iniciamos sesion mediante nuestra cuenta de  discord
+
 <img src="./public//Interfaces/login1.png" alt="Texto alternativo de la imagen" width="60%" />
 
 
 
 En segundo Lugar tenemos la interfaz principal donde visualizamos todos los cursos disponibles 
+
 <img src="./public//Interfaces/home.png" alt="Texto alternativo de la imagen" width="60%" />
 
 
@@ -17,6 +29,7 @@ Por otra parte tenemos la vista general de un curso en especifico- podemos obser
 -darle click inscribir, se nos habilitara la opcion de ver el curso y asi mmismo nos llegara un correo electronico dandonos la bienvenida al curso
 
 <img src="./public//Interfaces/detalles1.png" alt="Texto alternativo de la imagen" width="60%" />
+
 <img src="./public//Interfaces/detalles2.png" alt="Texto alternativo de la imagen" width="60%" />
 
 
