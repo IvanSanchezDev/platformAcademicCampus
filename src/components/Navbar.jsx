@@ -1,29 +1,24 @@
 
 import styled from 'styled-components'
-import {MdMenu} from 'react-icons/md'
-import { Link } from 'react-router-dom'
-import { useSidebarContext } from '../context/sidebar_context'
-import Container from 'react-bootstrap/Container';
 
+import { Link } from 'react-router-dom'
+import Container from 'react-bootstrap/Container';
+import MenuPerfil from './MenuPerfil';
 
 
 const Navbar=()=>{
-
-    const {openSidebar}=useSidebarContext()
-
 
     return(
         <NavbarWrapper className='bg-white flex'>
             <Container className='w-100'>
                 <div className='brand-and-toggler flex flex-between w-100'>
-                    <Link to='/home' className='navbar-brand text-uppercase ls-1 fw-8'>
+                    <Link to='/' className='navbar-brand text-uppercase ls-1 fw-8'>
                         <span>C</span>ampusAcademic                
                     </Link>
 
-                    <div className='navbar-btns flex'>                     
-                        <button type='button' className='sidebar-open-btn' onClick={()=>openSidebar()}>
-                          <MdMenu className="fs-26"/>
-                        </button>
+                    <div className='navbar-btns flex'>
+                      
+                      <MenuPerfil/>
                     </div>
 
                 </div>
@@ -34,7 +29,7 @@ const Navbar=()=>{
 
 const NavbarWrapper=styled.nav`
 height: 80px; 
-box-shadow: rgba(50, 50, 93, 0.15) 0px 16px 12px -2px, rgba(0, 0, 0, 0.2) 0px 3px 7px -3px; //sombra
+
 
 .navbar-brand{
   font-size: 23px;
@@ -49,6 +44,26 @@ box-shadow: rgba(50, 50, 93, 0.15) 0px 16px 12px -2px, rgba(0, 0, 0, 0.2) 0px 3p
     opacity: 0.7;
   }
 }
+
+/* Quitar el color azul del enlace del Dropdown */
+.dropdown-item:focus, .dropdown-item:hover {
+  background-color: transparent;
+  text-decoration: none;
+}
+
+/* Quitar la flecha */
+.dropdown-toggle::after {
+  display: none;
+}
+
+
+@media (max-width: 767px) { 
+  .navbar-brand{
+    font-size: 16px;
+  }
+}
+
+
 `;
 
 export default Navbar

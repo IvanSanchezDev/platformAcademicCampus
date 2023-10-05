@@ -15,6 +15,7 @@ passport.use(new DiscordStrategy({
     scope: ['identify', 'guilds', 'email']
 }, async (accestoken, refreshtoken, profile, done) =>{
   try {
+    
     const db=await connect()
     const usuarios=db.collection("usuarios")
     const user=await usuarios.findOne({discord_id:profile.id})
@@ -28,7 +29,8 @@ passport.use(new DiscordStrategy({
     const newUser={
       discord_id:profile.id,
       nombre_usuario:profile.username,
-      correo_electronico:profile.email
+      correo_electronico:profile.email,
+      imagen_perfil:profile.avatar
     }
     
   

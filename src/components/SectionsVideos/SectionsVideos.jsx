@@ -5,12 +5,15 @@ import { renderTituloSection } from './renderTituloSections';
 
 
 const SectionsVideos=({listSection})=>{
+
+  
+    
     
       return (
         <AccordionWrapper>
           <Accordion defaultActiveKey="0">
-            {Object.values(listSection).map((section, sectionIndex) =>
-              renderTituloSection(section, sectionIndex)
+            {listSection.videos.map((infoVideo, sectionIndex) =>
+              renderTituloSection(infoVideo, sectionIndex)
             )}
           </Accordion>
         </AccordionWrapper>

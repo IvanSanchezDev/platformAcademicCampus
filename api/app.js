@@ -4,15 +4,19 @@ import passport from 'passport';
 import { router as routerAuth } from './routes/auth.routes.js';
 import { router as routerUser } from './routes/user.routes.js';
 import { router as routerCourse } from './routes/curso.routes.js';
-
-
 import session from "express-session";
 import { loadEnv } from 'vite'
+
+
+
 const env=loadEnv("development", process.cwd(), 'VITE')
 
 
 
 export const app = express()
+
+
+
 app.use(cors({origin:true, methods:"GET,POST",credentials:true}))
 
 app.use(
